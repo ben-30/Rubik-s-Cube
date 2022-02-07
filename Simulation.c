@@ -1,38 +1,21 @@
 //On PC
 
 #include <stdio.h>
+#include <string.h>
 
-//void display(char[]);
 void display();
 void reset();
-//void initialize(char *, int);
+void U();
 
-char cube[54] = {'W','W','W','W','W','W','W','W','W',
-		     	 'O','O','O','O','O','O','O','O','O',
-		         'G','G','G','G','G','G','G','G','G',
-                 'R','R','R','R','R','R','R','R','R',
-		     	 'B','B','B','B','B','B','B','B','B',
-		     	 'Y','Y','Y','Y','Y','Y','Y','Y','Y'};
+char cube[54];
 
-int main() {
-	//char *cube;
-	//cube = NULL;
-	
-	display();
-	cube[0] = 'P';
-	display();
+int main() {	
 	reset();
+	U();
 	display();
 }
 
 void display() {
-	/*printf("\nColors!\n");
-	printf("W = White\n");
-	printf("O = Orange\n");
-	printf("G = Green\n");
-	printf("R = Red\n");
-	printf("B = Blue\n");
-	printf("Y = Yellow\n");*/
 	printf("\nCube!!!\n");
 	
 	printf("\nU: ");
@@ -106,11 +89,22 @@ void reset() {
 	}
 }
 
-/*void U(char **cube)
+void U()
 {
-	char temp[54] = *cube;
+	char temp[54];
+	memcpy(temp, cube, sizeof cube);
 	
-	/*for (int i = 0 ; i < 54 ; i++)
-        (*cube)[i] = 1;
-}*/
+	cube[9]  = temp[18];
+	cube[10] = temp[19];
+	cube[11] = temp[20];
+	cube[18] = temp[27];
+	cube[19] = temp[28];
+	cube[20] = temp[29];
+	cube[27] = temp[36];
+	cube[28] = temp[37];
+	cube[29] = temp[38];
+	cube[36] = temp[9] ;
+	cube[37] = temp[10];
+	cube[38] = temp[11];
+}
 
