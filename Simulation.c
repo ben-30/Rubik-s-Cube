@@ -8,11 +8,17 @@ void reset();
 void perform_movement(char);
 void make_copy();
 void U();
+void Ui();
 void D();
+void Di();
 void L();
+void Li();
 void R();
+void Ri();
 void F();
+void Fi();
 void B();
+void Bi();
 
 char cube[54];
 char cube_copy[54];
@@ -128,6 +134,24 @@ void perform_movement(char input_movement)
 		case 'B':
 			B();
 			break;
+		case 'u':
+			Ui();
+			break;
+		case 'd':
+			Di();
+			break;
+		case 'l':
+			Li();
+			break;
+		case 'r':
+			Ri();
+			break;
+		case 'f':
+			Fi();
+			break;
+		case 'b':
+			Bi();
+			break;
 		case ' ':
 			break;
 		default:
@@ -170,6 +194,13 @@ void U()
 	cube[8]  = cube_copy[2] ;
 }
 
+void Ui()
+{
+	U();
+	U();
+	U();
+}
+
 void D()
 {
 	make_copy();
@@ -196,6 +227,13 @@ void D()
 	cube[51] = cube_copy[53];
 	cube[52] = cube_copy[50];
 	cube[53] = cube_copy[47];
+}
+
+void Di()
+{
+	D();
+	D();
+	D();
 }
 
 void L()
@@ -226,6 +264,13 @@ void L()
 	cube[17] = cube_copy[11];
 }
 
+void Li()
+{
+	L();
+	L();
+	L();
+}
+
 void R()
 {
 	make_copy();
@@ -252,6 +297,13 @@ void R()
 	cube[33] = cube_copy[35];
 	cube[34] = cube_copy[32];
 	cube[35] = cube_copy[29];
+}
+
+void Ri()
+{
+	R();
+	R();
+	R();
 }
 
 void F()
@@ -282,6 +334,13 @@ void F()
 	cube[26] = cube_copy[20];
 }
 
+void Fi()
+{
+	F();
+	F();
+	F();
+}
+
 void B()
 {
 	make_copy();
@@ -308,4 +367,11 @@ void B()
 	cube[42] = cube_copy[44];
 	cube[43] = cube_copy[41];
 	cube[44] = cube_copy[38];
+}
+
+void Bi()
+{
+	B();
+	B();
+	B();
 }
