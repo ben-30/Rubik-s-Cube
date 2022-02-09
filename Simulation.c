@@ -1,4 +1,5 @@
 //On PC
+//https://ruwix.com/the-rubiks-cube/notation/advanced/
 
 #include <stdio.h>
 #include <string.h>
@@ -22,19 +23,27 @@ void Bi();
 
 char cube[54];
 char cube_copy[54];
+char sequence[150];
+int sequence_count = 0;
 
 int main() {	
 	reset();
-	
+		
 	char input[100];
-	printf("Enter Movement: ");
-	fgets(input, 100, stdin);
+	int done_flag = 0;
 	
-	for (int i=0; i<strlen(input)-1; i++) {
-		perform_movement(input[i]);
+	while (done_flag != 1) {
+		printf("\nEnter Movement: ");
+		fgets(input, 100, stdin);
+		
+		for (int i=0; i<strlen(input)-1; i++) {
+			if (input[i] == '1') { done_flag = 1; }
+			
+			perform_movement(input[i]);
+		}
+		
+		display();
 	}
-	
-	display();
 }
 
 void display()
@@ -115,6 +124,9 @@ void reset()
 
 void perform_movement(char input_movement)
 {
+	sequence[sequence_count] = input_movement;
+	sequence_count++;
+	
 	switch (input_movement) {
 		case 'U':
 			U();
@@ -153,9 +165,19 @@ void perform_movement(char input_movement)
 			Bi();
 			break;
 		case ' ':
+			sequence_count--;
+			break;
+		case '1':
+			sequence_count--;
+			printf("\nDone");
+			printf("\nPerformed Sequence: ");
+			for (int i=0; i<sequence_count; i++) {
+				printf("%c ", sequence[i]);
+			}
+			printf("\n");
 			break;
 		default:
-			printf("\nInvalid Move: %c", input_movement);
+			printf("\nInvalid Move: %c\n", input_movement);
 	}
 }
 
