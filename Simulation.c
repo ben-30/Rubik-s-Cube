@@ -5,7 +5,7 @@
 
 void display();
 void reset();
-void perform_movement(char[]);
+void perform_movement(char);
 void make_copy();
 void U();
 void D();
@@ -20,10 +20,13 @@ char cube_copy[54];
 int main() {	
 	reset();
 	
-	char input_movement[100];
-	printf("Enter Movement String: ");
-	scanf("%s", input_movement);
-	perform_movement(input_movement);
+	char input[100];
+	printf("Enter Movement: ");
+	fgets(input, 100, stdin);
+	
+	for (int i=0; i<strlen(input)-1; i++) {
+		perform_movement(input[i]);
+	}
 	
 	display();
 }
@@ -104,29 +107,31 @@ void reset()
 	}
 }
 
-void perform_movement(char input_movement[])
+void perform_movement(char input_movement)
 {
-	for (int i=0; i<100; i++) {
-		switch (input_movement[i]) {
-			case 'U':
-				U();
-				break;
-			case 'D':
-				D();
-				break;
-			case 'L':
-				L();
-				break;
-			case 'R':
-				R();
-				break;
-			case 'F':
-				F();
-				break;
-			case 'B':
-				B();
-				break;
-		}
+	switch (input_movement) {
+		case 'U':
+			U();
+			break;
+		case 'D':
+			D();
+			break;
+		case 'L':
+			L();
+			break;
+		case 'R':
+			R();
+			break;
+		case 'F':
+			F();
+			break;
+		case 'B':
+			B();
+			break;
+		case ' ':
+			break;
+		default:
+			printf("\nInvalid Move: %c", input_movement);
 	}
 }
 
