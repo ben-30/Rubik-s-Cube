@@ -20,6 +20,12 @@ void F();
 void Fi();
 void B();
 void Bi();
+void M();
+void Mi();
+void E();
+void Ei();
+void S();
+void Si();
 
 char cube[54];
 char cube_copy[54];
@@ -102,6 +108,8 @@ void display()
 
 void reset()
 {
+	sequence_count = 0;
+	
 	for (int i=0; i<9; i++) {
 		cube[i] = 'W';
 	}
@@ -164,19 +172,41 @@ void perform_movement(char input_movement)
 		case 'b':
 			Bi();
 			break;
+		case 'M':
+			M();
+			break;
+		case 'E':
+			E();
+			break;
+		case 'S':
+			S();
+			break;
+		case 'm':
+			Mi();
+			break;
+		case 'e':
+			Ei();
+			break;
+		case 's':
+			Si();
+			break;
 		case ' ':
 			sequence_count--;
+			break;
+		case '0':
+			reset();
 			break;
 		case '1':
 			sequence_count--;
 			printf("\nDone");
 			printf("\nPerformed Sequence: ");
 			for (int i=0; i<sequence_count; i++) {
-				printf("%c ", sequence[i]);
+				printf("%c", sequence[i]);
 			}
 			printf("\n");
 			break;
 		default:
+			sequence_count--;
 			printf("\nInvalid Move: %c\n", input_movement);
 	}
 }
@@ -396,4 +426,79 @@ void Bi()
 	B();
 	B();
 	B();
+}
+
+void M()
+{
+	make_copy();
+	
+	cube[1]  = cube_copy[43];
+	cube[4]  = cube_copy[40];
+	cube[7]  = cube_copy[37];
+	cube[19] = cube_copy[1] ;
+	cube[22] = cube_copy[4] ;
+	cube[25] = cube_copy[7] ;
+	cube[46] = cube_copy[19];
+	cube[49] = cube_copy[22];
+	cube[52] = cube_copy[25];
+	cube[43] = cube_copy[46];
+	cube[40] = cube_copy[49];
+	cube[37] = cube_copy[52];
+}
+
+void Mi()
+{
+	M();
+	M();
+	M();
+}
+
+void E()
+{
+	make_copy();
+	
+	cube[21] = cube_copy[12];
+	cube[22] = cube_copy[13];
+	cube[23] = cube_copy[14];
+	cube[12] = cube_copy[39];
+	cube[13] = cube_copy[40];
+	cube[14] = cube_copy[41];
+	cube[39] = cube_copy[30];
+	cube[40] = cube_copy[31];
+	cube[41] = cube_copy[32];
+	cube[30] = cube_copy[21];
+	cube[31] = cube_copy[22];
+	cube[32] = cube_copy[23];
+}
+
+void Ei()
+{
+	E();
+	E();
+	E();
+}
+
+void S()
+{
+	make_copy();
+	
+	cube[3]  = cube_copy[16];
+	cube[4]  = cube_copy[13];
+	cube[5]  = cube_copy[10];
+	cube[16] = cube_copy[50];
+	cube[13] = cube_copy[49];
+	cube[10] = cube_copy[48];
+	cube[50] = cube_copy[28];
+	cube[49] = cube_copy[31];
+	cube[48] = cube_copy[34];
+	cube[28] = cube_copy[3] ;
+	cube[31] = cube_copy[4] ;
+	cube[34] = cube_copy[5] ;
+}
+
+void Si()
+{
+	S();
+	S();
+	S();
 }
