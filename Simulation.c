@@ -52,7 +52,7 @@ int main() {
 	}
 }
 
-void display()
+/*void display()
 {
 	printf("\nCube!!!\n");
 	
@@ -100,6 +100,31 @@ void display()
 	for (int i=45; i<54; i++) {
 		if ( ((i+1)%3) == 0 ) {
 			printf("%c\n   ", cube[i]);
+		} else {
+			printf("%c ", cube[i]);
+		}
+	}
+}*/
+
+void display()
+{
+	printf("\nCube!!!\n\n          ");
+	
+	for (int i=0; i<9; i++) {
+		if ( ((i+1)%3) == 0 ) {
+			printf("%c\n          ", cube[i]);
+		} else {
+			printf("%c ", cube[i]);
+		}
+	}
+	
+	printf("\n  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n", cube[9], cube[10], cube[11], cube[18], cube[19], cube[20], cube[27], cube[28], cube[29], cube[36], cube[37], cube[38]);
+	printf("  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n", cube[12], cube[13], cube[14], cube[21], cube[22], cube[23], cube[30], cube[31], cube[32], cube[39], cube[40], cube[41]);
+	printf("  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n\n          ", cube[15], cube[16], cube[17], cube[24], cube[25], cube[26], cube[33], cube[34], cube[35], cube[42], cube[43], cube[44]);
+	
+	for (int i=45; i<54; i++) {
+		if ( ((i+1)%3) == 0 ) {
+			printf("%c\n          ", cube[i]);
 		} else {
 			printf("%c ", cube[i]);
 		}
