@@ -544,8 +544,7 @@ void Si()
 	S();
 }*/
 
-//Mixed  - FRUBBDFLLfuFRRUL
-//Mixed  - BYYOWWYRWWYGGOGRRROGGYGBBYORBOORWWWGBBOOBORRBYRGWYGWBY
+//Mixed  - OYWWWRYOYYBBBOGYBBRGRRGOROWGWGYRWGYBRRBGBYWBGWWOOYGORO
 void yellow_cross()
 {
 	int check[24] = {1,3,5,7,10,12,14,16,19,21,23,25,28,30,32,34,37,39,41,43,46,48,50,52};
@@ -672,8 +671,548 @@ void yellow_cross()
 		}
 	}
 	
+	for (int i=0; i<4; i++) {
+		int yellow_spot = yellow_edges[i];
+		switch (yellow_spot) {
+			case 1:
+				if (get_color(37) == 'G')
+					yellow_green = 1;
+				break;
+			case 3:
+				if (get_color(10) == 'G')
+					yellow_green = 3;
+				break;
+			case 5:
+				if (get_color(28) == 'G')
+					yellow_green = 5;
+				break;
+			case 7:
+				if (get_color(19) == 'G')
+					yellow_green = 7;
+				break;
+			case 10:
+				if (get_color(3) == 'G')
+					yellow_green = 10;
+				break;
+			case 12:
+				if (get_color(41) == 'G')
+					yellow_green = 12;
+				break;
+			case 14:
+				if (get_color(21) == 'G')
+					yellow_green = 14;
+				break;
+			case 16:
+				if (get_color(48) == 'G')
+					yellow_green = 16;
+				break;
+			case 19:
+				if (get_color(7) == 'G')
+					yellow_green = 19;
+				break;
+			case 21:
+				if (get_color(14) == 'G')
+					yellow_green = 21;
+				break;
+			case 23:
+				if (get_color(30) == 'G')
+					yellow_green = 23;
+				break;
+			case 25:
+				if (get_color(46) == 'G')
+					yellow_green = 25;
+				break;
+			case 28:
+				if (get_color(5) == 'G')
+					yellow_green = 28;
+				break;
+			case 30:
+				if (get_color(23) == 'G')
+					yellow_green = 30;
+				break;
+			case 32:
+				if (get_color(39) == 'G')
+					yellow_green = 32;
+				break;
+			case 34:
+				if (get_color(50) == 'G')
+					yellow_green = 34;
+				break;
+			case 37:
+				if (get_color(1) == 'G')
+					yellow_green = 37;
+				break;
+			case 39:
+				if (get_color(32) == 'G')
+					yellow_green = 39;
+				break;
+			case 41:
+				if (get_color(12) == 'G')
+					yellow_green = 41;
+				break;
+			case 43:
+				if (get_color(52) == 'G')
+					yellow_green = 43;
+				break;
+			case 46:
+				if (get_color(25) == 'G')
+					yellow_green = 46;
+				break;
+			case 48:
+				if (get_color(16) == 'G')
+					yellow_green = 48;
+				break;
+			case 50:
+				if (get_color(34) == 'G')
+					yellow_green = 50;
+				break;
+			case 52:
+				if (get_color(43) == 'G')
+					yellow_green = 52;
+				break;
+		}
+	}
+	
+	for (int i=0; i<4; i++) {
+		int yellow_spot = yellow_edges[i];
+		switch (yellow_spot) {
+			case 1:
+				if (get_color(37) == 'R')
+					yellow_red = 1;
+				break;
+			case 3:
+				if (get_color(10) == 'R')
+					yellow_red = 3;
+				break;
+			case 5:
+				if (get_color(28) == 'R')
+					yellow_red = 5;
+				break;
+			case 7:
+				if (get_color(19) == 'R')
+					yellow_red = 7;
+				break;
+			case 10:
+				if (get_color(3) == 'R')
+					yellow_red = 10;
+				break;
+			case 12:
+				if (get_color(41) == 'R')
+					yellow_red = 12;
+				break;
+			case 14:
+				if (get_color(21) == 'R')
+					yellow_red = 14;
+				break;
+			case 16:
+				if (get_color(48) == 'R')
+					yellow_red = 16;
+				break;
+			case 19:
+				if (get_color(7) == 'R')
+					yellow_red = 19;
+				break;
+			case 21:
+				if (get_color(14) == 'R')
+					yellow_red = 21;
+				break;
+			case 23:
+				if (get_color(30) == 'R')
+					yellow_red = 23;
+				break;
+			case 25:
+				if (get_color(46) == 'R')
+					yellow_red = 25;
+				break;
+			case 28:
+				if (get_color(5) == 'R')
+					yellow_red = 28;
+				break;
+			case 30:
+				if (get_color(23) == 'R')
+					yellow_red = 30;
+				break;
+			case 32:
+				if (get_color(39) == 'R')
+					yellow_red = 32;
+				break;
+			case 34:
+				if (get_color(50) == 'R')
+					yellow_red = 34;
+				break;
+			case 37:
+				if (get_color(1) == 'R')
+					yellow_red = 37;
+				break;
+			case 39:
+				if (get_color(32) == 'R')
+					yellow_red = 39;
+				break;
+			case 41:
+				if (get_color(12) == 'R')
+					yellow_red = 41;
+				break;
+			case 43:
+				if (get_color(52) == 'R')
+					yellow_red = 43;
+				break;
+			case 46:
+				if (get_color(25) == 'R')
+					yellow_red = 46;
+				break;
+			case 48:
+				if (get_color(16) == 'R')
+					yellow_red = 48;
+				break;
+			case 50:
+				if (get_color(34) == 'R')
+					yellow_red = 50;
+				break;
+			case 52:
+				if (get_color(43) == 'R')
+					yellow_red = 52;
+				break;
+		}
+	}
+	
+	for (int i=0; i<4; i++) {
+		int yellow_spot = yellow_edges[i];
+		switch (yellow_spot) {
+			case 1:
+				if (get_color(37) == 'B')
+					yellow_blue = 1;
+				break;
+			case 3:
+				if (get_color(10) == 'B')
+					yellow_blue = 3;
+				break;
+			case 5:
+				if (get_color(28) == 'B')
+					yellow_blue = 5;
+				break;
+			case 7:
+				if (get_color(19) == 'B')
+					yellow_blue = 7;
+				break;
+			case 10:
+				if (get_color(3) == 'B')
+					yellow_blue = 10;
+				break;
+			case 12:
+				if (get_color(41) == 'B')
+					yellow_blue = 12;
+				break;
+			case 14:
+				if (get_color(21) == 'B')
+					yellow_blue = 14;
+				break;
+			case 16:
+				if (get_color(48) == 'B')
+					yellow_blue = 16;
+				break;
+			case 19:
+				if (get_color(7) == 'B')
+					yellow_blue = 19;
+				break;
+			case 21:
+				if (get_color(14) == 'B')
+					yellow_blue = 21;
+				break;
+			case 23:
+				if (get_color(30) == 'B')
+					yellow_blue = 23;
+				break;
+			case 25:
+				if (get_color(46) == 'B')
+					yellow_blue = 25;
+				break;
+			case 28:
+				if (get_color(5) == 'B')
+					yellow_blue = 28;
+				break;
+			case 30:
+				if (get_color(23) == 'B')
+					yellow_blue = 30;
+				break;
+			case 32:
+				if (get_color(39) == 'B')
+					yellow_blue = 32;
+				break;
+			case 34:
+				if (get_color(50) == 'B')
+					yellow_blue = 34;
+				break;
+			case 37:
+				if (get_color(1) == 'B')
+					yellow_blue = 37;
+				break;
+			case 39:
+				if (get_color(32) == 'B')
+					yellow_blue = 39;
+				break;
+			case 41:
+				if (get_color(12) == 'B')
+					yellow_blue = 41;
+				break;
+			case 43:
+				if (get_color(52) == 'B')
+					yellow_blue = 43;
+				break;
+			case 46:
+				if (get_color(25) == 'B')
+					yellow_blue = 46;
+				break;
+			case 48:
+				if (get_color(16) == 'B')
+					yellow_blue = 48;
+				break;
+			case 50:
+				if (get_color(34) == 'B')
+					yellow_blue = 50;
+				break;
+			case 52:
+				if (get_color(43) == 'B')
+					yellow_blue = 52;
+				break;
+		}
+	}
+	
 	printf("\nYellow Orange: %d", yellow_orange);
 	printf("\nYellow Green: %d", yellow_green);
 	printf("\nYellow Red: %d", yellow_red);
 	printf("\nYellow Blue: %d", yellow_blue);
+	
+	printf("\n\nPlacing Yellow Orange:\n");
+	switch (yellow_orange) {
+		case 1:
+			printf("uLL");
+			break;
+		case 3:
+			printf("LL");
+			break;
+		case 5:
+			printf("UULL");
+			break;
+		case 7:
+			printf("ULL");
+			break;
+		case 10:
+			printf("ufL");
+			break;
+		case 12:
+			printf("BD");
+			break;
+		case 14:
+			printf("fd");
+			break;
+		case 16:
+			printf("lfd");
+			break;
+		case 19:
+			printf("fL");
+			break;
+		case 21:
+			printf("L");
+			break;
+		case 23:
+			printf("FFL");
+			break;
+		case 25:
+			printf("FL");
+			break;
+		case 28:
+			printf("rFd");
+			break;
+		case 30:
+			printf("Fd");
+			break;
+		case 32:
+			printf("bD");
+			break;
+		case 34:
+			printf("rbD");
+			break;
+		case 37:
+			printf("Bl");
+			break;
+		case 39:
+			printf("RDD");
+			break;
+		case 41:
+			printf("l");
+			break;
+		case 43:
+			printf("bl");
+			break;
+		case 46:
+			//printf("FDfd");
+			printf("d");
+			break;
+		case 48:
+			printf("Already in Place");
+			break;
+		case 50:
+			//printf("RDDrdd");
+			printf("DD");
+			break;
+		case 52:
+			printf("D");
+			break;
+	}
+	
+	printf("\n\nPlacing Yellow Green:\n");
+	switch (yellow_green) {
+		case 1:
+			break;
+		case 3:
+			break;
+		case 5:
+			break;
+		case 7:
+			break;
+		case 10:
+			break;
+		case 12:
+			break;
+		case 14:
+			break;
+		case 16:
+			break;
+		case 19:
+			break;
+		case 21:
+			break;
+		case 23:
+			break;
+		case 25:
+			break;
+		case 28:
+			break;
+		case 30:
+			break;
+		case 32:
+			break;
+		case 34:
+			break;
+		case 37:
+			break;
+		case 39:
+			break;
+		case 41:
+			break;
+		case 43:
+			break;
+		case 46:
+			break;
+		case 48:
+			break;
+		case 50:
+			break;
+		case 52:
+			break;
+	}
+
+	printf("\n\nPlacing Yellow Red:\n");
+	switch (yellow_red) {
+		case 1:
+			break;
+		case 3:
+			break;
+		case 5:
+			break;
+		case 7:
+			break;
+		case 10:
+			break;
+		case 12:
+			break;
+		case 14:
+			break;
+		case 16:
+			break;
+		case 19:
+			break;
+		case 21:
+			break;
+		case 23:
+			break;
+		case 25:
+			break;
+		case 28:
+			break;
+		case 30:
+			break;
+		case 32:
+			break;
+		case 34:
+			break;
+		case 37:
+			break;
+		case 39:
+			break;
+		case 41:
+			break;
+		case 43:
+			break;
+		case 46:
+			break;
+		case 48:
+			break;
+		case 50:
+			break;
+		case 52:
+			break;
+	}
+	
+	printf("\n\nPlacing Yellow Blue:\n");
+	switch (yellow_blue) {
+		case 1:
+			break;
+		case 3:
+			break;
+		case 5:
+			break;
+		case 7:
+			break;
+		case 10:
+			break;
+		case 12:
+			break;
+		case 14:
+			break;
+		case 16:
+			break;
+		case 19:
+			break;
+		case 21:
+			break;
+		case 23:
+			break;
+		case 25:
+			break;
+		case 28:
+			break;
+		case 30:
+			break;
+		case 32:
+			break;
+		case 34:
+			break;
+		case 37:
+			break;
+		case 39:
+			break;
+		case 41:
+			break;
+		case 43:
+			break;
+		case 46:
+			break;
+		case 48:
+			break;
+		case 50:
+			break;
+		case 52:
+			break;
+	}
 }
