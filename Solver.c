@@ -1,3 +1,4 @@
+
 //On PC
 //https://ruwix.com/the-rubiks-cube/notation/advanced/
 //https://www.jaapsch.net/puzzles/compcube.htm
@@ -32,7 +33,7 @@ void S();
 void Si();
 char get_color(int);
 void yellow_cross();
-void F2L();
+void yellow_corners();
 
 char cube[54];
 char cube_copy[54];
@@ -51,6 +52,10 @@ int main() {
 	display();
 	
 	yellow_cross();
+	printf("\n");
+	display();
+	
+	yellow_corners();
 	printf("\n");
 	display();
 }
@@ -1578,7 +1583,7 @@ void yellow_corners()
 					}
 					break;
 				case 36:
-					if (get_color(29) == 'O' && get_color(251) == 'G') {
+					if (get_color(29) == 'O' && get_color(2) == 'G') {
 						yellow_orange_green = 36;
 					}
 					break;
@@ -1621,54 +1626,200 @@ void yellow_corners()
 		}
 	}
 	
+	printf("\nYellow Orange Green: %d", yellow_orange_green);	
+	printf("\nPlacing Yellow Orange Green: ");
 	switch (yellow_orange_green) {
 				case 0:
+					printf("uFRUUrf");	
+					Ui();
+					F();
+					R();
+					U();
+					U();
+					Ri();
+					Fi();				
 					break;
 				case 2:
+					printf("UUFRUUrf");
+					U();
+					U();
+					F();
+					R();
+					U();
+					U();
+					Ri();
+					Fi();
 					break;
 				case 6:
+					printf("FRUUrf");
+					F();
+					R();
+					U();
+					Ri();
+					Fi();
 					break;
 				case 8:
+					printf("UFRUUrf");
+					U();
+					F();
+					R();
+					U();
+					U();
+					Ri();
+					Fi();
 					break;
 				case 9:
+					printf("uFUf");
+					Ui();
+					F();
+					U();
+					Fi();
 					break;
 				case 11:
+					printf("luL");
+					Li();
+					Ui();
+					L();
 					break;
 				case 15:
+					printf("buBFRUUrf");
 					break;
 				case 17:
+					printf("luLUluL");
 					break;
 				case 18:
+					printf("FUf");
+					F();
+					U();
+					Fi();
 					break;
 				case 20:
+					printf("UluL");
+					U();
+					Li();
+					Ui();
+					L();
 					break;
 				case 24:
+					printf("lULFUf");
+					Li();
+					U();
+					L();
+					F();
+					U();
+					Fi();
 					break;
 				case 26:
+					printf("fuFUUluL");
+					Fi();
+					Ui();
+					F();
+					U();
+					U();
+					Li();
+					Ui();
+					L();
 					break;
 				case 27:
+					printf("UFUf");
+					U();
+					F();
+					U();
+					Fi();
 					break;
 				case 29:
+					printf("UUluL");
+					U();
+					U();
+					Li();
+					Ui();
+					L();
 					break;
 				case 33:
+					printf("fUFlUL");
+					Fi();
+					U();
+					F();
+					Li();
+					U();
+					L();
 					break;
 				case 35:
+					printf("BubUUluL");
+					B();
+					Ui();
+					Bi();
+					U();
+					U();
+					Li();
+					Ui();
+					L();
 					break;
 				case 36:
+					printf("UUFUf");
+					U();
+					U();
+					F();
+					U();
+					Fi();
 					break;
 				case 38:
+					printf("uluL");
+					Ui();
+					Li();
+					Ui();
+					L();
 					break;
 				case 42:
+					printf("BUblUL");
+					B();
+					U();
+					Bi();
+					Li();
+					U();
+					L();
 					break;
 				case 44:
+					printf("buBluL");
+					Bi();
+					Ui();
+					B();
+					Li();
+					Ui();
+					L();
 					break;
 				case 45:
+					printf("Already in Place");
 					break;
 				case 47:
+					printf("fuFUlUL");
+					Fi();
+					Ui();
+					F();
+					U();
+					Li();
+					U();
+					L();
 					break;
 				case 51:
+					printf("bUUBlUL");
+					Bi();
+					U();
+					U();
+					B();
+					Li();
+					U();
+					L();
 					break;
 				case 53:
+					printf("BUUbluL");
+					B();
+					U();
+					U();
+					Bi();
+					Li();
+					Ui();
+					L();
 					break;
 	}
 }
