@@ -32,6 +32,7 @@ void S();
 void Si();
 char get_color(int);
 void yellow_cross();
+void F2L();
 
 char cube[54];
 char cube_copy[54];
@@ -50,22 +51,8 @@ int main() {
 	display();
 	
 	yellow_cross();
-	
-	//char input[100];
-	//int done_flag = 0;
-	
-	/*while (done_flag != 1) {
-		printf("\nEnter Movement: ");
-		fgets(input, 100, stdin);
-		
-		for (int i=0; i<strlen(input)-1; i++) {
-			if (input[i] == '1') { done_flag = 1; }
-			
-			perform_movement(input[i]);
-		}
-		
-		display();
-	}*/
+	printf("\n");
+	display();
 }
 
 void display()
@@ -117,9 +104,6 @@ void reset()
 	}
 }
 
-//Solved - WWWWWWWWWOOOOOOOOOGGGGGGGGGRRRRRRRRRBBBBBBBBBYYYYYYYYY
-//Mixed  - FRUBBDFLLfuFRRUL
-//Mixed  - BYYOWWYRWWYGGOGRRROGGYGBBYORBOORWWWGBBOOBORRBYRGWYGWBY
 void set(char input_cube[])
 {
 	//printf("\nEntered Sequence: \n");
@@ -543,24 +527,11 @@ void Si()
 
 //Mixed  - YBYOWBGGWOGYWOWGWBRRBOGBOWBOOBRRYRYRRYGGBRGOWYGWBYROYW
 void yellow_cross()
-{
-	//int check[24] = {1,3,5,7,10,12,14,16,19,21,23,25,28,30,32,34,37,39,41,43,46,48,50,52};
-	//int yellow_edges[4];
-	//int count = 0;
-	
+{	
 	int yellow_orange;
 	int yellow_green;
 	int yellow_red;
 	int yellow_blue;
-	
-	//char opposite_color;
-	
-	/*for (int i=0; i<24; i++) {
-		if (get_color(check[i]) == 'Y') {
-			yellow_edges[count] = check[i];
-			count++;
-		}
-	}*/
 	
 	for (int i=0; i<54; i++) {
 		if (get_color(i) == 'Y') {
@@ -1513,5 +1484,191 @@ void yellow_cross()
 		case 52:
 			printf("Already in Place");
 			break;
+	}
+}
+
+void yellow_corners()
+{
+	int yellow_orange_green;
+	int yellow_green_red;
+	int yellow_red_blue;
+	int yellow_blue_orange;
+	
+	for (int i=0; i<54; i++) {
+		if (get_color(i) == 'Y') {
+			switch (i) {
+				case 0:
+					if (get_color(9) == 'O' && get_color(38) == 'G') {
+						yellow_orange_green = 0;
+					}
+					break;
+				case 2:
+					if (get_color(36) == 'O' && get_color(29) == 'G') {
+						yellow_orange_green = 2;
+					}
+					break;
+				case 6:
+					if (get_color(18) == 'O' && get_color(11) == 'G') {
+						yellow_orange_green = 6;
+					}
+					break;
+				case 8:
+					if (get_color(27) == 'O' && get_color(20) == 'G') {
+						yellow_orange_green = 8;
+					}
+					break;
+				case 9:
+					if (get_color(38) == 'O' && get_color(0) == 'G') {
+						yellow_orange_green = 9;
+					}
+					break;
+				case 11:
+					if (get_color(6) == 'O' && get_color(18) == 'G') {
+						yellow_orange_green = 11;
+					}
+					break;
+				case 15:
+					if (get_color(51) == 'O' && get_color(44) == 'G') {
+						yellow_orange_green = 15;
+					}
+					break;
+				case 17:
+					if (get_color(24) == 'O' && get_color(45) == 'G') {
+						yellow_orange_green = 17;
+					}
+					break;
+				case 18:
+					if (get_color(11) == 'O' && get_color(6) == 'G') {
+						yellow_orange_green = 18;
+					}
+					break;
+				case 20:
+					if (get_color(8) == 'O' && get_color(27) == 'G') {
+						yellow_orange_green = 20;
+					}
+					break;
+				case 24:
+					if (get_color(45) == 'O' && get_color(17) == 'G') {
+						yellow_orange_green = 24;
+					}
+					break;
+				case 26:
+					if (get_color(33) == 'O' && get_color(47) == 'G') {
+						yellow_orange_green = 26;
+					}
+					break;
+				case 27:
+					if (get_color(20) == 'O' && get_color(8) == 'G') {
+						yellow_orange_green = 27;
+					}
+					break;
+				case 29:
+					if (get_color(2) == 'O' && get_color(36) == 'G') {
+						yellow_orange_green = 29;
+					}
+					break;
+				case 33:
+					if (get_color(47) == 'O' && get_color(26) == 'G') {
+						yellow_orange_green = 33;
+					}
+					break;
+				case 35:
+					if (get_color(42) == 'O' && get_color(53) == 'G') {
+						yellow_orange_green = 35;
+					}
+					break;
+				case 36:
+					if (get_color(29) == 'O' && get_color(251) == 'G') {
+						yellow_orange_green = 36;
+					}
+					break;
+				case 38:
+					if (get_color(0) == 'O' && get_color(9) == 'G') {
+						yellow_orange_green = 38;
+					}
+					break;
+				case 42:
+					if (get_color(53) == 'O' && get_color(35) == 'G') {
+						yellow_orange_green = 42;
+					}
+					break;
+				case 44:
+					if (get_color(15) == 'O' && get_color(51) == 'G') {
+						yellow_orange_green = 44;
+					}
+					break;
+				case 45:
+					if (get_color(17) == 'O' && get_color(24) == 'G') {
+						yellow_orange_green = 45;
+					}
+					break;
+				case 47:
+					if (get_color(26) == 'O' && get_color(33) == 'G') {
+						yellow_orange_green = 47;
+					}
+					break;
+				case 51:
+					if (get_color(44) == 'O' && get_color(15) == 'G') {
+						yellow_orange_green = 51;
+					}
+					break;
+				case 53:
+					if (get_color(35) == 'O' && get_color(42) == 'G') {
+						yellow_orange_green = 53;
+					}
+					break;
+			}
+		}
+	}
+	
+	switch (yellow_orange_green) {
+				case 0:
+					break;
+				case 2:
+					break;
+				case 6:
+					break;
+				case 8:
+					break;
+				case 9:
+					break;
+				case 11:
+					break;
+				case 15:
+					break;
+				case 17:
+					break;
+				case 18:
+					break;
+				case 20:
+					break;
+				case 24:
+					break;
+				case 26:
+					break;
+				case 27:
+					break;
+				case 29:
+					break;
+				case 33:
+					break;
+				case 35:
+					break;
+				case 36:
+					break;
+				case 38:
+					break;
+				case 42:
+					break;
+				case 44:
+					break;
+				case 45:
+					break;
+				case 47:
+					break;
+				case 51:
+					break;
+				case 53:
+					break;
 	}
 }
