@@ -35,6 +35,7 @@ char get_color(int);
 void yellow_cross();
 void yellow_corners();
 void second_layer();
+void white_cross();
 
 char cube[54];
 char cube_copy[54];
@@ -61,6 +62,10 @@ int main() {
 	display();
 	
 	second_layer();
+	printf("\n");
+	display();
+	
+	white_cross();
 	printf("\n");
 	display();
 }
@@ -2863,7 +2868,7 @@ void second_layer()
 			L();
 			break;
 		case 12:
-			printf("bUBULullULUFuf");
+			printf("bUBULul lULUFuf");
 			Bi();
 			U();
 			B();
@@ -2895,7 +2900,7 @@ void second_layer()
 			L();
 			break;
 		case 21:
-			printf("lULUFufUlULUFuf");
+			printf("lULUFuf UlULUFuf");
 			Li();
 			U();
 			L();
@@ -2913,7 +2918,7 @@ void second_layer()
 			Fi();			
 			break;
 		case 23:
-			printf("RurufUFUlULUFuf");
+			printf("RurufUF UlULUFuf");
 			R();
 			Ui();
 			Ri();
@@ -2942,7 +2947,7 @@ void second_layer()
 			L();
 			break;
 		case 30:
-			printf("RurufUFFufulUL");
+			printf("RurufUF FufulUL");
 			R();
 			Ui();
 			Ri();
@@ -2959,7 +2964,7 @@ void second_layer()
 			L();			
 			break;
 		case 32:
-			printf("BuburURUUlULUFuf");
+			printf("BuburUR UUlULUFuf");
 			B();
 			Ui();
 			Bi();
@@ -2988,7 +2993,7 @@ void second_layer()
 			L();
 			break;
 		case 39:
-			printf("rURUBubulULUFuf");
+			printf("rURUBub ulULUFuf");
 			Ri();
 			U();
 			R();
@@ -3006,7 +3011,7 @@ void second_layer()
 			Fi();
 			break;
 		case 41:
-			printf("LulubUBulULUFuf");
+			printf("LulubUB ulULUFuf");
 			L();
 			Ui();
 			Li();
@@ -3154,7 +3159,7 @@ void second_layer()
 			F();
 			break;
 		case 12:
-			printf("bUBULulufUFURur");
+			printf("bUBULul ufUFURur");
 			Bi();
 			U();
 			B();
@@ -3204,7 +3209,7 @@ void second_layer()
 			F();
 			break;
 		case 30:
-			printf("RurufUFuRurufUF");
+			printf("RurufUF uRurufUF");
 			R();
 			Ui();
 			Ri();
@@ -3222,7 +3227,7 @@ void second_layer()
 			F();
 			break;
 		case 32:
-			printf("BuburURUfUFURur");
+			printf("BuburUR UfUFURur");
 			B();
 			Ui();
 			Bi();
@@ -3251,7 +3256,7 @@ void second_layer()
 			F();
 			break;
 		case 39:
-			printf("BuburURRurufUF");
+			printf("BuburUR RurufUF");
 			B();
 			Ui();
 			Bi();
@@ -3268,7 +3273,7 @@ void second_layer()
 			F();
 			break;
 		case 41:
-			printf("LulubUBUUfUFURur");
+			printf("LulubUB UUfUFURur");
 			L();
 			Ui();
 			Li();
@@ -3418,7 +3423,7 @@ void second_layer()
 			R();
 			break;
 		case 12:
-			printf("bUBULulUUrURUBub");
+			printf("bUBULul UUrURUBub");
 			Bi();
 			U();
 			B();
@@ -3485,7 +3490,7 @@ void second_layer()
 			R();
 			break;
 		case 39:
-			printf("BuburURuBuburUR");
+			printf("BuburUR uBuburUR");
 			B();
 			Ui();
 			Bi();
@@ -3503,7 +3508,7 @@ void second_layer()
 			R();
 			break;
 		case 41:
-			printf("bUBULulUBuburUR");
+			printf("bUBULul UBuburUR");
 			Bi();
 			U();
 			B();
@@ -3653,7 +3658,7 @@ void second_layer()
 			B();
 			break;
 		case 12:
-			printf("bUBULulUbUBULul");
+			printf("bUBULul UbUBULul");
 			Bi();
 			U();
 			B();
@@ -3723,5 +3728,130 @@ void second_layer()
 		case 41:
 			printf("Already in Place");
 			break;
+	}
+}
+
+void white_cross()
+{
+	int top = 0;
+	int left = 0;
+	int middle = 0;
+	int right = 0;
+	int bottom = 0;
+	
+	for (int i=0; i<9; i++) {
+		if (get_color(i) == 'W') {
+			switch (i) {
+				case 1:
+					top = 1;
+					break;
+				case 3:
+					left = 1;
+					break;
+				case 4:
+					middle = 1;
+					break;
+				case 5:
+					right = 1;
+					break;
+				case 7:
+					bottom = 1;
+					break;
+			}
+		}
+	}
+	
+	if (top == 0 && left == 0 && middle == 1 && right == 0 && bottom == 0) {
+		printf("\nYellow Spots: 4");
+		printf("\nSolving Yellow Cross: BLUlub FRUru RUruf");
+		B();
+		L();
+		U();
+		Li();
+		Ui();
+		Bi();
+		F();
+		R();
+		U();
+		Ri();
+		Ui();
+		R();
+		U();
+		Ri();
+		Ui();
+		Fi();
+	} else if (top == 1 && left == 1 && middle == 1 && right == 0 && bottom == 0) {
+		printf("\nYellow Spots: 1, 3, 4");
+		printf("\nSolving Yellow Cross: FRUru RUruf");
+		F();
+		R();
+		U();
+		Ri();
+		Ui();
+		R();
+		U();
+		Ri();
+		Ui();
+		Fi();
+	} else if (top == 0 && left == 1 && middle == 1 && right == 0 && bottom == 1) {
+		printf("\nYellow Spots: 3, 4, 7");
+		printf("\nSolving Yellow Cross: RBUbu BUbur");
+		R();
+		B();
+		U();
+		Bi();
+		Ui();
+		B();
+		U();
+		Bi();
+		Ui();
+		Ri();
+	} else if (top == 0 && left == 0 && middle == 1 && right == 1 && bottom == 1) {
+		printf("\nYellow Spots: 4, 5, 7");
+		printf("\nSolving Yellow Cross: BLUlu LUlub");
+		B();
+		L();
+		U();
+		Li();
+		Ui();
+		L();
+		U();
+		Li();
+		Ui();
+		Bi();
+	} else if (top == 1 && left == 0 && middle == 1 && right == 1 && bottom == 0) {
+		printf("\nYellow Spots: 1, 4, 5");
+		printf("\nSolving Yellow Cross: LFUfu FUful");
+		L();
+		F();
+		U();
+		Fi();
+		Ui();
+		F();
+		U();
+		Fi();
+		Ui();
+		Li();
+	} else if (top == 0 && left == 1 && middle == 1 && right == 1 && bottom == 0) {
+		printf("\nYellow Spots: 3, 4, 5");
+		printf("\nSolving Yellow Cross: FRUruf");
+		F();
+		R();
+		U();
+		Ri();
+		Ui();
+		Fi();
+	} else if (top == 1 && left == 0 && middle == 1 && right == 0 && bottom == 1) {
+		printf("\nYellow Spots: 1, 4, 7");
+		printf("\nSolving Yellow Cross: LFUful");
+		L();
+		F();
+		U();
+		Fi();
+		Ui();
+		Li();
+	} else if (top == 1 && left == 1 && middle == 1 && right == 1 && bottom == 1) {
+		printf("\nYellow Spots: 1, 3, 4, 5, 7");
+		printf("\nSolving Yellow Cross: Already in Place");
 	}
 }
