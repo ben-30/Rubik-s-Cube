@@ -3287,4 +3287,237 @@ void second_layer()
 			Ri();
 			break;
 	}
+
+	for (int i=0; i<42; i++) {
+		if (get_color(i) == 'R') {
+			switch (i) {
+				case 1:
+					if (get_color(37) == 'B')
+						red_blue = 1;
+					break;
+				case 3:
+					if (get_color(10) == 'B')
+						red_blue = 3;
+					break;
+				case 5:
+					if (get_color(28) == 'B')
+						red_blue = 5;
+					break;
+				case 7:
+					if (get_color(19) == 'B')
+						red_blue = 7;
+					break;
+				case 10:
+					if (get_color(3) == 'B')
+						red_blue = 10;
+					break;
+				case 12:
+					if (get_color(41) == 'B')
+						red_blue = 12;
+					break;
+				case 14:
+					if (get_color(21) == 'B')
+						red_blue = 14;
+					break;
+				case 19:
+					if (get_color(7) == 'B')
+						red_blue = 19;
+					break;
+				case 21:
+					if (get_color(14) == 'B')
+						red_blue = 21;
+					break;
+				case 23:
+					if (get_color(30) == 'B')
+						red_blue = 23;
+					break;
+				case 28:
+					if (get_color(5) == 'B')
+						red_blue = 28;
+					break;
+				case 30:
+					if (get_color(23) == 'B')
+						red_blue = 30;
+					break;
+				case 32:
+					if (get_color(39) == 'B')
+						red_blue = 32;
+					break;
+				case 37:
+					if (get_color(1) == 'B')
+						red_blue = 37;
+					break;
+				case 39:
+					if (get_color(32) == 'B')
+						red_blue = 39;
+					break;
+				case 41:
+					if (get_color(12) == 'B')
+						red_blue = 41;
+					break;
+			}
+		}
+	}
+	
+	printf("\nRed Blue: %d", red_blue);	
+	printf("\nPlacing Red Blue: ");
+	switch (red_blue) {
+		case 1:
+			printf("urURUBub");
+			Ui();
+			Ri();
+			U();
+			R();
+			U();
+			B();
+			Ui();
+			Bi();
+			break;
+		case 3:
+			printf("rURUBub");
+			Ri();
+			U();
+			R();
+			U();
+			B();
+			Ui();
+			Bi();
+			break;
+		case 5:
+			printf("UUrURUBub");
+			U();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			B();
+			Ui();
+			Bi();
+			break;
+		case 7:
+			printf("UrURUBub");
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			B();
+			Ui();
+			Bi();
+			break;
+		case 10:
+			printf("uBuburUR");
+			Ui();
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Ri();
+			U();
+			R();
+			break;
+		case 12:
+			//printf("bUBULulufUFURur");
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			Ui();
+			Fi();
+			U();
+			F();
+			U();
+			R();
+			Ui();
+			Ri();
+			break;
+		case 14:
+			printf("Should Never Be Here");
+			break;
+		case 19:
+			printf("BuburUR");
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Ri();
+			U();
+			R();
+			break;
+		case 21:
+			printf("Should Never Be Here");
+			break;
+		case 23:
+			printf("Should Never Be Here");
+			break;
+		case 28:
+			printf("UBuburUR");
+			U();
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Ri();
+			U();
+			R();
+			break;
+		case 30:
+			printf("Should Never Be Here");
+			break;
+		case 32:
+			printf("Already in Place");
+			break;
+		case 37:
+			printf("UUBuburUR");
+			U();
+			U();
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Ri();
+			U();
+			R();
+			break;
+		case 39:
+			//printf("BuburURRurufUF");
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Ri();
+			U();
+			R();
+			R();
+			Ui();
+			Ri();
+			Ui();
+			Fi();
+			U();
+			F();
+			break;
+		case 41:
+			//printf("LulubUBUUfUFURur");
+			L();
+			Ui();
+			Li();
+			Ui();
+			Bi();
+			U();
+			B();
+			U();
+			U();
+			Fi();
+			U();
+			F();
+			U();
+			R();
+			Ui();
+			Ri();
+			break;
+	}
 }
