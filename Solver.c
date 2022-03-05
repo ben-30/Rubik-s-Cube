@@ -2441,4 +2441,282 @@ void yellow_corners()
 			printf("Already in Place");
 			break;
 	}
+
+	for (int i=0; i<54; i++) {
+		if (get_color(i) == 'Y') {
+			switch (i) {
+				case 0:
+					if (get_color(9) == 'B' && get_color(38) == 'O') {
+						yellow_blue_orange = 0;
+					}
+					break;
+				case 2:
+					if (get_color(36) == 'B' && get_color(29) == 'O') {
+						yellow_blue_orange = 2;
+					}
+					break;
+				case 6:
+					if (get_color(18) == 'B' && get_color(11) == 'O') {
+						yellow_blue_orange = 6;
+					}
+					break;
+				case 8:
+					if (get_color(27) == 'B' && get_color(20) == 'O') {
+						yellow_blue_orange = 8;
+					}
+					break;
+				case 9:
+					if (get_color(38) == 'B' && get_color(0) == 'O') {
+						yellow_blue_orange = 9;
+					}
+					break;
+				case 11:
+					if (get_color(6) == 'B' && get_color(18) == 'O') {
+						yellow_blue_orange = 11;
+					}
+					break;
+				case 15:
+					if (get_color(51) == 'B' && get_color(44) == 'O') {
+						yellow_blue_orange = 15;
+					}
+					break;
+				case 17:
+					if (get_color(24) == 'B' && get_color(45) == 'O') {
+						yellow_blue_orange = 17;
+					}
+					break;
+				case 18:
+					if (get_color(11) == 'B' && get_color(6) == 'O') {
+						yellow_blue_orange = 18;
+					}
+					break;
+				case 20:
+					if (get_color(8) == 'B' && get_color(27) == 'O') {
+						yellow_blue_orange = 20;
+					}
+					break;
+				case 24:
+					if (get_color(45) == 'B' && get_color(17) == 'O') {
+						yellow_blue_orange = 24;
+					}
+					break;
+				case 26:
+					if (get_color(33) == 'B' && get_color(47) == 'O') {
+						yellow_blue_orange = 26;
+					}
+					break;
+				case 27:
+					if (get_color(20) == 'B' && get_color(8) == 'O') {
+						yellow_blue_orange = 27;
+					}
+					break;
+				case 29:
+					if (get_color(2) == 'B' && get_color(36) == 'O') {
+						yellow_blue_orange = 29;
+					}
+					break;
+				case 33:
+					if (get_color(47) == 'B' && get_color(26) == 'O') {
+						yellow_blue_orange = 33;
+					}
+					break;
+				case 35:
+					if (get_color(42) == 'B' && get_color(53) == 'O') {
+						yellow_blue_orange = 35;
+					}
+					break;
+				case 36:
+					if (get_color(29) == 'B' && get_color(2) == 'O') {
+						yellow_blue_orange = 36;
+					}
+					break;
+				case 38:
+					if (get_color(0) == 'B' && get_color(9) == 'O') {
+						yellow_blue_orange = 38;
+					}
+					break;
+				case 42:
+					if (get_color(53) == 'B' && get_color(35) == 'O') {
+						yellow_blue_orange = 42;
+					}
+					break;
+				case 44:
+					if (get_color(15) == 'B' && get_color(51) == 'O') {
+						yellow_blue_orange = 44;
+					}
+					break;
+				case 45:
+					if (get_color(17) == 'B' && get_color(24) == 'O') {
+						yellow_blue_orange = 45;
+					}
+					break;
+				case 47:
+					if (get_color(26) == 'B' && get_color(33) == 'O') {
+						yellow_blue_orange = 47;
+					}
+					break;
+				case 51:
+					if (get_color(44) == 'B' && get_color(15) == 'O') {
+						yellow_blue_orange = 51;
+					}
+					break;
+				case 53:
+					if (get_color(35) == 'B' && get_color(42) == 'O') {
+						yellow_blue_orange = 53;
+					}
+					break;
+			}
+		}
+	}
+
+	printf("\nYellow Blue Orange: %d", yellow_blue_orange);	
+	printf("\nPlacing Yellow Blue Orange: ");
+	switch (yellow_blue_orange) {
+		case 0:
+			printf("LFUUfl");
+			L();
+			F();
+			U();
+			U();
+			Fi();
+			Li();
+			break;
+		case 2:
+			printf("uLFUUfl");
+			Ui();
+			L();
+			F();
+			U();
+			U();
+			Fi();
+			Li();
+			break;
+		case 6:
+			printf("ULFUUfl");
+			U();
+			L();
+			F();
+			U();
+			U();
+			Fi();
+			Li();
+			break;
+		case 8:
+			printf("UULFUUfl");
+			U();
+			U();
+			L();
+			F();
+			U();
+			U();
+			Fi();
+			Li();
+			break;
+		case 9:
+			printf("LUl");
+			L();
+			U();
+			Li();
+			break;
+		case 11:
+			printf("UbuB");
+			U();
+			Bi();
+			Ui();
+			B();
+			break;
+		case 15:
+			printf("LUUlUbUB");
+			L();
+			U();
+			U();
+			Li();
+			U();
+			Bi();
+			U();
+			B();
+			break;
+		case 17:
+			printf("Should Never Be Here");
+			break;
+		case 18:
+			printf("ULUl");
+			U();
+			L();
+			U();
+			Li();
+			break;
+		case 20:
+			printf("UUbuB");
+			U();
+			U();
+			Bi();
+			Ui();
+			B();
+			break;
+		case 24:
+			printf("Should Never Be Here");
+			break;
+		case 26:
+			printf("Should Never Be Here");
+			break;
+		case 27:
+			printf("UULUl");
+			U();
+			U();
+			L();
+			U();
+			Li();
+			break;
+		case 29:
+			printf("ubuB");
+			Ui();
+			Bi();
+			Ui();
+			B();
+			break;
+		case 33:
+			printf("Should Never Be Here");
+			break;
+		case 35:
+			printf("Should Never Be Here");
+			break;
+		case 36:
+			printf("uLUl");
+			Ui();
+			L();
+			U();
+			Li();
+			break;
+		case 38:
+			printf("buB");
+			Bi();
+			Ui();
+			B();
+			break;
+		case 42:
+			printf("Should Never Be Here");
+			break;
+		case 44:
+			printf("LulbuB");
+			L();
+			Ui();
+			Li();
+			Bi();
+			Ui();
+			B();
+			break;
+		case 45:
+			printf("Should Never Be Here");
+			break;
+		case 47:
+			printf("Should Never Be Here");
+			break;
+		case 51:
+			printf("Already in Place");
+			break;
+		case 53:
+			printf("Should Never Be Here");
+			break;
+	}
 }
