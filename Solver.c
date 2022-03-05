@@ -34,6 +34,7 @@ void Si();
 char get_color(int);
 void yellow_cross();
 void yellow_corners();
+void second_layer();
 
 char cube[54];
 char cube_copy[54];
@@ -2717,6 +2718,306 @@ void yellow_corners()
 			break;
 		case 53:
 			printf("Should Never Be Here");
+			break;
+	}
+}
+
+void second_layer()
+{
+	int orange_green;
+	int green_red;
+	int red_blue;
+	int blue_orange;
+	
+	for (int i=0; i<42; i++) {
+		if (get_color(i) == 'O') {
+			switch (i) {
+				case 1:
+					if (get_color(37) == 'G')
+						orange_green = 1;
+					break;
+				case 3:
+					if (get_color(10) == 'G')
+						orange_green = 3;
+					break;
+				case 5:
+					if (get_color(28) == 'G')
+						orange_green = 5;
+					break;
+				case 7:
+					if (get_color(19) == 'G')
+						orange_green = 7;
+					break;
+				case 10:
+					if (get_color(3) == 'G')
+						orange_green = 10;
+					break;
+				case 12:
+					if (get_color(41) == 'G')
+						orange_green = 12;
+					break;
+				case 14:
+					if (get_color(21) == 'G')
+						orange_green = 14;
+					break;
+				case 19:
+					if (get_color(7) == 'G')
+						orange_green = 19;
+					break;
+				case 21:
+					if (get_color(14) == 'G')
+						orange_green = 21;
+					break;
+				case 23:
+					if (get_color(30) == 'G')
+						orange_green = 23;
+					break;
+				case 28:
+					if (get_color(5) == 'G')
+						orange_green = 28;
+					break;
+				case 30:
+					if (get_color(23) == 'G')
+						orange_green = 30;
+					break;
+				case 32:
+					if (get_color(39) == 'G')
+						orange_green = 32;
+					break;
+				case 37:
+					if (get_color(1) == 'G')
+						orange_green = 37;
+					break;
+				case 39:
+					if (get_color(32) == 'G')
+						orange_green = 39;
+					break;
+				case 41:
+					if (get_color(12) == 'G')
+						orange_green = 41;
+					break;
+			}
+		}
+	}
+
+	printf("\nOrange Green: %d", orange_green);	
+	printf("\nPlacing Orange Green: ");
+	switch (orange_green) {
+		case 1:
+			printf("UlULUFuf");
+			U();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 3:
+			printf("UUlULUFuf");
+			U();
+			U();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 5:
+			printf("lULUFuf");
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 7:
+			printf("ulULUFuf");
+			Ui();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 10:
+			printf("UFufulUL");
+			U();
+			F();
+			Ui();
+			Fi();
+			Ui();
+			Li();
+			U();
+			L();
+			break;
+		case 12:
+			printf("bUBULullULUFuf");
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 14:
+			printf("Already in Place");
+			break;
+		case 19:
+			printf("UUFufulUL");
+			U();
+			U();
+			F();
+			Ui();
+			Fi();
+			Ui();
+			Li();
+			U();
+			L();
+			break;
+		case 21:
+			printf("lULUFufUlULUFuf");
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			U();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();			
+			break;
+		case 23:
+			printf("RurufUFUlULUFuf");
+			R();
+			Ui();
+			Ri();
+			Ui();
+			Fi();
+			U();
+			F();
+			U();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 28:
+			printf("uFufulUL");
+			Ui();
+			F();
+			Ui();
+			Fi();
+			Ui();
+			Li();
+			U();
+			L();
+			break;
+		case 30:
+			printf("RurufUFFufulUL");
+			R();
+			Ui();
+			Ri();
+			Ui();
+			Fi();
+			U();
+			F();
+			F();
+			Ui();
+			Fi();
+			Ui();
+			Li();
+			U();
+			L();			
+			break;
+		case 32:
+			printf("BuburURUUlULUFuf");
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 37:
+			printf("FufulUL");
+			F();
+			Ui();
+			Fi();
+			Ui();
+			Li();
+			U();
+			L();
+			break;
+		case 39:
+			printf("rURUBubulULUFuf");
+			Ri();
+			U();
+			R();
+			U();
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
+			break;
+		case 41:
+			printf("LulubUBulULUFuf");
+			L();
+			Ui();
+			Li();
+			Ui();
+			Bi();
+			U();
+			B();
+			Ui();
+			Li();
+			U();
+			L();
+			U();
+			F();
+			Ui();
+			Fi();
 			break;
 	}
 }
