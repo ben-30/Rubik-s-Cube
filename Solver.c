@@ -1681,15 +1681,14 @@ void yellow_corners()
 			L();
 			break;
 		case 15:
-			printf("buBFRUUrf");
-			Bi();
-			Ui();
-			B();
+			printf("LUlUUFUf");
+			L();
+			U();
+			Li();
+			U();
+			U();
 			F();
-			R();
 			U();
-			U();
-			Ri();
 			Fi();
 			break;
 		case 17:
@@ -1725,11 +1724,10 @@ void yellow_corners()
 			Fi();
 			break;
 		case 26:
-			printf("fuFUUluL");
-			Fi();
+			printf("RurUluL");
+			R();
 			Ui();
-			F();
-			U();
+			Ri();
 			U();
 			Li();
 			Ui();
@@ -1760,12 +1758,11 @@ void yellow_corners()
 			L();
 			break;
 		case 35:
-			printf("BubUUluL");
-			B();
+			printf("ruRuluL");
+			Ri();
 			Ui();
-			Bi();
-			U();
-			U();
+			R();
+			Ui();
 			Li();
 			Ui();
 			L();
@@ -2303,8 +2300,9 @@ void yellow_corners()
 			Bi();
 			break;
 		case 6:
-			printf("uBLUUlb");
-			Ui();
+			printf("UUBLUUlb");
+			U();
+			U();
 			B();
 			L();
 			U();
@@ -2313,9 +2311,8 @@ void yellow_corners()
 			Bi();
 			break;
 		case 8:
-			printf("UUBLUUlb");
-			U();
-			U();
+			printf("uBLUUlb");
+			Ui();
 			B();
 			L();
 			U();
@@ -2337,7 +2334,13 @@ void yellow_corners()
 			Bi();
 			break;
 		case 15:
-			//printf("LUlfUF");		
+			printf("LUlBUb");		
+			L();
+			U();
+			Li();
+			B();
+			U();
+			Bi();
 			break;
 		case 17:
 			printf("Should Never Be Here");
@@ -2379,7 +2382,13 @@ void yellow_corners()
 			printf("Should Never Be Here");
 			break;
 		case 35:
-			//printf("BubUfuF");
+			printf("BubruR");
+			B();
+			Ui();
+			Bi();
+			Ri();
+			Ui();
+			R();
 			break;
 		case 36:
 			printf("BUb");
@@ -2395,10 +2404,23 @@ void yellow_corners()
 			R();
 			break;
 		case 42:
-			//printf("rURfUF");
+			printf("rURBUb");
+			Ri();
+			U();
+			R();
+			B();
+			U();
+			Bi();
 			break;
 		case 44:
-			//printf("rUR");
+			printf("LulUruR");
+			L();
+			Ui();
+			Li();
+			U();
+			Ri();
+			U();
+			R();
 			break;
 		case 45:
 			printf("Should Never Be Here");
