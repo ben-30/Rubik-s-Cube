@@ -3418,7 +3418,7 @@ void second_layer()
 			R();
 			break;
 		case 12:
-			//printf("bUBULulufUFURur");
+			printf("bUBULulUUrURUBub");
 			Bi();
 			U();
 			B();
@@ -3426,14 +3426,15 @@ void second_layer()
 			L();
 			Ui();
 			Li();
-			Ui();
-			Fi();
 			U();
-			F();
+			U();
+			Ri();
 			U();
 			R();
+			U();
+			B();
 			Ui();
-			Ri();
+			Bi();
 			break;
 		case 14:
 			printf("Should Never Be Here");
@@ -3484,7 +3485,7 @@ void second_layer()
 			R();
 			break;
 		case 39:
-			//printf("BuburURRurufUF");
+			printf("BuburURuBuburUR");
 			B();
 			Ui();
 			Bi();
@@ -3492,16 +3493,157 @@ void second_layer()
 			Ri();
 			U();
 			R();
-			R();
+			Ui();
+			B();
+			Ui();
+			Bi();
 			Ui();
 			Ri();
-			Ui();
-			Fi();
 			U();
-			F();
+			R();
 			break;
 		case 41:
-			//printf("LulubUBUUfUFURur");
+			printf("bUBULulUBuburUR");
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			U();
+			B();
+			Ui();
+			Bi();
+			Ui();
+			Ri();
+			U();
+			R();
+			break;
+	}
+
+	for (int i=0; i<42; i++) {
+		if (get_color(i) == 'B') {
+			switch (i) {
+				case 1:
+					if (get_color(37) == 'O')
+						blue_orange = 1;
+					break;
+				case 3:
+					if (get_color(10) == 'O')
+						blue_orange = 3;
+					break;
+				case 5:
+					if (get_color(28) == 'O')
+						blue_orange = 5;
+					break;
+				case 7:
+					if (get_color(19) == 'O')
+						blue_orange = 7;
+					break;
+				case 10:
+					if (get_color(3) == 'O')
+						blue_orange = 10;
+					break;
+				case 12:
+					if (get_color(41) == 'O')
+						blue_orange = 12;
+					break;
+				case 14:
+					if (get_color(21) == 'O')
+						blue_orange = 14;
+					break;
+				case 19:
+					if (get_color(7) == 'O')
+						blue_orange = 19;
+					break;
+				case 21:
+					if (get_color(14) == 'O')
+						blue_orange = 21;
+					break;
+				case 23:
+					if (get_color(30) == 'O')
+						blue_orange = 23;
+					break;
+				case 28:
+					if (get_color(5) == 'O')
+						blue_orange = 28;
+					break;
+				case 30:
+					if (get_color(23) == 'O')
+						blue_orange = 30;
+					break;
+				case 32:
+					if (get_color(39) == 'O')
+						blue_orange = 32;
+					break;
+				case 37:
+					if (get_color(1) == 'O')
+						blue_orange = 37;
+					break;
+				case 39:
+					if (get_color(32) == 'O')
+						blue_orange = 39;
+					break;
+				case 41:
+					if (get_color(12) == 'O')
+						blue_orange = 41;
+					break;
+			}
+		}
+	}
+	
+	printf("\nBlue Orange: %d", blue_orange);	
+	printf("\nPlacing Blue Orange: ");
+	switch (blue_orange) {
+		case 1:
+			printf("UUbUBULul");
+			U();
+			U();
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			break;
+		case 3:
+			printf("ubUBULul");
+			Ui();
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			break;
+		case 5:
+			printf("UbUBULul");
+			U();
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			break;
+		case 7:
+			printf("bUBULul");
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			break;
+		case 10:
+			printf("UULulubUB");
+			U();
+			U();
 			L();
 			Ui();
 			Li();
@@ -3509,15 +3651,77 @@ void second_layer()
 			Bi();
 			U();
 			B();
+			break;
+		case 12:
+			printf("bUBULulUbUBULul");
+			Bi();
 			U();
+			B();
 			U();
-			Fi();
-			U();
-			F();
-			U();
-			R();
+			L();
 			Ui();
-			Ri();
+			Li();
+			U();
+			Bi();
+			U();
+			B();
+			U();
+			L();
+			Ui();
+			Li();
+			break;
+		case 14:
+			printf("Should Never Be Here");
+			break;
+		case 19:
+			printf("uLulubUB");
+			Ui();
+			L();
+			Ui();
+			Li();
+			Ui();
+			Bi();
+			U();
+			B();
+			break;
+		case 21:
+			printf("Should Never Be Here");
+			break;
+		case 23:
+			printf("Should Never Be Here");
+			break;
+		case 28:
+			printf("LulubUB");
+			L();
+			Ui();
+			Li();
+			Ui();
+			Bi();
+			U();
+			B();
+			break;
+		case 30:
+			printf("Should Never Be Here");
+			break;
+		case 32:
+			printf("Should Never Be Here");
+			break;
+		case 37:
+			printf("ULulubUB");
+			U();
+			L();
+			Ui();
+			Li();
+			Ui();
+			Bi();
+			U();
+			B();
+			break;
+		case 39:
+			printf("Should Never Be Here");
+			break;
+		case 41:
+			printf("Already in Place");
 			break;
 	}
 }
