@@ -36,6 +36,7 @@ void yellow_cross();
 void yellow_corners();
 void second_layer();
 void white_cross();
+void white_corners();
 
 char cube[54];
 char cube_copy[54];
@@ -66,6 +67,10 @@ int main() {
 	display();
 	
 	white_cross();
+	printf("\n");
+	display();
+	
+	white_corners();
 	printf("\n");
 	display();
 }
@@ -3762,8 +3767,8 @@ void white_cross()
 	}
 	
 	if (top == 0 && left == 0 && middle == 1 && right == 0 && bottom == 0) {
-		printf("\nYellow Spots: 4");
-		printf("\nSolving Yellow Cross: BLUlub FRUru RUruf");
+		printf("\nWhite Spots: 4");
+		printf("\nSolving White Cross: BLUlub FRUru RUruf");
 		B();
 		L();
 		U();
@@ -3781,8 +3786,8 @@ void white_cross()
 		Ui();
 		Fi();
 	} else if (top == 1 && left == 1 && middle == 1 && right == 0 && bottom == 0) {
-		printf("\nYellow Spots: 1, 3, 4");
-		printf("\nSolving Yellow Cross: FRUru RUruf");
+		printf("\nWhite Spots: 1 3 4");
+		printf("\nSolving White Cross: FRUru RUruf");
 		F();
 		R();
 		U();
@@ -3794,8 +3799,8 @@ void white_cross()
 		Ui();
 		Fi();
 	} else if (top == 0 && left == 1 && middle == 1 && right == 0 && bottom == 1) {
-		printf("\nYellow Spots: 3, 4, 7");
-		printf("\nSolving Yellow Cross: RBUbu BUbur");
+		printf("\nWhite Spots: 3 4 7");
+		printf("\nSolving White Cross: RBUbu BUbur");
 		R();
 		B();
 		U();
@@ -3807,8 +3812,8 @@ void white_cross()
 		Ui();
 		Ri();
 	} else if (top == 0 && left == 0 && middle == 1 && right == 1 && bottom == 1) {
-		printf("\nYellow Spots: 4, 5, 7");
-		printf("\nSolving Yellow Cross: BLUlu LUlub");
+		printf("\nWhite Spots: 4 5 7");
+		printf("\nSolving White Cross: BLUlu LUlub");
 		B();
 		L();
 		U();
@@ -3820,8 +3825,8 @@ void white_cross()
 		Ui();
 		Bi();
 	} else if (top == 1 && left == 0 && middle == 1 && right == 1 && bottom == 0) {
-		printf("\nYellow Spots: 1, 4, 5");
-		printf("\nSolving Yellow Cross: LFUfu FUful");
+		printf("\nWhite Spots: 1 4 5");
+		printf("\nSolving White Cross: LFUfu FUful");
 		L();
 		F();
 		U();
@@ -3833,8 +3838,8 @@ void white_cross()
 		Ui();
 		Li();
 	} else if (top == 0 && left == 1 && middle == 1 && right == 1 && bottom == 0) {
-		printf("\nYellow Spots: 3, 4, 5");
-		printf("\nSolving Yellow Cross: FRUruf");
+		printf("\nWhite Spots: 3 4 5");
+		printf("\nSolving White Cross: FRUruf");
 		F();
 		R();
 		U();
@@ -3842,8 +3847,8 @@ void white_cross()
 		Ui();
 		Fi();
 	} else if (top == 1 && left == 0 && middle == 1 && right == 0 && bottom == 1) {
-		printf("\nYellow Spots: 1, 4, 7");
-		printf("\nSolving Yellow Cross: LFUful");
+		printf("\nWhite Spots: 1 4 7");
+		printf("\nSolving White Cross: LFUful");
 		L();
 		F();
 		U();
@@ -3851,7 +3856,110 @@ void white_cross()
 		Ui();
 		Li();
 	} else if (top == 1 && left == 1 && middle == 1 && right == 1 && bottom == 1) {
-		printf("\nYellow Spots: 1, 3, 4, 5, 7");
-		printf("\nSolving Yellow Cross: Already in Place");
+		printf("\nWhite Spots: 1 3 4 5 7");
+		printf("\nSolving White Cross: Already in Place");
+	}
+}
+
+void white_corners()
+{
+	int done = 0;
+	
+	while (done == 0) {
+		printf("\nSolving White Face: ");
+		if (get_color(0) == 'W' && get_color(2) == 'W' && get_color(6) == 'W' && get_color(8) == 'W') {
+			printf("White Face Completed");
+			done = 1;
+		} else if (get_color(6) == 'W' && get_color(0) != 'W' && get_color(2) != 'W' && get_color(8) != 'W') {
+			printf("RUrURUUr");
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else if (get_color(0) == 'W' && get_color(6) != 'W' && get_color(2) != 'W' && get_color(8) != 'W') {
+			printf("uRUrURUUr");
+			Ui();
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else if (get_color(8) == 'W' && get_color(0) != 'W' && get_color(2) != 'W' && get_color(6) != 'W') {
+			printf("URUrURUUr");
+			U();
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else if (get_color(2) == 'W' && get_color(0) != 'W' && get_color(6) != 'W' && get_color(8) != 'W') {
+			printf("UURUrURUUr");
+			U();
+			U();
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else if (get_color(11) == 'W') {
+			printf("RUrURUUr");
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else if (get_color(20) == 'W') {
+			printf("URUrURUUr");
+			U();
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else if (get_color(38) == 'W') {
+			printf("uRUrURUUr");
+			Ui();
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else if (get_color(29) == 'W') {
+			printf("UURUrURUUr");
+			U();
+			U();
+			R();
+			U();
+			Ri();
+			U();
+			R();
+			U();
+			U();
+			Ri();
+		} else {
+			printf("Should Never Be Here");
+		}
 	}
 }
