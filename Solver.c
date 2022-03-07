@@ -35,8 +35,7 @@ char get_color(int);
 void yellow_cross();
 void yellow_corners();
 void second_layer();
-void white_cross();
-void white_corners();
+void OLL();
 
 char cube[54];
 char cube_copy[54];
@@ -66,11 +65,15 @@ int main() {
 	printf("\n");
 	display();
 	
-	white_cross();
+	/*white_cross();
 	printf("\n");
 	display();
 	
 	white_corners();
+	printf("\n");
+	display();*/
+	
+	OLL();
 	printf("\n");
 	display();
 }
@@ -3736,230 +3739,367 @@ void second_layer()
 	}
 }
 
-void white_cross()
-{
-	int top = 0;
-	int left = 0;
-	int middle = 0;
-	int right = 0;
-	int bottom = 0;
+void OLL()
+{	
+	int case_found = 0;
 	
-	for (int i=0; i<9; i++) {
-		if (get_color(i) == 'W') {
-			switch (i) {
-				case 1:
-					top = 1;
-					break;
-				case 3:
-					left = 1;
-					break;
-				case 4:
-					middle = 1;
-					break;
-				case 5:
-					right = 1;
-					break;
-				case 7:
-					bottom = 1;
-					break;
-			}
-		}
-	}
-	
-	if (top == 0 && left == 0 && middle == 1 && right == 0 && bottom == 0) {
-		printf("\nWhite Spots: 4");
-		printf("\nSolving White Cross: BLUlub FRUru RUruf");
-		B();
-		L();
-		U();
-		Li();
-		Ui();
-		Bi();
-		F();
-		R();
-		U();
-		Ri();
-		Ui();
-		R();
-		U();
-		Ri();
-		Ui();
-		Fi();
-	} else if (top == 1 && left == 1 && middle == 1 && right == 0 && bottom == 0) {
-		printf("\nWhite Spots: 1 3 4");
-		printf("\nSolving White Cross: FRUru RUruf");
-		F();
-		R();
-		U();
-		Ri();
-		Ui();
-		R();
-		U();
-		Ri();
-		Ui();
-		Fi();
-	} else if (top == 0 && left == 1 && middle == 1 && right == 0 && bottom == 1) {
-		printf("\nWhite Spots: 3 4 7");
-		printf("\nSolving White Cross: RBUbu BUbur");
-		R();
-		B();
-		U();
-		Bi();
-		Ui();
-		B();
-		U();
-		Bi();
-		Ui();
-		Ri();
-	} else if (top == 0 && left == 0 && middle == 1 && right == 1 && bottom == 1) {
-		printf("\nWhite Spots: 4 5 7");
-		printf("\nSolving White Cross: BLUlu LUlub");
-		B();
-		L();
-		U();
-		Li();
-		Ui();
-		L();
-		U();
-		Li();
-		Ui();
-		Bi();
-	} else if (top == 1 && left == 0 && middle == 1 && right == 1 && bottom == 0) {
-		printf("\nWhite Spots: 1 4 5");
-		printf("\nSolving White Cross: LFUfu FUful");
-		L();
-		F();
-		U();
-		Fi();
-		Ui();
-		F();
-		U();
-		Fi();
-		Ui();
-		Li();
-	} else if (top == 0 && left == 1 && middle == 1 && right == 1 && bottom == 0) {
-		printf("\nWhite Spots: 3 4 5");
-		printf("\nSolving White Cross: FRUruf");
-		F();
-		R();
-		U();
-		Ri();
-		Ui();
-		Fi();
-	} else if (top == 1 && left == 0 && middle == 1 && right == 0 && bottom == 1) {
-		printf("\nWhite Spots: 1 4 7");
-		printf("\nSolving White Cross: LFUful");
-		L();
-		F();
-		U();
-		Fi();
-		Ui();
-		Li();
-	} else if (top == 1 && left == 1 && middle == 1 && right == 1 && bottom == 1) {
-		printf("\nWhite Spots: 1 3 4 5 7");
-		printf("\nSolving White Cross: Already in Place");
-	}
-}
-
-void white_corners()
-{
-	int done = 0;
-	
-	while (done == 0) {
-		printf("\nSolving White Face: ");
-		if (get_color(0) == 'W' && get_color(2) == 'W' && get_color(6) == 'W' && get_color(8) == 'W') {
-			printf("White Face Completed");
-			done = 1;
-		} else if (get_color(6) == 'W' && get_color(0) != 'W' && get_color(2) != 'W' && get_color(8) != 'W') {
-			printf("RUrURUUr");
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else if (get_color(0) == 'W' && get_color(6) != 'W' && get_color(2) != 'W' && get_color(8) != 'W') {
-			printf("uRUrURUUr");
-			Ui();
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else if (get_color(8) == 'W' && get_color(0) != 'W' && get_color(2) != 'W' && get_color(6) != 'W') {
-			printf("URUrURUUr");
-			U();
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else if (get_color(2) == 'W' && get_color(0) != 'W' && get_color(6) != 'W' && get_color(8) != 'W') {
-			printf("UURUrURUUr");
-			U();
-			U();
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else if (get_color(11) == 'W') {
-			printf("RUrURUUr");
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else if (get_color(20) == 'W') {
-			printf("URUrURUUr");
-			U();
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else if (get_color(38) == 'W') {
-			printf("uRUrURUUr");
-			Ui();
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else if (get_color(29) == 'W') {
-			printf("UURUrURUUr");
-			U();
-			U();
-			R();
-			U();
-			Ri();
-			U();
-			R();
-			U();
-			U();
-			Ri();
-		} else {
-			printf("Should Never Be Here");
-		}
+	while (case_found == 0) {
+		case_found = 1;
+		printf("\nOLL Case: ");
+		
+		if      (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(2)  == 'W' && 
+			     get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(7)  == 'W' && get_color(8)  == 'W') 
+			     { 
+					 printf("Already in Place"); 
+				 }
+		else if (get_color(4)  == 'W' && get_color(9)  == 'W' && get_color(10) == 'W' && 
+			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(27) == 'W' && 
+			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(37) == 'W') 
+			     { 
+					 printf("1 - RUURRFRfUUrFRf");
+				 }
+		else if (get_color(4)  == 'W' && get_color(10) == 'W' && get_color(11) == 'W' && 
+			     get_color(19) == 'W' && get_color(27) == 'W' && get_color(28) == 'W' && 
+			     get_color(36) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("2 - ");
+				 }
+		else if (get_color(0)  == 'W' && get_color(4)  == 'W' && get_color(10) == 'W' && 
+			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
+			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("3 - FURurfUFRUruf");
+				 }
+		else if (get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(9)  == 'W' && 
+			     get_color(10) == 'W' && get_color(19) == 'W' && get_color(27) == 'W' && 
+			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("4 - FURurfuFRUruf");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
+			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
+			     { 
+					 printf("5 - ");
+				 }
+		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(9)  == 'W' && get_color(10) == 'W' && 
+			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(27) == 'W')
+			     { 
+					 printf("6 - ");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
+			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("7 - ");
+				 }
+		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(10) == 'W' && 
+			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("8 - RUUrUUrFRf");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(18) == 'W' && 
+			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("9 - RUrurFRRUruf");
+				 }
+		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(7)  == 'W' && get_color(11) == 'W' && get_color(20) == 'W' && 
+			     get_color(28) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("10 - RUrUrFRfRUUr");
+				 }
+		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
+			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("11 - ");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(10) == 'W' && get_color(18) == 'W' && 
+			     get_color(19) == 'W' && get_color(27) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("12 - ");
+				 }
+		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
+			     get_color(29) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("13 - FURuRRfRURur");
+				 }
+		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(18) == 'W' && 
+			     get_color(19) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("14 - rFRUrfRFuf");
+				 }
+		else if (get_color(0)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
+			     get_color(20) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("15 - ");
+				 }
+		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(9)  == 'W' && get_color(18) == 'W' && 
+			     get_color(19) == 'W' && get_color(27) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("16 - ");
+				 }
+		else if (get_color(0)  == 'W' && get_color(4)  == 'W' && get_color(8)  == 'W' && 
+			     get_color(10) == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
+			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("17 - RUrUrFRfUUrFRf");
+				 }
+		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(10) == 'W' && get_color(18) == 'W' && get_color(19) == 'W' && 
+			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("18 - ");
+				 }
+		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(10) == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
+			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("19 - ");
+				 }
+		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
+			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(37) == 'W') 
+			     { 
+					 printf("20 - ");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(7)  == 'W' && get_color(18) == 'W' && 
+			     get_color(20) == 'W' && get_color(36) == 'W' && get_color(38) == 'W') 
+			     { 
+					 printf("21 - RUUruRUruRur");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(7)  == 'W' && get_color(9)  == 'W' && 
+			     get_color(11) == 'W' && get_color(20) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("22 - RUURuRRuRRUUR");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(7)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(36) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("23 - RRdRUUrDRUUR");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(7)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(29) == 'W')
+			     { 
+					 printf("24 - RURDruRdRR");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(7)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(18) == 'W' && get_color(29) == 'W')
+			     { 
+					 printf("25 - rFRbrfRB");
+				 }
+		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(7)  == 'W' && 
+			     get_color(9)  == 'W' && get_color(18) == 'W' && get_color(27) == 'W')
+			     { 
+					 printf("26 - RUUruRur");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(7)  == 'W' && 
+			     get_color(20) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("27 - RUrURUUr");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(2)  == 'W' && 
+			     get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(6)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(19) == 'W' && get_color(28) == 'W')
+			     { 
+					 printf("28 - ");
+				 }
+		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(8)  == 'W' && get_color(18) == 'W' && 
+			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("29 - RUruRurfuFRUr");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
+			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
+			     { 
+					 printf("30 - FrFRRuruRUrFF");
+				 }
+		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
+			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("31 - ruFURurfR");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
+			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("32 - LUfulULFl");
+				 }
+		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(18) == 'W' && 
+			     get_color(19) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("33 - RUrurFRf");
+				 }
+		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
+			     get_color(19) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("34 - RURRurFRURuf");
+				 }
+		else if (get_color(0)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(7)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
+			     get_color(18) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("35 - RUURRFRfRUUr");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
+			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("36 - luLulULULflF");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(8)  == 'W' && get_color(18) == 'W' && 
+			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
+			     { 
+					 printf("37 - FrfRURur");
+				 }
+		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
+			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("38 - RUrURururFRf");
+				 }
+		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
+			     get_color(27) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("39 - LfluLUFul");
+				 }
+		else if (get_color(0)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(11) == 'W' && 
+			     get_color(19) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("40 - rFRUrufUR");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(19) == 'W' && 
+			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("41 - RUrURUUrFRUruf");
+				 }
+		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(7)  == 'W' && get_color(18) == 'W' && 
+			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("42 - ruRurUURFRUruf");
+				 }
+		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
+			     get_color(10) == 'W' && get_color(11) == 'W' && get_color(19) == 'W') 
+			     { 
+					 printf("43 - fulULF");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
+			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
+			     { 
+					 printf("44 - FURurf");
+				 }
+		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
+			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("45 - FRUruf");
+				 }
+		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(6)  == 'W' && get_color(7)  == 'W' && get_color(10) == 'W' && 
+			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
+			     { 
+					 printf("46 - rurFRfUR");
+				 }
+		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(10) == 'W' && get_color(18) == 'W' && get_color(19) == 'W' && 
+			     get_color(27) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("47 - rurFRfrFRfUR");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(9)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
+			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("48 - FRUruRUruf");
+				 }
+		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(9)  == 'W' && get_color(10) == 'W' && get_color(11) == 'W' && 
+			     get_color(19) == 'W' && get_color(20) == 'W' && get_color(36) == 'W')
+			     { 
+					 printf("49 - ");
+				 }
+		else if (get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(7)  == 'W' && 
+			     get_color(9)  == 'W' && get_color(10) == 'W' && get_color(11) == 'W' && 
+			     get_color(20) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("50 - ");
+				 }
+		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(27) == 'W' && 
+			     get_color(29) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("51 - FURurURurf");
+				 }
+		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(7)  == 'W' && 
+			     get_color(10) == 'W' && get_color(18) == 'W' && get_color(27) == 'W' && 
+			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("52 - RUrURuBubr");
+				 }
+		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(10) == 'W' && get_color(18) == 'W' && get_color(19) == 'W' && 
+			     get_color(20) == 'W' && get_color(36) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("53 - ");
+				 }
+		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
+			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
+			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("54 - ");
+				 }
+		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
+			     get_color(36) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
+			     { 
+					 printf("55 - rFRURuRRfRRurURUr");
+				 }
+		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
+			     get_color(9)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
+			     get_color(27) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("56 - ");
+				 }
+		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
+			     get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(6)  == 'W' && 
+			     get_color(8)  == 'W' && get_color(19) == 'W' && get_color(37) == 'W')
+			     { 
+					 printf("57 - ");
+				 }
+		else 
+				 { 
+				 	 printf("(U)");
+					 U();
+				 	 case_found = 0; 
+				 }
 	}
 }
