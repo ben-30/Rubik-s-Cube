@@ -24,9 +24,13 @@ void yellow_corners();
 void second_layer();
 void OLL();
 void PLL();
+void end_display();
 
 char cube[54];
 char cube_copy[54];
+
+char final_moves[200];
+int final_moves_count = 0;
 
 int main() {
 	char input[54];
@@ -63,6 +67,9 @@ int main() {
 	PLL();
 	printf("\n");
 	display();
+	
+	printf("\n----------------------------------------------END---------------------------------------------\n");
+	end_display();
 }
 
 void display()
@@ -163,55 +170,70 @@ void move_and_print_string(char movement[])
 			case 'U':
 				U();
 				printf("U");
+				final_moves[final_moves_count] = 'U';
 				break;
 			case 'D':
 				D();
 				printf("D");
+				final_moves[final_moves_count] = 'D';
 				break;
 			case 'L':
 				L();
 				printf("L");
+				final_moves[final_moves_count] = 'L';
 				break;
 			case 'R':
 				R();
 				printf("R");
+				final_moves[final_moves_count] = 'R';
 				break;
 			case 'F':
 				F();
 				printf("F");
+				final_moves[final_moves_count] = 'F';
 				break;
 			case 'B':
 				B();
 				printf("B");
+				final_moves[final_moves_count] = 'B';
 				break;
 			case 'u':
 				Ui();
 				printf("u");
+				final_moves[final_moves_count] = 'u';
 				break;
 			case 'd':
 				Di();
 				printf("d");
+				final_moves[final_moves_count] = 'd';
 				break;
 			case 'l':
 				Li();
 				printf("l");
+				final_moves[final_moves_count] = 'l';
 				break;
 			case 'r':
 				Ri();
 				printf("r");
+				final_moves[final_moves_count] = 'r';
 				break;
 			case 'f':
 				Fi();
 				printf("f");
+				final_moves[final_moves_count] = 'f';
 				break;
 			case 'b':
 				Bi();
 				printf("b");
+				final_moves[final_moves_count] = 'b';
 				break;
 			case ' ':
 				printf(" ");
+				final_moves_count--;
 				break;
 		}
+		
+		final_moves_count++;
 	}
 }
 
@@ -2513,7 +2535,7 @@ void OLL()
 			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(37) == 'W') 
 			     { 
 					 printf("1 - ");
-					 move_and_print_string("RUURRFRfUUrFRf");
+					 move_and_print_string("RUbRBRRurFRf");
 				 }
 		else if (get_color(4)  == 'W' && get_color(10) == 'W' && get_color(11) == 'W' && 
 			     get_color(19) == 'W' && get_color(27) == 'W' && get_color(28) == 'W' && 
@@ -2660,7 +2682,7 @@ void OLL()
 			     get_color(11) == 'W' && get_color(20) == 'W' && get_color(36) == 'W')
 			     { 
 					 printf("22 - ");
-					 move_and_print_string("RUURuRRuRRUUR");
+					 move_and_print_string("RUURRuRRuRRUUR");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(7)  == 'W' && 
@@ -2909,8 +2931,7 @@ void OLL()
 				 }
 		else 
 				 { 
-				 	 printf("(U)");
-					 U();
+					 move_and_print_string("U");
 				 	 case_found = 0; 
 				 	 count++;
 				 }
@@ -3545,10 +3566,20 @@ void PLL()
 				 }
 		else 
 				 { 
-				 	 printf("(U)");
-					 U();
+					 move_and_print_string("U");
 				 	 case_found = 0; 
 				 	 count++;
 				 }
+	}
+}
+
+void end_display()
+{
+	printf("\nTotal Move Count: %d", final_moves_count);
+	printf("\nMoves to Solve: ");
+	for (int i=0; i<final_moves_count; i++) {
+		printf("%c", final_moves[i]);
+		if ((i+1)%10 == 0) { printf(" "); }
+		if ((i+1)%50 == 0) { printf("\n                "); }
 	}
 }
