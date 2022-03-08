@@ -547,7 +547,7 @@ void yellow_cross()
 		}
 	}
 	
-	printf("\nYellow Orange: %d", yellow_orange);	
+	//printf("\nYellow Orange: %d", yellow_orange);	
 	printf("\nPlacing Yellow Orange: ");
 	switch (yellow_orange) {
 		case 1:
@@ -727,7 +727,7 @@ void yellow_cross()
 		}
 	}
 	
-	printf("\nYellow Green: %d", yellow_green);	
+	//printf("\nYellow Green: %d", yellow_green);	
 	printf("\nPlacing Yellow Green: ");
 	switch (yellow_green) {
 		case 1:
@@ -907,7 +907,7 @@ void yellow_cross()
 		}
 	}
 	
-	printf("\nYellow Red: %d", yellow_red);	
+	//printf("\nYellow Red: %d", yellow_red);	
 	printf("\nPlacing Yellow Red: ");
 	switch (yellow_red) {
 		case 1:
@@ -1087,7 +1087,7 @@ void yellow_cross()
 		}
 	}
 	
-	printf("\nYellow Blue: %d", yellow_blue);
+	//printf("\nYellow Blue: %d", yellow_blue);
 	printf("\nPlacing Yellow Blue: ");
 	switch (yellow_blue) {
 		case 1:
@@ -1299,7 +1299,7 @@ void yellow_corners()
 		}
 	}
 	
-	printf("\nYellow Orange Green: %d", yellow_orange_green);	
+	//printf("\nYellow Orange Green: %d", yellow_orange_green);	
 	printf("\nPlacing Yellow Orange Green: ");
 	switch (yellow_orange_green) {
 		case 0:
@@ -1503,7 +1503,7 @@ void yellow_corners()
 		}
 	}
 
-	printf("\nYellow Green Red: %d", yellow_green_red);	
+	//printf("\nYellow Green Red: %d", yellow_green_red);	
 	printf("\nPlacing Yellow Green Red: ");
 	switch (yellow_green_red) {
 		case 0:
@@ -1707,7 +1707,7 @@ void yellow_corners()
 		}
 	}
 
-	printf("\nYellow Red Blue: %d", yellow_red_blue);	
+	//printf("\nYellow Red Blue: %d", yellow_red_blue);	
 	printf("\nPlacing Yellow Red Blue: ");
 	switch (yellow_red_blue) {
 		case 0:
@@ -1911,7 +1911,7 @@ void yellow_corners()
 		}
 	}
 
-	printf("\nYellow Blue Orange: %d", yellow_blue_orange);	
+	//printf("\nYellow Blue Orange: %d", yellow_blue_orange);	
 	printf("\nPlacing Yellow Blue Orange: ");
 	switch (yellow_blue_orange) {
 		case 0:
@@ -2067,7 +2067,7 @@ void second_layer()
 		}
 	}
 
-	printf("\nOrange Green: %d", orange_green);	
+	//printf("\nOrange Green: %d", orange_green);	
 	printf("\nPlacing Orange Green: ");
 	switch (orange_green) {
 		case 1:
@@ -2191,7 +2191,7 @@ void second_layer()
 		}
 	}
 
-	printf("\nGreen Red: %d", green_red);	
+	//printf("\nGreen Red: %d", green_red);	
 	printf("\nPlacing Green Red: ");
 	switch (green_red) {
 		case 1:
@@ -2315,7 +2315,7 @@ void second_layer()
 		}
 	}
 	
-	printf("\nRed Blue: %d", red_blue);	
+	//printf("\nRed Blue: %d", red_blue);	
 	printf("\nPlacing Red Blue: ");
 	switch (red_blue) {
 		case 1:
@@ -2439,7 +2439,7 @@ void second_layer()
 		}
 	}
 	
-	printf("\nBlue Orange: %d", blue_orange);	
+	//printf("\nBlue Orange: %d", blue_orange);	
 	printf("\nPlacing Blue Orange: ");
 	switch (blue_orange) {
 		case 1:
