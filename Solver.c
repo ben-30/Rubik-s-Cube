@@ -23,6 +23,7 @@ void yellow_cross();
 void yellow_corners();
 void second_layer();
 void OLL();
+void PLL();
 
 char cube[54];
 char cube_copy[54];
@@ -34,6 +35,8 @@ int main() {
 	
 	int valid_input = set(input);
 	if (valid_input == 0) { return -1; }
+	
+	printf("\n---------------------------------------------START--------------------------------------------\n");
 	display();
 	
 	printf("\n-----------------------------------------YELLOW CROSS-----------------------------------------\n");
@@ -56,15 +59,16 @@ int main() {
 	printf("\n");
 	display();
 	
-	/*printf("\n----------------------------------------------PLL---------------------------------------------\n");
+	printf("\n----------------------------------------------PLL---------------------------------------------\n");
 	PLL();
 	printf("\n");
-	display();*/
+	display();
 }
 
 void display()
 {
-	printf("\nCube!!!\n\n          ");
+	//printf("\nCube!!!\n\n          ");
+	printf("\n          ");
 	
 	for (int i=0; i<9; i++) {
 		if ( ((i+1)%3) == 0 ) {
@@ -2902,6 +2906,642 @@ void OLL()
 			     { 
 					 printf("57 - ");
 					 move_and_print_string("RUruLrFRfl");
+				 }
+		else 
+				 { 
+				 	 printf("(U)");
+					 U();
+				 	 case_found = 0; 
+				 	 count++;
+				 }
+	}
+}
+
+void PLL()
+{
+	char last_layer[12] = {get_color(9) , get_color(10), get_color(11), 
+						   get_color(18), get_color(19), get_color(20),  
+						   get_color(27), get_color(28), get_color(29),  
+						   get_color(36), get_color(37), get_color(38)};
+						    
+	int case_found = 0;
+	int count = 0;
+	
+	while (case_found == 0 && count < 4) {
+		case_found = 1;
+		printf("\nPLL Case: ");
+		
+		if      (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     { 
+					 printf("Already in Place"); 
+				 }
+		// H
+		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'B' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
+			     { 
+					 printf("H - ");
+					 move_and_print_string("LRUUlrfbUUFB");	
+				 }
+		// Ua
+		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
+			     { 
+					 printf("Ua - ");
+					 move_and_print_string("RRuruRURURuR");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'R' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
+			     { 
+					 printf("Ua - ");
+					 move_and_print_string("FFufuFUFUFuF");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'B' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
+			     { 
+					 printf("Ua - ");
+					 move_and_print_string("BBubuBUBUBuB");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'R' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     { 
+					 printf("Ua - ");
+					 move_and_print_string("LLuluLULULuL");
+				 }
+		// Ub
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
+			     { 
+					 printf("Ub - ");
+					 move_and_print_string("rUrururURURR");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'B' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
+			     { 
+					 printf("Ub - ");
+					 move_and_print_string("fUfufufUFUFF");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
+			     { 
+					 printf("Ub - ");
+					 move_and_print_string("bUbububUBUBB");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     { 
+					 printf("Ub - ");
+					 move_and_print_string("lUlululULULL");
+				 }
+		// Z
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'R' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
+			     { 
+					 printf("Z - ");
+					 move_and_print_string("ruRRURUruRURuRurUU");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
+			     { 
+					 printf("Z - ");
+					 move_and_print_string("fuFFUFUfuFUFuFufUU");	
+				 }
+		// Aa
+		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'R') 
+			     { 
+					 printf("Aa - ");
+					 move_and_print_string("rFrBBRfrBBRR");	
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'G' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     { 
+					 printf("Aa - ");
+					 move_and_print_string("fLfRRFlfRRFF");	
+				 }
+		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'R') 
+			     { 
+					 printf("Aa - ");
+					 move_and_print_string("bRbLLBrbLLBB");	
+				 }
+		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'G' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
+			     { 
+					 printf("Aa - ");
+					 move_and_print_string("lBlFFLblFFLL");	
+				 }
+		// Ab
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     { 
+					 printf("Ab - ");
+					 move_and_print_string("RbRFFrBRFFRR");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
+			     { 
+					 printf("Ab - ");
+					 move_and_print_string("FrFLLfRFLLFF");	
+				 }
+		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'G') 
+			     { 
+					 printf("Ab - ");
+					 move_and_print_string("BlBRRbLBRRBB");	
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'O') 
+			     {
+					 printf("Ab - ");
+					 move_and_print_string("LfLBBlFLBBLL");	
+				 }
+		// E
+		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
+			     {
+					 printf("E - ");
+					 move_and_print_string("rUlDDLuRlUrDDRuL");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'G' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'O') 
+			     {
+					 printf("E - ");
+					 move_and_print_string("fUbDDBuFbUfDDFuB");
+				 }
+		// F
+		else if (get_color(9)  == 'B' && get_color(10) == 'R' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
+			     {
+					 printf("F - ");
+					 move_and_print_string("rURuRRfuFURFrfRRu");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'B' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'G' && get_color(38) == 'B') 
+			     {
+					 printf("F - ");
+					 move_and_print_string("fUFuFFluLUFLflFFu");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'B' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'O') 
+			     {
+					 printf("F - ");
+					 move_and_print_string("bUBuBBruRUBRbrBBu");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'O' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("F - ");
+					 move_and_print_string("lULuLLbuBULBlbLLu");
+				 }
+		// Ga
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'O' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'R' && get_color(38) == 'B') 
+			     {
+					 printf("Ga - ");
+					 move_and_print_string("RUrurUFRURurfUrUUR");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'B' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'G' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'O') 
+			     {
+					 printf("Ga - ");
+					 move_and_print_string("FUfufULFUFuflUfUUF");
+				 }
+		else if (get_color(9)  == 'R' && get_color(10) == 'B' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'G' && get_color(38) == 'G') 
+			     {
+					 printf("Ga - ");
+					 move_and_print_string("BUbubURBUBubrUbUUB");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'R' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'O' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'O') 
+			     {
+					 printf("Ga - ");
+					 move_and_print_string("LUlulUBLULulbUlUUL");
+				 }
+		// Gb
+		else if (get_color(9)  == 'G' && get_color(10) == 'B' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'O' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'O') 
+			     {
+					 printf("Gb - ");
+					 move_and_print_string("ruRBBDlULuLdBB");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'B' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'O') 
+			     {
+					 printf("Gb - ");
+					 move_and_print_string("fuFRRDbUBuBdRR");	
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'O' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("Gb - ");
+					 move_and_print_string("buBLLDfUFuFdLL");	
+				 }
+		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'B' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'G') 
+			     {
+					 printf("Gb - ");
+					 move_and_print_string("luLFFDrURuRdFF");	
+				 }
+		// Gc
+		else if (get_color(9)  == 'R' && get_color(10) == 'R' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'G' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'B' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'G') 
+			     {
+					 printf("Gc - ");
+					 move_and_print_string("luLULuflulULFuLUUl");
+				 }
+		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'R' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'G' && get_color(38) == 'R') 
+			     {
+					 printf("Gc - ");
+					 move_and_print_string("buBUBulbubUBLuBUUb");	
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'B' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'O' && get_color(38) == 'B') 
+			     {
+					 printf("Gc - ");
+					 move_and_print_string("fuFUFurfufUFRuFUUf");
+				 }
+		else if (get_color(9)  == 'B' && get_color(10) == 'G' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'R' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'O' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'R') 
+			     {
+					 printf("Gc - ");
+					 move_and_print_string("ruRURubrurURBuRUUr");
+				 }
+		// Gd
+		else if (get_color(9)  == 'R' && get_color(10) == 'R' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'G') 
+			     {
+					 printf("Gd - ");
+					 move_and_print_string("RUUrUbruRURBUrurUR");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'O' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'G' && get_color(38) == 'B') 
+			     {
+					 printf("Gd - ");
+					 move_and_print_string("FUUfUrfuFUFRUfufUF");	
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'B' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'O') 
+			     {
+					 printf("Gd - ");
+					 move_and_print_string("BUUbUlbuBUBLUbubUB");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'B' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'O' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'O') 
+			     {
+					 printf("Gd - ");
+					 move_and_print_string("LUUlUfluLULFUlulUL");
+				 }
+		// Ja
+		else if (get_color(9)  == 'G' && get_color(10) == 'G' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'O' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
+			     {
+					 printf("Ja - ");
+					 move_and_print_string("rlUULUlUURuLU");
+				 }
+		else if (get_color(9)  == 'B' && get_color(10) == 'B' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'O' && get_color(38) == 'R') 
+			     {
+					 printf("Ja - ");
+					 move_and_print_string("fbUUBUbUUFuBU");	
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'R' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'G' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("Ja - ");
+					 move_and_print_string("bfUUFUfUUBuFU");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'B' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'R' && get_color(38) == 'B') 
+			     {
+					 printf("Ja - ");
+					 move_and_print_string("lrUURUrUULuRU");
+				 }
+		// Jb
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'R' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("Jb - ");
+					 move_and_print_string("RUrfRUrurFRRuru");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'O' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("Jb - ");
+					 move_and_print_string("FUflFUfufLFFufu");	
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'B' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'O') 
+			     {
+					 printf("Jb - ");
+					 move_and_print_string("LUlbLUlulBLLulu");
+				 }
+		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'R') 
+			     {
+					 printf("Jb - ");
+					 move_and_print_string("BUbrBUbubRBBubu");
+				 }
+		// Na
+		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("Na - ");
+					 move_and_print_string("fRUrurFRRFuruRUfr");
+				 }
+		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'B' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'G') 
+			     {
+					 printf("Na - ");
+					 move_and_print_string("lFUfufLFFLufuFUlf");
+				 }
+		// Nb
+		else if (get_color(9)  == 'R' && get_color(10) == 'R' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'O' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
+			     {
+					 printf("Nb - ");
+					 move_and_print_string("BruRURbRRbURUruBR");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'B' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'G' && get_color(38) == 'b') 
+			     {
+					 printf("Nb - ");
+					 move_and_print_string("RfuFUFrFFrUFUfuRF");
+				 }
+		// Ra
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'B' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
+			     {
+					 printf("Ra - ");
+					 move_and_print_string("RUUrUURbruRURBRRU");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'R' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
+			     {
+					 printf("Ra - ");
+					 move_and_print_string("FUUfUUFrfuFUFRFFU");	
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'O' && get_color(38) == 'B') 
+			     {
+					 printf("Ra - ");
+					 move_and_print_string("BUUbUUBlbuBUBLBBU");
+				 }
+		else if (get_color(9)  == 'B' && get_color(10) == 'G' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
+			     {
+					 printf("Ra - ");
+					 move_and_print_string("LUUlUULfluLULFLLU");
+				 }
+		// Rb
+		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'R' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
+			     {
+					 printf("Rb - ");
+					 move_and_print_string("rUURUUrFRUrurfRRu");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("Rb - ");
+					 move_and_print_string("fUUFUUfLFUfuflFFu");	
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'O') 
+			     {
+					 printf("Rb - ");
+					 move_and_print_string("bUUBUUbRBUbubrBBu");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'G' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
+			     {
+					 printf("Rb - ");
+					 move_and_print_string("lUULUUlBLUlulbLLu");
+				 }
+		// T
+		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'R' && 
+			     get_color(27) == 'B' && get_color(28) == 'O' && get_color(29) == 'G' && 
+			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("T - ");
+					 move_and_print_string("RUrurFRRuruRUrf");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'G' && 
+			     get_color(18) == 'R' && get_color(19) == 'B' && get_color(20) == 'O' && 
+			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
+			     {
+					 printf("T - ");
+					 move_and_print_string("FUfufLFFufuFUfl");	
+				 }
+		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'B' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
+			     get_color(36) == 'O' && get_color(37) == 'G' && get_color(38) == 'R') 
+			     {
+					 printf("T - ");
+					 move_and_print_string("BUbubRBBubuBUbr");
+				 }
+		else if (get_color(9)  == 'G' && get_color(10) == 'R' && get_color(11) == 'B' && 
+			     get_color(18) == 'O' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
+			     {
+					 printf("T - ");
+					 move_and_print_string("LUlulBLLuluLUlb");
+				 }
+		// V
+		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'B' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'G') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("rUrubrBBubUbRBR");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'R' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("fUfurfRRurUrFRF");	
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'O' && get_color(38) == 'B') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("bUbulbLLulUlBLB");
+				 }
+		else if (get_color(9)  == 'R' && get_color(10) == 'G' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'O' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("lUluflFFufUfLFL");
+				 }
+		// Y
+		else if (get_color(9)  == 'R' && get_color(10) == 'B' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'G') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("ruRuLRUUruRUUlURRUR");
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'G' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'R' && get_color(38) == 'B') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("fuFuBFUUfuFUUbUFFUF");	
+				 }
+		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'R' && 
+			     get_color(18) == 'B' && get_color(19) == 'O' && get_color(20) == 'G' && 
+			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
+			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("buBuFBUUbuBUUfUBBUB");
+				 }
+		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
+			     get_color(18) == 'G' && get_color(19) == 'R' && get_color(20) == 'B' && 
+			     get_color(27) == 'O' && get_color(28) == 'G' && get_color(29) == 'R' && 
+			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
+			     {
+					 printf("V - ");
+					 move_and_print_string("luLuRLUUluLUUrULLUL");
 				 }
 		else 
 				 { 
