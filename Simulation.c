@@ -34,6 +34,7 @@ int sequence_count = 0;
 
 int main() {	
 	reset();
+	display();
 		
 	char input[100];
 	int done_flag = 0;
