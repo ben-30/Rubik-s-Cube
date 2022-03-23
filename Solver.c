@@ -20,8 +20,9 @@ void B();
 void Bi();
 char get_color(int);
 void yellow_cross();
-void yellow_corners();
-void second_layer();
+/*void yellow_corners();
+void second_layer();*/
+void F2L();
 void OLL();
 void PLL();
 void end_display();
@@ -48,7 +49,12 @@ int main() {
 	printf("\n");
 	display();
 	
-	printf("\n----------------------------------------YELLOW CORNERS----------------------------------------\n");
+	printf("\n----------------------------------------------F2L---------------------------------------------\n");
+	F2L();
+	printf("\n");
+	display();
+	
+	/*printf("\n----------------------------------------YELLOW CORNERS----------------------------------------\n");
 	yellow_corners();
 	printf("\n");
 	display();
@@ -56,7 +62,7 @@ int main() {
 	printf("\n-----------------------------------------SECOND LAYER-----------------------------------------\n");
 	second_layer();
 	printf("\n");
-	display();
+	display();*/
 	
 	printf("\n----------------------------------------------OLL---------------------------------------------\n");
 	OLL();
@@ -1187,6 +1193,7 @@ void yellow_cross()
 	}
 }
 
+/*
 void yellow_corners()
 {
 	int yellow_orange_green;
@@ -2010,7 +2017,9 @@ void yellow_corners()
 			break;
 	}
 }
+*/
 
+/*
 void second_layer()
 {
 	int orange_green;
@@ -2512,6 +2521,373 @@ void second_layer()
 		case 41:
 			printf("Already in Place");
 			break;
+	}
+}
+*/
+
+void F2L()
+{
+	int yellow_orange_green;
+	int yellow_green_red;
+	int yellow_red_blue;
+	int yellow_blue_orange;
+	
+	int orange_green;
+	int green_red;
+	int red_blue;
+	int blue_orange;
+	
+	//printf("\nYellow Green Red: %d", yellow_green_red);
+	//printf("\nGreen Red: %d", green_red);
+	
+	int case_found = 0;
+	int count = 0;
+	
+	while (case_found == 0 && count < 4) {
+		case_found = 1;
+			
+		for (int i=0; i<54; i++) {
+			if (get_color(i) == 'Y') {
+				switch (i) {
+					case 0:
+						if (get_color(9) == 'G' && get_color(38) == 'R') {
+							yellow_green_red = 0;
+						}
+						break;
+					case 2:
+						if (get_color(36) == 'G' && get_color(29) == 'R') {
+							yellow_green_red = 2;
+						}
+						break;
+					case 6:
+						if (get_color(18) == 'G' && get_color(11) == 'R') {
+							yellow_green_red = 6;
+						}
+						break;
+					case 8:
+						if (get_color(27) == 'G' && get_color(20) == 'R') {
+							yellow_green_red = 8;
+						}
+						break;
+					case 9:
+						if (get_color(38) == 'G' && get_color(0) == 'R') {
+							yellow_green_red = 9;
+						}
+						break;
+					case 11:
+						if (get_color(6) == 'G' && get_color(18) == 'R') {
+							yellow_green_red = 11;
+						}
+						break;
+					case 15:
+						if (get_color(51) == 'G' && get_color(44) == 'R') {
+							yellow_green_red = 15;
+						}
+						break;
+					case 17:
+						if (get_color(24) == 'G' && get_color(45) == 'R') {
+							yellow_green_red = 17;
+						}
+						break;
+					case 18:
+						if (get_color(11) == 'G' && get_color(6) == 'R') {
+							yellow_green_red = 18;
+						}
+						break;
+					case 20:
+						if (get_color(8) == 'G' && get_color(27) == 'R') {
+							yellow_green_red = 20;
+						}
+						break;
+					case 24:
+						if (get_color(45) == 'G' && get_color(17) == 'R') {
+							yellow_green_red = 24;
+						}
+						break;
+					case 26:
+						if (get_color(33) == 'G' && get_color(47) == 'R') {
+							yellow_green_red = 26;
+						}
+						break;
+					case 27:
+						if (get_color(20) == 'G' && get_color(8) == 'R') {
+							yellow_green_red = 27;
+						}
+						break;
+					case 29:
+						if (get_color(2) == 'G' && get_color(36) == 'R') {
+							yellow_green_red = 29;
+						}
+						break;
+					case 33:
+						if (get_color(47) == 'G' && get_color(26) == 'R') {
+							yellow_green_red = 33;
+						}
+						break;
+					case 35:
+						if (get_color(42) == 'G' && get_color(53) == 'R') {
+							yellow_green_red = 35;
+						}
+						break;
+					case 36:
+						if (get_color(29) == 'G' && get_color(2) == 'R') {
+							yellow_green_red = 36;
+						}
+						break;
+					case 38:
+						if (get_color(0) == 'G' && get_color(9) == 'R') {
+							yellow_green_red = 38;
+						}
+						break;
+					case 42:
+						if (get_color(53) == 'G' && get_color(35) == 'R') {
+							yellow_green_red = 42;
+						}
+						break;
+					case 44:
+						if (get_color(15) == 'G' && get_color(51) == 'R') {
+							yellow_green_red = 44;
+						}
+						break;
+					case 45:
+						if (get_color(17) == 'G' && get_color(24) == 'R') {
+							yellow_green_red = 45;
+						}
+						break;
+					case 47:
+						if (get_color(26) == 'G' && get_color(33) == 'R') {
+							yellow_green_red = 47;
+						}
+						break;
+					case 51:
+						if (get_color(44) == 'G' && get_color(15) == 'R') {
+							yellow_green_red = 51;
+						}
+						break;
+					case 53:
+						if (get_color(35) == 'G' && get_color(42) == 'R') {
+							yellow_green_red = 53;
+						}
+						break;
+				}
+			}
+		}
+
+		for (int i=0; i<42; i++) {
+			if (get_color(i) == 'G') {
+				switch (i) {
+					case 1:
+						if (get_color(37) == 'R')
+							green_red = 1;
+						break;
+					case 3:
+						if (get_color(10) == 'R')
+							green_red = 3;
+						break;
+					case 5:
+						if (get_color(28) == 'R')
+							green_red = 5;
+						break;
+					case 7:
+						if (get_color(19) == 'R')
+							green_red = 7;
+						break;
+					case 10:
+						if (get_color(3) == 'R')
+							green_red = 10;
+						break;
+					case 12:
+						if (get_color(41) == 'R')
+							green_red = 12;
+						break;
+					case 14:
+						if (get_color(21) == 'R')
+							green_red = 14;
+						break;
+					case 19:
+						if (get_color(7) == 'R')
+							green_red = 19;
+						break;
+					case 21:
+						if (get_color(14) == 'R')
+							green_red = 21;
+						break;
+					case 23:
+						if (get_color(30) == 'R')
+							green_red = 23;
+						break;
+					case 28:
+						if (get_color(5) == 'R')
+							green_red = 28;
+						break;
+					case 30:
+						if (get_color(23) == 'R')
+							green_red = 30;
+						break;
+					case 32:
+						if (get_color(39) == 'R')
+							green_red = 32;
+						break;
+					case 37:
+						if (get_color(1) == 'R')
+							green_red = 37;
+						break;
+					case 39:
+						if (get_color(32) == 'R')
+							green_red = 39;
+						break;
+					case 41:
+						if (get_color(12) == 'R')
+							green_red = 41;
+						break;
+				}
+			}
+		}
+
+		printf("\n\nYellow Green Red: %d", yellow_green_red);
+		printf("\nGreen Red: %d", green_red);
+		printf("\nPlacing Yellow Green Red: ");
+	
+		// Basic Inserts
+		if (yellow_green_red == 20 && green_red == 5) {
+			move_and_print_string("URur");
+		}
+		else if (yellow_green_red == 27 && green_red == 19) {
+			move_and_print_string("ufUF");
+		}
+		else if (yellow_green_red == 20 && green_red == 10) {
+			move_and_print_string("fuF");
+		}
+		else if (yellow_green_red == 27 && green_red == 1) {
+			move_and_print_string("RUr");
+		}
+		// Reposition Edge
+		else if (yellow_green_red == 20 && green_red == 1) {
+			move_and_print_string("UfrfRF");
+		}
+		else if (yellow_green_red == 27 && green_red == 10) {
+			move_and_print_string("ufrFRF");
+		}
+		else if (yellow_green_red == 20 && green_red == 3) {
+			move_and_print_string("RUBUUbUr");
+		}
+		else if (yellow_green_red == 27 && green_red == 37) {
+			move_and_print_string("UfUUFUfUUF");
+		}
+		// Reposition Edge and Flip Corner
+		else if (yellow_green_red == 20 && green_red == 37) {
+			move_and_print_string("ruRfuF");
+		}
+		else if (yellow_green_red == 27 && green_red == 3) {
+			move_and_print_string("FUfRUr");
+		}
+		else if (yellow_green_red == 20 && green_red == 28) {
+			move_and_print_string("uRUUrUfuF");
+		}
+		else if (yellow_green_red == 27 && green_red == 7) {
+			move_and_print_string("rUURRUr");
+		}
+		else if (yellow_green_red == 20 && green_red == 19) {
+			move_and_print_string("rURfuF");
+		}
+		else if (yellow_green_red == 27 && green_red == 5) {
+			move_and_print_string("uRurURUr");
+		}
+		// Split Pair by Going Over
+		else if (yellow_green_red == 20 && green_red == 7) {
+			move_and_print_string("RFUfur");
+		}
+		else if (yellow_green_red == 27 && green_red == 28) {
+			move_and_print_string("fruRUF");
+		}
+		else if (yellow_green_red == 8 && green_red == 5) {
+			move_and_print_string("RUUruRUr");
+		}
+		else if (yellow_green_red == 8 && green_red == 19) {
+			move_and_print_string("fUUFUfuF");
+		}
+		// Pair Made on Side
+		else if (yellow_green_red == 8 && green_red == 1) {
+			move_and_print_string("URUURRFRf");
+		}
+		else if (yellow_green_red == 8 && green_red == 10) {
+			move_and_print_string("LufUUFFrfR");
+		}
+		else if (yellow_green_red == 8 && green_red == 3) {
+			move_and_print_string("RBUUbr");
+		}
+		else if (yellow_green_red == 8 && green_red == 37) {
+			move_and_print_string("flUULF");
+		}
+		// Weird
+		else if (yellow_green_red == 8 && green_red == 7) {
+			move_and_print_string("UFrfRURUr");
+		}
+		else if (yellow_green_red == 8 && green_red == 28) {
+			move_and_print_string("UflULFRUr");
+		}
+		// Corner in Place, Edge in U Face
+		else if (yellow_green_red == 47 && green_red == 5) {
+			move_and_print_string("UdRurD");
+		}
+		else if (yellow_green_red == 47 && green_red == 19) {
+			move_and_print_string("URurufUF");
+		}
+		else if (yellow_green_red == 26 && green_red == 5) {
+			move_and_print_string("RurURur");
+		}
+		else if (yellow_green_red == 33 && green_red == 19) {
+			move_and_print_string("RUruFrfR");
+		}
+		else if (yellow_green_red == 26 && green_red == 19) {
+			move_and_print_string("rFRfrFRf");
+		}
+		else if (yellow_green_red == 33 && green_red == 5) {
+			move_and_print_string("RUruRUr");
+		}
+		// Edge in Place, Corner in U Face
+		else if (yellow_green_red == 8 && green_red == 30) {
+			move_and_print_string("RurUfUF");
+		}
+		else if (yellow_green_red == 8 && green_red == 23) {
+			move_and_print_string("RUruRUruRUr");
+		}
+		else if (yellow_green_red == 20 && green_red == 23) {
+			move_and_print_string("uRurUURur");
+		}
+		else if (yellow_green_red == 27 && green_red == 23) {
+			move_and_print_string("UfUFUUfUF");
+		}
+		else if (yellow_green_red == 20 && green_red == 30) {
+			move_and_print_string("uRUrUfuF");
+		}
+		else if (yellow_green_red == 27 && green_red == 30) {
+			move_and_print_string("UfuFuRUr");
+		}
+		// Edge and Corner in Place
+		else if (yellow_green_red == 47 && green_red == 23) {
+			printf("Already in Place");
+		}
+		else if (yellow_green_red == 47 && green_red == 30) {
+			move_and_print_string("RuRRUURufUF");
+		}
+		else if (yellow_green_red == 26 && green_red == 23) {
+			move_and_print_string("RuruRUrUURur");
+		}
+		else if (yellow_green_red == 33 && green_red == 23) {
+			move_and_print_string("RurURUUrURur");
+		}
+		else if (yellow_green_red == 26 && green_red == 30) {
+			move_and_print_string("RFURurfur");
+		}
+		else if (yellow_green_red == 33 && green_red == 30) {
+			move_and_print_string("RUFRUrufr");
+		}
+		else {
+			move_and_print_string("U");
+			case_found = 0; 
+			count++;
+		}
 	}
 }
 
