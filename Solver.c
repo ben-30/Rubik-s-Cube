@@ -23,6 +23,7 @@ void yellow_cross();
 void F2L();
 void OLL();
 void PLL();
+int check_correct();
 void end_display();
 
 char cube[54];
@@ -3881,13 +3882,52 @@ void PLL()
 	}
 }
 
+int check_correct()
+{
+	int correct = 1;
+	
+	for (int i=0; i<9; i++) {
+		if (cube[i] != 'W')
+			correct = 0;
+	}
+	for (int i=9; i<18; i++) {
+		if (cube[i] != 'O')
+			correct = 0;
+	}
+	for (int i=18; i<27; i++) {
+		if (cube[i] != 'G')
+			correct = 0;
+	}
+	for (int i=27; i<36; i++) {
+		if (cube[i] != 'R')
+			correct = 0;
+	}
+	for (int i=36; i<45; i++) {
+		if (cube[i] != 'B')
+			correct = 0;
+	}
+	for (int i=45; i<54; i++) {
+		if (cube[i] != 'Y')
+			correct = 0;
+	}
+	
+	return correct;
+}
+
 void end_display()
 {
-	printf("\nTotal Move Count: %d", final_moves_count);
-	printf("\nMoves to Solve: ");
-	for (int i=0; i<final_moves_count; i++) {
-		printf("%c", final_moves[i]);
-		if ((i+1)%10 == 0) { printf(" "); }
-		if ((i+1)%50 == 0) { printf("\n                "); }
+	int correct = check_correct();
+	if (correct == 1) {
+		printf("\nCorrectly Solved");
+		printf("\nTotal Move Count: %d", final_moves_count);
+		printf("\nMoves to Solve: ");
+		for (int i=0; i<final_moves_count; i++) {
+			printf("%c", final_moves[i]);
+			if ((i+1)%10 == 0) { printf(" "); }
+			if ((i+1)%50 == 0) { printf("\n                "); }
+		}
+		printf("\n\n");
+	} else {
+		printf("\nIncorrectly Solved");
 	}
 }
