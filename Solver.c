@@ -20,8 +20,6 @@ void B();
 void Bi();
 char get_color(int);
 void yellow_cross();
-/*void yellow_corners();
-void second_layer();*/
 void F2L();
 void OLL();
 void PLL();
@@ -36,7 +34,7 @@ int final_moves_count = 0;
 int main() {
 	char input[54];
 	printf("\nEnter Starting Cube Sequence: ");
-		fgets(input, 55, stdin);
+	fgets(input, 55, stdin);
 	
 	int valid_input = set(input);
 	if (valid_input == 0) { return -1; }
@@ -53,16 +51,6 @@ int main() {
 	F2L();
 	printf("\n");
 	display();
-	
-	/*printf("\n----------------------------------------YELLOW CORNERS----------------------------------------\n");
-	yellow_corners();
-	printf("\n");
-	display();
-	
-	printf("\n-----------------------------------------SECOND LAYER-----------------------------------------\n");
-	second_layer();
-	printf("\n");
-	display();*/
 	
 	printf("\n----------------------------------------------OLL---------------------------------------------\n");
 	OLL();
@@ -1193,1358 +1181,23 @@ void yellow_cross()
 	}
 }
 
-/*
-void yellow_corners()
-{
-	int yellow_orange_green;
-	int yellow_green_red;
-	int yellow_red_blue;
-	int yellow_blue_orange;
-	
-	for (int i=0; i<54; i++) {
-		if (get_color(i) == 'Y') {
-			switch (i) {
-				case 0:
-					if (get_color(9) == 'O' && get_color(38) == 'G') {
-						yellow_orange_green = 0;
-					}
-					break;
-				case 2:
-					if (get_color(36) == 'O' && get_color(29) == 'G') {
-						yellow_orange_green = 2;
-					}
-					break;
-				case 6:
-					if (get_color(18) == 'O' && get_color(11) == 'G') {
-						yellow_orange_green = 6;
-					}
-					break;
-				case 8:
-					if (get_color(27) == 'O' && get_color(20) == 'G') {
-						yellow_orange_green = 8;
-					}
-					break;
-				case 9:
-					if (get_color(38) == 'O' && get_color(0) == 'G') {
-						yellow_orange_green = 9;
-					}
-					break;
-				case 11:
-					if (get_color(6) == 'O' && get_color(18) == 'G') {
-						yellow_orange_green = 11;
-					}
-					break;
-				case 15:
-					if (get_color(51) == 'O' && get_color(44) == 'G') {
-						yellow_orange_green = 15;
-					}
-					break;
-				case 17:
-					if (get_color(24) == 'O' && get_color(45) == 'G') {
-						yellow_orange_green = 17;
-					}
-					break;
-				case 18:
-					if (get_color(11) == 'O' && get_color(6) == 'G') {
-						yellow_orange_green = 18;
-					}
-					break;
-				case 20:
-					if (get_color(8) == 'O' && get_color(27) == 'G') {
-						yellow_orange_green = 20;
-					}
-					break;
-				case 24:
-					if (get_color(45) == 'O' && get_color(17) == 'G') {
-						yellow_orange_green = 24;
-					}
-					break;
-				case 26:
-					if (get_color(33) == 'O' && get_color(47) == 'G') {
-						yellow_orange_green = 26;
-					}
-					break;
-				case 27:
-					if (get_color(20) == 'O' && get_color(8) == 'G') {
-						yellow_orange_green = 27;
-					}
-					break;
-				case 29:
-					if (get_color(2) == 'O' && get_color(36) == 'G') {
-						yellow_orange_green = 29;
-					}
-					break;
-				case 33:
-					if (get_color(47) == 'O' && get_color(26) == 'G') {
-						yellow_orange_green = 33;
-					}
-					break;
-				case 35:
-					if (get_color(42) == 'O' && get_color(53) == 'G') {
-						yellow_orange_green = 35;
-					}
-					break;
-				case 36:
-					if (get_color(29) == 'O' && get_color(2) == 'G') {
-						yellow_orange_green = 36;
-					}
-					break;
-				case 38:
-					if (get_color(0) == 'O' && get_color(9) == 'G') {
-						yellow_orange_green = 38;
-					}
-					break;
-				case 42:
-					if (get_color(53) == 'O' && get_color(35) == 'G') {
-						yellow_orange_green = 42;
-					}
-					break;
-				case 44:
-					if (get_color(15) == 'O' && get_color(51) == 'G') {
-						yellow_orange_green = 44;
-					}
-					break;
-				case 45:
-					if (get_color(17) == 'O' && get_color(24) == 'G') {
-						yellow_orange_green = 45;
-					}
-					break;
-				case 47:
-					if (get_color(26) == 'O' && get_color(33) == 'G') {
-						yellow_orange_green = 47;
-					}
-					break;
-				case 51:
-					if (get_color(44) == 'O' && get_color(15) == 'G') {
-						yellow_orange_green = 51;
-					}
-					break;
-				case 53:
-					if (get_color(35) == 'O' && get_color(42) == 'G') {
-						yellow_orange_green = 53;
-					}
-					break;
-			}
-		}
-	}
-	
-	//printf("\nYellow Orange Green: %d", yellow_orange_green);	
-	printf("\nPlacing Yellow Orange Green: ");
-	switch (yellow_orange_green) {
-		case 0:
-			move_and_print_string("uFRUUrf");
-			break;
-		case 2:
-			move_and_print_string("UUFRUUrf");
-			break;
-		case 6:
-			move_and_print_string("FRUUrf");
-			break;
-		case 8:
-			move_and_print_string("UFRUUrf");
-			break;
-		case 9:
-			move_and_print_string("uFUf");
-			break;
-		case 11:
-			move_and_print_string("luL");
-			break;
-		case 15:
-			move_and_print_string("LUlUUFUf");
-			break;
-		case 17:
-			move_and_print_string("luLUluL");
-			break;
-		case 18:
-			move_and_print_string("FUf");
-			break;
-		case 20:
-			move_and_print_string("UluL");
-			break;
-		case 24:
-			move_and_print_string("lULFUf");
-			break;
-		case 26:
-			move_and_print_string("RurUluL");
-			break;
-		case 27:
-			move_and_print_string("UFUf");
-			break;
-		case 29:
-			move_and_print_string("UUluL");
-			break;
-		case 33:
-			move_and_print_string("fUFlUL");
-			break;
-		case 35:
-			move_and_print_string("ruRuluL");
-			break;
-		case 36:
-			move_and_print_string("UUFUf");
-			break;
-		case 38:
-			move_and_print_string("uluL");
-			break;
-		case 42:
-			move_and_print_string("BUblUL");
-			break;
-		case 44:
-			move_and_print_string("buBluL");
-			break;
-		case 45:
-			printf("Already in Place");
-			break;
-		case 47:
-			move_and_print_string("fuFUlUL");
-			break;
-		case 51:
-			move_and_print_string("bUUBlUL");
-			break;
-		case 53:
-			move_and_print_string("BUUbluL");
-			break;
-	}
-	
-	for (int i=0; i<54; i++) {
-		if (get_color(i) == 'Y') {
-			switch (i) {
-				case 0:
-					if (get_color(9) == 'G' && get_color(38) == 'R') {
-						yellow_green_red = 0;
-					}
-					break;
-				case 2:
-					if (get_color(36) == 'G' && get_color(29) == 'R') {
-						yellow_green_red = 2;
-					}
-					break;
-				case 6:
-					if (get_color(18) == 'G' && get_color(11) == 'R') {
-						yellow_green_red = 6;
-					}
-					break;
-				case 8:
-					if (get_color(27) == 'G' && get_color(20) == 'R') {
-						yellow_green_red = 8;
-					}
-					break;
-				case 9:
-					if (get_color(38) == 'G' && get_color(0) == 'R') {
-						yellow_green_red = 9;
-					}
-					break;
-				case 11:
-					if (get_color(6) == 'G' && get_color(18) == 'R') {
-						yellow_green_red = 11;
-					}
-					break;
-				case 15:
-					if (get_color(51) == 'G' && get_color(44) == 'R') {
-						yellow_green_red = 15;
-					}
-					break;
-				case 17:
-					if (get_color(24) == 'G' && get_color(45) == 'R') {
-						yellow_green_red = 17;
-					}
-					break;
-				case 18:
-					if (get_color(11) == 'G' && get_color(6) == 'R') {
-						yellow_green_red = 18;
-					}
-					break;
-				case 20:
-					if (get_color(8) == 'G' && get_color(27) == 'R') {
-						yellow_green_red = 20;
-					}
-					break;
-				case 24:
-					if (get_color(45) == 'G' && get_color(17) == 'R') {
-						yellow_green_red = 24;
-					}
-					break;
-				case 26:
-					if (get_color(33) == 'G' && get_color(47) == 'R') {
-						yellow_green_red = 26;
-					}
-					break;
-				case 27:
-					if (get_color(20) == 'G' && get_color(8) == 'R') {
-						yellow_green_red = 27;
-					}
-					break;
-				case 29:
-					if (get_color(2) == 'G' && get_color(36) == 'R') {
-						yellow_green_red = 29;
-					}
-					break;
-				case 33:
-					if (get_color(47) == 'G' && get_color(26) == 'R') {
-						yellow_green_red = 33;
-					}
-					break;
-				case 35:
-					if (get_color(42) == 'G' && get_color(53) == 'R') {
-						yellow_green_red = 35;
-					}
-					break;
-				case 36:
-					if (get_color(29) == 'G' && get_color(2) == 'R') {
-						yellow_green_red = 36;
-					}
-					break;
-				case 38:
-					if (get_color(0) == 'G' && get_color(9) == 'R') {
-						yellow_green_red = 38;
-					}
-					break;
-				case 42:
-					if (get_color(53) == 'G' && get_color(35) == 'R') {
-						yellow_green_red = 42;
-					}
-					break;
-				case 44:
-					if (get_color(15) == 'G' && get_color(51) == 'R') {
-						yellow_green_red = 44;
-					}
-					break;
-				case 45:
-					if (get_color(17) == 'G' && get_color(24) == 'R') {
-						yellow_green_red = 45;
-					}
-					break;
-				case 47:
-					if (get_color(26) == 'G' && get_color(33) == 'R') {
-						yellow_green_red = 47;
-					}
-					break;
-				case 51:
-					if (get_color(44) == 'G' && get_color(15) == 'R') {
-						yellow_green_red = 51;
-					}
-					break;
-				case 53:
-					if (get_color(35) == 'G' && get_color(42) == 'R') {
-						yellow_green_red = 53;
-					}
-					break;
-			}
-		}
-	}
-
-	//printf("\nYellow Green Red: %d", yellow_green_red);	
-	printf("\nPlacing Yellow Green Red: ");
-	switch (yellow_green_red) {
-		case 0:
-			move_and_print_string("UURBUUbr");
-			break;
-		case 2:
-			move_and_print_string("URBUUbr");
-			break;
-		case 6:
-			move_and_print_string("uRBUUbr");
-			break;
-		case 8:
-			move_and_print_string("RBUUbr");
-			break;
-		case 9:
-			move_and_print_string("UfUF");
-			break;
-		case 11:
-			move_and_print_string("ufuF");
-			break;
-		case 15:
-			move_and_print_string("LUlfUF");		
-			break;
-		case 17:
-			printf("Should Never Be Here");
-			break;
-		case 18:
-			move_and_print_string("uRUr");
-			break;
-		case 20:
-			move_and_print_string("fuF");
-			break;
-		case 24:
-			printf("Should Never Be Here");
-			break;
-		case 26:
-			move_and_print_string("fuFUfuF");
-			break;
-		case 27:
-			move_and_print_string("ufUF");
-			break;
-		case 29:
-			move_and_print_string("UfuF");
-			break;
-		case 33:
-			move_and_print_string("fUFufUF");
-			break;
-		case 35:
-			move_and_print_string("BubUfuF");
-			break;
-		case 36:
-			move_and_print_string("fUF");
-			break;
-		case 38:
-			move_and_print_string("UUfuF");
-			break;
-		case 42:
-			move_and_print_string("rURfUF");
-			break;
-		case 44:
-			move_and_print_string("bUUfuF");
-			break;
-		case 45:
-			printf("Should Never Be Here");
-			break;
-		case 47:
-			printf("Already in Place");
-			break;
-		case 51:
-			move_and_print_string("LUUlfuF");
-			break;
-		case 53:
-			move_and_print_string("BUbfuF");
-			break;
-	}
-	
-	for (int i=0; i<54; i++) {
-		if (get_color(i) == 'Y') {
-			switch (i) {
-				case 0:
-					if (get_color(9) == 'R' && get_color(38) == 'B') {
-						yellow_red_blue = 0;
-					}
-					break;
-				case 2:
-					if (get_color(36) == 'R' && get_color(29) == 'B') {
-						yellow_red_blue = 2;
-					}
-					break;
-				case 6:
-					if (get_color(18) == 'R' && get_color(11) == 'B') {
-						yellow_red_blue = 6;
-					}
-					break;
-				case 8:
-					if (get_color(27) == 'R' && get_color(20) == 'B') {
-						yellow_red_blue = 8;
-					}
-					break;
-				case 9:
-					if (get_color(38) == 'R' && get_color(0) == 'B') {
-						yellow_red_blue = 9;
-					}
-					break;
-				case 11:
-					if (get_color(6) == 'R' && get_color(18) == 'B') {
-						yellow_red_blue = 11;
-					}
-					break;
-				case 15:
-					if (get_color(51) == 'R' && get_color(44) == 'B') {
-						yellow_red_blue = 15;
-					}
-					break;
-				case 17:
-					if (get_color(24) == 'R' && get_color(45) == 'B') {
-						yellow_red_blue = 17;
-					}
-					break;
-				case 18:
-					if (get_color(11) == 'R' && get_color(6) == 'B') {
-						yellow_red_blue = 18;
-					}
-					break;
-				case 20:
-					if (get_color(8) == 'R' && get_color(27) == 'B') {
-						yellow_red_blue = 20;
-					}
-					break;
-				case 24:
-					if (get_color(45) == 'R' && get_color(17) == 'B') {
-						yellow_red_blue = 24;
-					}
-					break;
-				case 26:
-					if (get_color(33) == 'R' && get_color(47) == 'B') {
-						yellow_red_blue = 26;
-					}
-					break;
-				case 27:
-					if (get_color(20) == 'R' && get_color(8) == 'B') {
-						yellow_red_blue = 27;
-					}
-					break;
-				case 29:
-					if (get_color(2) == 'R' && get_color(36) == 'B') {
-						yellow_red_blue = 29;
-					}
-					break;
-				case 33:
-					if (get_color(47) == 'R' && get_color(26) == 'B') {
-						yellow_red_blue = 33;
-					}
-					break;
-				case 35:
-					if (get_color(42) == 'R' && get_color(53) == 'B') {
-						yellow_red_blue = 35;
-					}
-					break;
-				case 36:
-					if (get_color(29) == 'R' && get_color(2) == 'B') {
-						yellow_red_blue = 36;
-					}
-					break;
-				case 38:
-					if (get_color(0) == 'R' && get_color(9) == 'B') {
-						yellow_red_blue = 38;
-					}
-					break;
-				case 42:
-					if (get_color(53) == 'R' && get_color(35) == 'B') {
-						yellow_red_blue = 42;
-					}
-					break;
-				case 44:
-					if (get_color(15) == 'R' && get_color(51) == 'B') {
-						yellow_red_blue = 44;
-					}
-					break;
-				case 45:
-					if (get_color(17) == 'R' && get_color(24) == 'B') {
-						yellow_red_blue = 45;
-					}
-					break;
-				case 47:
-					if (get_color(26) == 'R' && get_color(33) == 'B') {
-						yellow_red_blue = 47;
-					}
-					break;
-				case 51:
-					if (get_color(44) == 'R' && get_color(15) == 'B') {
-						yellow_red_blue = 51;
-					}
-					break;
-				case 53:
-					if (get_color(35) == 'R' && get_color(42) == 'B') {
-						yellow_red_blue = 53;
-					}
-					break;
-			}
-		}
-	}
-
-	//printf("\nYellow Red Blue: %d", yellow_red_blue);	
-	printf("\nPlacing Yellow Red Blue: ");
-	switch (yellow_red_blue) {
-		case 0:
-			move_and_print_string("UBLUUlb");
-			break;
-		case 2:
-			move_and_print_string("BLUUlb");
-			break;
-		case 6:
-			move_and_print_string("UUBLUUlb");
-			break;
-		case 8:
-			move_and_print_string("uBLUUlb");
-			break;
-		case 9:
-			move_and_print_string("rUR");
-			break;
-		case 11:
-			move_and_print_string("uBub");
-			break;
-		case 15:
-			move_and_print_string("LUlBUb");
-			break;
-		case 17:
-			printf("Should Never Be Here");
-			break;
-		case 18:
-			move_and_print_string("UrUR");
-			break;
-		case 20:
-			move_and_print_string("Bub");
-			break;
-		case 24:
-			printf("Should Never Be Here");
-			break;
-		case 26:
-			printf("Should Never Be Here");
-			break;
-		case 27:
-			move_and_print_string("UUrUR");
-			break;
-		case 29:
-			move_and_print_string("ruR");
-			break;
-		case 33:
-			printf("Should Never Be Here");
-			break;
-		case 35:
-			move_and_print_string("BubruR");
-			break;
-		case 36:
-			move_and_print_string("BUb");
-			break;
-		case 38:
-			move_and_print_string("UruR");
-			break;
-		case 42:
-			move_and_print_string("rURBUb");
-			break;
-		case 44:
-			move_and_print_string("LulUruR");
-			break;
-		case 45:
-			printf("Should Never Be Here");
-			break;
-		case 47:
-			printf("Should Never Be Here");
-			break;
-		case 51:
-			move_and_print_string("LUlruR");
-			break;
-		case 53:
-			printf("Already in Place");
-			break;
-	}
-
-	for (int i=0; i<54; i++) {
-		if (get_color(i) == 'Y') {
-			switch (i) {
-				case 0:
-					if (get_color(9) == 'B' && get_color(38) == 'O') {
-						yellow_blue_orange = 0;
-					}
-					break;
-				case 2:
-					if (get_color(36) == 'B' && get_color(29) == 'O') {
-						yellow_blue_orange = 2;
-					}
-					break;
-				case 6:
-					if (get_color(18) == 'B' && get_color(11) == 'O') {
-						yellow_blue_orange = 6;
-					}
-					break;
-				case 8:
-					if (get_color(27) == 'B' && get_color(20) == 'O') {
-						yellow_blue_orange = 8;
-					}
-					break;
-				case 9:
-					if (get_color(38) == 'B' && get_color(0) == 'O') {
-						yellow_blue_orange = 9;
-					}
-					break;
-				case 11:
-					if (get_color(6) == 'B' && get_color(18) == 'O') {
-						yellow_blue_orange = 11;
-					}
-					break;
-				case 15:
-					if (get_color(51) == 'B' && get_color(44) == 'O') {
-						yellow_blue_orange = 15;
-					}
-					break;
-				case 17:
-					if (get_color(24) == 'B' && get_color(45) == 'O') {
-						yellow_blue_orange = 17;
-					}
-					break;
-				case 18:
-					if (get_color(11) == 'B' && get_color(6) == 'O') {
-						yellow_blue_orange = 18;
-					}
-					break;
-				case 20:
-					if (get_color(8) == 'B' && get_color(27) == 'O') {
-						yellow_blue_orange = 20;
-					}
-					break;
-				case 24:
-					if (get_color(45) == 'B' && get_color(17) == 'O') {
-						yellow_blue_orange = 24;
-					}
-					break;
-				case 26:
-					if (get_color(33) == 'B' && get_color(47) == 'O') {
-						yellow_blue_orange = 26;
-					}
-					break;
-				case 27:
-					if (get_color(20) == 'B' && get_color(8) == 'O') {
-						yellow_blue_orange = 27;
-					}
-					break;
-				case 29:
-					if (get_color(2) == 'B' && get_color(36) == 'O') {
-						yellow_blue_orange = 29;
-					}
-					break;
-				case 33:
-					if (get_color(47) == 'B' && get_color(26) == 'O') {
-						yellow_blue_orange = 33;
-					}
-					break;
-				case 35:
-					if (get_color(42) == 'B' && get_color(53) == 'O') {
-						yellow_blue_orange = 35;
-					}
-					break;
-				case 36:
-					if (get_color(29) == 'B' && get_color(2) == 'O') {
-						yellow_blue_orange = 36;
-					}
-					break;
-				case 38:
-					if (get_color(0) == 'B' && get_color(9) == 'O') {
-						yellow_blue_orange = 38;
-					}
-					break;
-				case 42:
-					if (get_color(53) == 'B' && get_color(35) == 'O') {
-						yellow_blue_orange = 42;
-					}
-					break;
-				case 44:
-					if (get_color(15) == 'B' && get_color(51) == 'O') {
-						yellow_blue_orange = 44;
-					}
-					break;
-				case 45:
-					if (get_color(17) == 'B' && get_color(24) == 'O') {
-						yellow_blue_orange = 45;
-					}
-					break;
-				case 47:
-					if (get_color(26) == 'B' && get_color(33) == 'O') {
-						yellow_blue_orange = 47;
-					}
-					break;
-				case 51:
-					if (get_color(44) == 'B' && get_color(15) == 'O') {
-						yellow_blue_orange = 51;
-					}
-					break;
-				case 53:
-					if (get_color(35) == 'B' && get_color(42) == 'O') {
-						yellow_blue_orange = 53;
-					}
-					break;
-			}
-		}
-	}
-
-	//printf("\nYellow Blue Orange: %d", yellow_blue_orange);	
-	printf("\nPlacing Yellow Blue Orange: ");
-	switch (yellow_blue_orange) {
-		case 0:
-			move_and_print_string("LFUUfl");
-			break;
-		case 2:
-			move_and_print_string("uLFUUfl");
-			break;
-		case 6:
-			move_and_print_string("ULFUUfl");
-			break;
-		case 8:
-			move_and_print_string("UULFUUfl");
-			break;
-		case 9:
-			move_and_print_string("LUl");
-			break;
-		case 11:
-			move_and_print_string("UbuB");
-			break;
-		case 15:
-			move_and_print_string("LUUlUbUB");
-			break;
-		case 17:
-			printf("Should Never Be Here");
-			break;
-		case 18:
-			move_and_print_string("ULUl");
-			break;
-		case 20:
-			move_and_print_string("UUbuB");
-			break;
-		case 24:
-			printf("Should Never Be Here");
-			break;
-		case 26:
-			printf("Should Never Be Here");
-			break;
-		case 27:
-			move_and_print_string("UULUl");
-			break;
-		case 29:
-			move_and_print_string("ubuB");
-			break;
-		case 33:
-			printf("Should Never Be Here");
-			break;
-		case 35:
-			printf("Should Never Be Here");
-			break;
-		case 36:
-			move_and_print_string("uLUl");
-			break;
-		case 38:
-			move_and_print_string("buB");
-			break;
-		case 42:
-			printf("Should Never Be Here");
-			break;
-		case 44:
-			move_and_print_string("LulbuB");
-			break;
-		case 45:
-			printf("Should Never Be Here");
-			break;
-		case 47:
-			printf("Should Never Be Here");
-			break;
-		case 51:
-			printf("Already in Place");
-			break;
-		case 53:
-			printf("Should Never Be Here");
-			break;
-	}
-}
-*/
-
-/*
-void second_layer()
-{
-	int orange_green;
-	int green_red;
-	int red_blue;
-	int blue_orange;
-	
-	for (int i=0; i<42; i++) {
-		if (get_color(i) == 'O') {
-			switch (i) {
-				case 1:
-					if (get_color(37) == 'G')
-						orange_green = 1;
-					break;
-				case 3:
-					if (get_color(10) == 'G')
-						orange_green = 3;
-					break;
-				case 5:
-					if (get_color(28) == 'G')
-						orange_green = 5;
-					break;
-				case 7:
-					if (get_color(19) == 'G')
-						orange_green = 7;
-					break;
-				case 10:
-					if (get_color(3) == 'G')
-						orange_green = 10;
-					break;
-				case 12:
-					if (get_color(41) == 'G')
-						orange_green = 12;
-					break;
-				case 14:
-					if (get_color(21) == 'G')
-						orange_green = 14;
-					break;
-				case 19:
-					if (get_color(7) == 'G')
-						orange_green = 19;
-					break;
-				case 21:
-					if (get_color(14) == 'G')
-						orange_green = 21;
-					break;
-				case 23:
-					if (get_color(30) == 'G')
-						orange_green = 23;
-					break;
-				case 28:
-					if (get_color(5) == 'G')
-						orange_green = 28;
-					break;
-				case 30:
-					if (get_color(23) == 'G')
-						orange_green = 30;
-					break;
-				case 32:
-					if (get_color(39) == 'G')
-						orange_green = 32;
-					break;
-				case 37:
-					if (get_color(1) == 'G')
-						orange_green = 37;
-					break;
-				case 39:
-					if (get_color(32) == 'G')
-						orange_green = 39;
-					break;
-				case 41:
-					if (get_color(12) == 'G')
-						orange_green = 41;
-					break;
-			}
-		}
-	}
-
-	//printf("\nOrange Green: %d", orange_green);	
-	printf("\nPlacing Orange Green: ");
-	switch (orange_green) {
-		case 1:
-			move_and_print_string("UlULUFuf");
-			break;
-		case 3:
-			move_and_print_string("UUlULUFuf");
-			break;
-		case 5:
-			move_and_print_string("lULUFuf");
-			break;
-		case 7:
-			move_and_print_string("ulULUFuf");
-			break;
-		case 10:
-			move_and_print_string("UFufulUL");
-			break;
-		case 12:
-			move_and_print_string("bUBULul lULUFuf");
-			break;
-		case 14:
-			printf("Already in Place");
-			break;
-		case 19:
-			move_and_print_string("UUFufulUL");
-			break;
-		case 21:
-			move_and_print_string("lULUFuf UlULUFuf");
-			break;
-		case 23:
-			move_and_print_string("RurufUF UlULUFuf");
-			break;
-		case 28:
-			move_and_print_string("uFufulUL");
-			break;
-		case 30:
-			move_and_print_string("RurufUF FufulUL");
-			break;
-		case 32:
-			move_and_print_string("BuburUR UUlULUFuf");
-			break;
-		case 37:
-			move_and_print_string("FufulUL");
-			break;
-		case 39:
-			move_and_print_string("rURUBub ulULUFuf");
-			break;
-		case 41:
-			move_and_print_string("LulubUB ulULUFuf");
-			break;
-	}
-
-	for (int i=0; i<42; i++) {
-		if (get_color(i) == 'G') {
-			switch (i) {
-				case 1:
-					if (get_color(37) == 'R')
-						green_red = 1;
-					break;
-				case 3:
-					if (get_color(10) == 'R')
-						green_red = 3;
-					break;
-				case 5:
-					if (get_color(28) == 'R')
-						green_red = 5;
-					break;
-				case 7:
-					if (get_color(19) == 'R')
-						green_red = 7;
-					break;
-				case 10:
-					if (get_color(3) == 'R')
-						green_red = 10;
-					break;
-				case 12:
-					if (get_color(41) == 'R')
-						green_red = 12;
-					break;
-				case 14:
-					if (get_color(21) == 'R')
-						green_red = 14;
-					break;
-				case 19:
-					if (get_color(7) == 'R')
-						green_red = 19;
-					break;
-				case 21:
-					if (get_color(14) == 'R')
-						green_red = 21;
-					break;
-				case 23:
-					if (get_color(30) == 'R')
-						green_red = 23;
-					break;
-				case 28:
-					if (get_color(5) == 'R')
-						green_red = 28;
-					break;
-				case 30:
-					if (get_color(23) == 'R')
-						green_red = 30;
-					break;
-				case 32:
-					if (get_color(39) == 'R')
-						green_red = 32;
-					break;
-				case 37:
-					if (get_color(1) == 'R')
-						green_red = 37;
-					break;
-				case 39:
-					if (get_color(32) == 'R')
-						green_red = 39;
-					break;
-				case 41:
-					if (get_color(12) == 'R')
-						green_red = 41;
-					break;
-			}
-		}
-	}
-
-	//printf("\nGreen Red: %d", green_red);	
-	printf("\nPlacing Green Red: ");
-	switch (green_red) {
-		case 1:
-			move_and_print_string("fUFURur");
-			break;
-		case 3:
-			move_and_print_string("UfUFURur");
-			break;
-		case 5:
-			move_and_print_string("ufUFURur");
-			break;
-		case 7:
-			move_and_print_string("UUfUFURur");
-			break;
-		case 10:
-			move_and_print_string("RurufUF");
-			break;
-		case 12:
-			move_and_print_string("bUBULul ufUFURur");
-			break;
-		case 14:
-			printf("Should Never Be Here");
-			break;
-		case 19:
-			move_and_print_string("URurufUF");
-			break;
-		case 21:
-			printf("Should Never Be Here");
-			break;
-		case 23:
-			printf("Already in Place");
-			break;
-		case 28:
-			move_and_print_string("UURurufUF");
-			break;
-		case 30:
-			move_and_print_string("RurufUF uRurufUF");
-			break;
-		case 32:
-			move_and_print_string("BuburUR UfUFURur");
-			break;
-		case 37:
-			move_and_print_string("uRurufUF");
-			break;
-		case 39:
-			move_and_print_string("BuburUR RurufUF");
-			break;
-		case 41:
-			move_and_print_string("LulubUB UUfUFURur");
-			break;
-	}
-
-	for (int i=0; i<42; i++) {
-		if (get_color(i) == 'R') {
-			switch (i) {
-				case 1:
-					if (get_color(37) == 'B')
-						red_blue = 1;
-					break;
-				case 3:
-					if (get_color(10) == 'B')
-						red_blue = 3;
-					break;
-				case 5:
-					if (get_color(28) == 'B')
-						red_blue = 5;
-					break;
-				case 7:
-					if (get_color(19) == 'B')
-						red_blue = 7;
-					break;
-				case 10:
-					if (get_color(3) == 'B')
-						red_blue = 10;
-					break;
-				case 12:
-					if (get_color(41) == 'B')
-						red_blue = 12;
-					break;
-				case 14:
-					if (get_color(21) == 'B')
-						red_blue = 14;
-					break;
-				case 19:
-					if (get_color(7) == 'B')
-						red_blue = 19;
-					break;
-				case 21:
-					if (get_color(14) == 'B')
-						red_blue = 21;
-					break;
-				case 23:
-					if (get_color(30) == 'B')
-						red_blue = 23;
-					break;
-				case 28:
-					if (get_color(5) == 'B')
-						red_blue = 28;
-					break;
-				case 30:
-					if (get_color(23) == 'B')
-						red_blue = 30;
-					break;
-				case 32:
-					if (get_color(39) == 'B')
-						red_blue = 32;
-					break;
-				case 37:
-					if (get_color(1) == 'B')
-						red_blue = 37;
-					break;
-				case 39:
-					if (get_color(32) == 'B')
-						red_blue = 39;
-					break;
-				case 41:
-					if (get_color(12) == 'B')
-						red_blue = 41;
-					break;
-			}
-		}
-	}
-	
-	//printf("\nRed Blue: %d", red_blue);	
-	printf("\nPlacing Red Blue: ");
-	switch (red_blue) {
-		case 1:
-			move_and_print_string("urURUBub");
-			break;
-		case 3:
-			move_and_print_string("rURUBub");
-			break;
-		case 5:
-			move_and_print_string("UUrURUBub");
-			break;
-		case 7:
-			move_and_print_string("UrURUBub");
-			break;
-		case 10:
-			move_and_print_string("uBuburUR");
-			break;
-		case 12:
-			move_and_print_string("bUBULul UUrURUBub");
-			break;
-		case 14:
-			printf("Should Never Be Here");
-			break;
-		case 19:
-			move_and_print_string("BuburUR");
-			break;
-		case 21:
-			printf("Should Never Be Here");
-			break;
-		case 23:
-			printf("Should Never Be Here");
-			break;
-		case 28:
-			move_and_print_string("UBuburUR");
-			break;
-		case 30:
-			printf("Should Never Be Here");
-			break;
-		case 32:
-			printf("Already in Place");
-			break;
-		case 37:
-			move_and_print_string("UUBuburUR");
-			break;
-		case 39:
-			move_and_print_string("BuburUR uBuburUR");
-			break;
-		case 41:
-			move_and_print_string("bUBULul UBuburUR");
-			break;
-	}
-
-	for (int i=0; i<42; i++) {
-		if (get_color(i) == 'B') {
-			switch (i) {
-				case 1:
-					if (get_color(37) == 'O')
-						blue_orange = 1;
-					break;
-				case 3:
-					if (get_color(10) == 'O')
-						blue_orange = 3;
-					break;
-				case 5:
-					if (get_color(28) == 'O')
-						blue_orange = 5;
-					break;
-				case 7:
-					if (get_color(19) == 'O')
-						blue_orange = 7;
-					break;
-				case 10:
-					if (get_color(3) == 'O')
-						blue_orange = 10;
-					break;
-				case 12:
-					if (get_color(41) == 'O')
-						blue_orange = 12;
-					break;
-				case 14:
-					if (get_color(21) == 'O')
-						blue_orange = 14;
-					break;
-				case 19:
-					if (get_color(7) == 'O')
-						blue_orange = 19;
-					break;
-				case 21:
-					if (get_color(14) == 'O')
-						blue_orange = 21;
-					break;
-				case 23:
-					if (get_color(30) == 'O')
-						blue_orange = 23;
-					break;
-				case 28:
-					if (get_color(5) == 'O')
-						blue_orange = 28;
-					break;
-				case 30:
-					if (get_color(23) == 'O')
-						blue_orange = 30;
-					break;
-				case 32:
-					if (get_color(39) == 'O')
-						blue_orange = 32;
-					break;
-				case 37:
-					if (get_color(1) == 'O')
-						blue_orange = 37;
-					break;
-				case 39:
-					if (get_color(32) == 'O')
-						blue_orange = 39;
-					break;
-				case 41:
-					if (get_color(12) == 'O')
-						blue_orange = 41;
-					break;
-			}
-		}
-	}
-	
-	//printf("\nBlue Orange: %d", blue_orange);	
-	printf("\nPlacing Blue Orange: ");
-	switch (blue_orange) {
-		case 1:
-			move_and_print_string("UUbUBULul");
-			break;
-		case 3:
-			move_and_print_string("ubUBULul");
-			break;
-		case 5:
-			move_and_print_string("UbUBULul");
-			break;
-		case 7:
-			move_and_print_string("bUBULul");
-			break;
-		case 10:
-			move_and_print_string("UULulubUB");
-			break;
-		case 12:
-			move_and_print_string("bUBULul UbUBULul");
-			break;
-		case 14:
-			printf("Should Never Be Here");
-			break;
-		case 19:
-			move_and_print_string("uLulubUB");
-			break;
-		case 21:
-			printf("Should Never Be Here");
-			break;
-		case 23:
-			printf("Should Never Be Here");
-			break;
-		case 28:
-			move_and_print_string("LulubUB");
-			break;
-		case 30:
-			printf("Should Never Be Here");
-			break;
-		case 32:
-			printf("Should Never Be Here");
-			break;
-		case 37:
-			move_and_print_string("ULulubUB");
-			break;
-		case 39:
-			printf("Should Never Be Here");
-			break;
-		case 41:
-			printf("Already in Place");
-			break;
-	}
-}
-*/
-
 void F2L()
 {
-	int yellow_orange_green;
 	int yellow_green_red;
 	int yellow_red_blue;
 	int yellow_blue_orange;
+	int yellow_orange_green;
 	
-	int orange_green;
 	int green_red;
 	int red_blue;
 	int blue_orange;
+	int orange_green;
 	
-	//printf("\nYellow Green Red: %d", yellow_green_red);
-	//printf("\nGreen Red: %d", green_red);
+	int case_found_A = 0;
+	int count_A = 0;
 	
-	int case_found = 0;
-	int count = 0;
-	
-	while (case_found == 0 && count < 4) {
-		case_found = 1;
+	while (case_found_A == 0 && count_A < 4) {
+		case_found_A = 1;
 			
 		for (int i=0; i<54; i++) {
 			if (get_color(i) == 'Y') {
@@ -2672,7 +1325,6 @@ void F2L()
 				}
 			}
 		}
-
 		for (int i=0; i<42; i++) {
 			if (get_color(i) == 'G') {
 				switch (i) {
@@ -2744,149 +1396,1429 @@ void F2L()
 			}
 		}
 
-		printf("\n\nYellow Green Red: %d", yellow_green_red);
-		printf("\nGreen Red: %d", green_red);
 		printf("\nPlacing Yellow Green Red: ");
 	
 		// Basic Inserts
 		if (yellow_green_red == 20 && green_red == 5) {
+			printf("1 - ");
 			move_and_print_string("URur");
 		}
 		else if (yellow_green_red == 27 && green_red == 19) {
+			printf("2 - ");
 			move_and_print_string("ufUF");
 		}
 		else if (yellow_green_red == 20 && green_red == 10) {
+			printf("3 - ");
 			move_and_print_string("fuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 1) {
+			printf("4 - ");
 			move_and_print_string("RUr");
 		}
 		// Reposition Edge
 		else if (yellow_green_red == 20 && green_red == 1) {
+			printf("5 - ");
 			move_and_print_string("UfrfRF");
 		}
 		else if (yellow_green_red == 27 && green_red == 10) {
+			printf("6 - ");
 			move_and_print_string("ufrFRF");
 		}
 		else if (yellow_green_red == 20 && green_red == 3) {
+			printf("7 - ");
 			move_and_print_string("RUBUUbUr");
 		}
 		else if (yellow_green_red == 27 && green_red == 37) {
+			printf("8 - ");
 			move_and_print_string("UfUUFUfUUF");
 		}
 		// Reposition Edge and Flip Corner
 		else if (yellow_green_red == 20 && green_red == 37) {
+			printf("9 - ");
 			move_and_print_string("ruRfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 3) {
+			printf("10 - ");
 			move_and_print_string("FUfRUr");
 		}
 		else if (yellow_green_red == 20 && green_red == 28) {
+			printf("11 - ");
 			move_and_print_string("uRUUrUfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 7) {
+			printf("12 - ");
 			move_and_print_string("rUURRUr");
 		}
 		else if (yellow_green_red == 20 && green_red == 19) {
+			printf("13 - ");
 			move_and_print_string("rURfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 5) {
+			printf("14 - ");
 			move_and_print_string("uRurURUr");
 		}
 		// Split Pair by Going Over
 		else if (yellow_green_red == 20 && green_red == 7) {
+			printf("15 - ");
 			move_and_print_string("RFUfur");
 		}
 		else if (yellow_green_red == 27 && green_red == 28) {
+			printf("16 - ");
 			move_and_print_string("fruRUF");
 		}
 		else if (yellow_green_red == 8 && green_red == 5) {
+			printf("17 - ");
 			move_and_print_string("RUUruRUr");
 		}
 		else if (yellow_green_red == 8 && green_red == 19) {
+			printf("18 - ");
 			move_and_print_string("fUUFUfuF");
 		}
 		// Pair Made on Side
 		else if (yellow_green_red == 8 && green_red == 1) {
+			printf("19 - ");
 			move_and_print_string("URUURRFRf");
 		}
 		else if (yellow_green_red == 8 && green_red == 10) {
+			printf("20 - ");
 			move_and_print_string("LufUUFFrfR");
 		}
 		else if (yellow_green_red == 8 && green_red == 3) {
+			printf("21 - ");
 			move_and_print_string("RBUUbr");
 		}
 		else if (yellow_green_red == 8 && green_red == 37) {
+			printf("21 - ");
 			move_and_print_string("flUULF");
 		}
 		// Weird
 		else if (yellow_green_red == 8 && green_red == 7) {
+			printf("23 - ");
 			move_and_print_string("UFrfRURUr");
 		}
 		else if (yellow_green_red == 8 && green_red == 28) {
+			printf("24 - ");
 			move_and_print_string("UflULFRUr");
 		}
 		// Corner in Place, Edge in U Face
 		else if (yellow_green_red == 47 && green_red == 5) {
+			printf("25 - ");
 			move_and_print_string("UdRurD");
 		}
 		else if (yellow_green_red == 47 && green_red == 19) {
+			printf("26 - ");
 			move_and_print_string("URurufUF");
 		}
 		else if (yellow_green_red == 26 && green_red == 5) {
+			printf("27 - ");
 			move_and_print_string("RurURur");
 		}
 		else if (yellow_green_red == 33 && green_red == 19) {
+			printf("28 - ");
 			move_and_print_string("RUruFrfR");
 		}
 		else if (yellow_green_red == 26 && green_red == 19) {
+			printf("29 - ");
 			move_and_print_string("rFRfrFRf");
 		}
 		else if (yellow_green_red == 33 && green_red == 5) {
+			printf("30 - ");
 			move_and_print_string("RUruRUr");
 		}
 		// Edge in Place, Corner in U Face
 		else if (yellow_green_red == 8 && green_red == 30) {
+			printf("31 - ");
 			move_and_print_string("RurUfUF");
 		}
 		else if (yellow_green_red == 8 && green_red == 23) {
+			printf("32 - ");
 			move_and_print_string("RUruRUruRUr");
 		}
 		else if (yellow_green_red == 20 && green_red == 23) {
+			printf("33 - ");
 			move_and_print_string("uRurUURur");
 		}
 		else if (yellow_green_red == 27 && green_red == 23) {
+			printf("34 - ");
 			move_and_print_string("UfUFUUfUF");
 		}
 		else if (yellow_green_red == 20 && green_red == 30) {
+			printf("35 - ");
 			move_and_print_string("uRUrUfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 30) {
+			printf("36 - ");
 			move_and_print_string("UfuFuRUr");
 		}
 		// Edge and Corner in Place
 		else if (yellow_green_red == 47 && green_red == 23) {
+			printf("37 - ");
 			printf("Already in Place");
 		}
 		else if (yellow_green_red == 47 && green_red == 30) {
+			printf("38 - ");
 			move_and_print_string("RuRRUURufUF");
 		}
 		else if (yellow_green_red == 26 && green_red == 23) {
+			printf("39 - ");
 			move_and_print_string("RuruRUrUURur");
 		}
 		else if (yellow_green_red == 33 && green_red == 23) {
+			printf("40 - ");
 			move_and_print_string("RurURUUrURur");
 		}
 		else if (yellow_green_red == 26 && green_red == 30) {
+			printf("41 - ");
 			move_and_print_string("RFURurfur");
 		}
 		else if (yellow_green_red == 33 && green_red == 30) {
+			printf("42 - ");
 			move_and_print_string("RUFRUrufr");
 		}
+		// Corner in Wrong Corner
+		else if (yellow_green_red == 17 || yellow_green_red == 24 || yellow_green_red == 45) {
+			printf("Wrong Corner - ");
+			move_and_print_string("lUL");
+			case_found_A = 0; 
+		}
+		else if (yellow_green_red == 15 || yellow_green_red == 44 || yellow_green_red == 51) {
+			printf("Wrong Corner - ");
+			move_and_print_string("buB");
+			case_found_A = 0; 
+		}
+		else if (yellow_green_red == 35 || yellow_green_red == 42 || yellow_green_red == 53) {
+			printf("Wrong Corner - ");
+			move_and_print_string("rUR");
+			case_found_A = 0; 
+		}
+		// Edge in Wrong Edge
+		else if (green_red == 14 || green_red == 21) {
+			printf("Wrong Edge - ");
+			move_and_print_string("lUL");
+			case_found_A = 0; 
+		}
+		else if (green_red == 12 || green_red == 41) {
+			printf("Wrong Edge - ");
+			move_and_print_string("buB");
+			case_found_A = 0; 
+		}
+		else if (green_red == 32 || green_red == 39) {
+			printf("Remove From Wrong Edge - ");
+			move_and_print_string("rUR");
+			case_found_A = 0; 
+		}
+		// Rotate to Find Case
 		else {
 			move_and_print_string("U");
-			case_found = 0; 
-			count++;
+			case_found_A = 0; 
+			count_A++;
+		}
+	}
+
+	int case_found_B = 0;
+	int count_B = 0;
+	printf("\n");
+	
+	while (case_found_B == 0 && count_B < 4) {
+		case_found_B = 1;
+		
+		for (int i=0; i<54; i++) {
+			if (get_color(i) == 'Y') {
+				switch (i) {
+					case 0:
+						if (get_color(9) == 'R' && get_color(38) == 'B') {
+							yellow_red_blue = 0;
+						}
+						break;
+					case 2:
+						if (get_color(36) == 'R' && get_color(29) == 'B') {
+							yellow_red_blue = 2;
+						}
+						break;
+					case 6:
+						if (get_color(18) == 'R' && get_color(11) == 'B') {
+							yellow_red_blue = 6;
+						}
+						break;
+					case 8:
+						if (get_color(27) == 'R' && get_color(20) == 'B') {
+							yellow_red_blue = 8;
+						}
+						break;
+					case 9:
+						if (get_color(38) == 'R' && get_color(0) == 'B') {
+							yellow_red_blue = 9;
+						}
+						break;
+					case 11:
+						if (get_color(6) == 'R' && get_color(18) == 'B') {
+							yellow_red_blue = 11;
+						}
+						break;
+					case 15:
+						if (get_color(51) == 'R' && get_color(44) == 'B') {
+							yellow_red_blue = 15;
+						}
+						break;
+					case 17:
+						if (get_color(24) == 'R' && get_color(45) == 'B') {
+							yellow_red_blue = 17;
+						}
+						break;
+					case 18:
+						if (get_color(11) == 'R' && get_color(6) == 'B') {
+							yellow_red_blue = 18;
+						}
+						break;
+					case 20:
+						if (get_color(8) == 'R' && get_color(27) == 'B') {
+							yellow_red_blue = 20;
+						}
+						break;
+					case 24:
+						if (get_color(45) == 'R' && get_color(17) == 'B') {
+							yellow_red_blue = 24;
+						}
+						break;
+					case 26:
+						if (get_color(33) == 'R' && get_color(47) == 'B') {
+							yellow_red_blue = 26;
+						}
+						break;
+					case 27:
+						if (get_color(20) == 'R' && get_color(8) == 'B') {
+							yellow_red_blue = 27;
+						}
+						break;
+					case 29:
+						if (get_color(2) == 'R' && get_color(36) == 'B') {
+							yellow_red_blue = 29;
+						}
+						break;
+					case 33:
+						if (get_color(47) == 'R' && get_color(26) == 'B') {
+							yellow_red_blue = 33;
+						}
+						break;
+					case 35:
+						if (get_color(42) == 'R' && get_color(53) == 'B') {
+							yellow_red_blue = 35;
+						}
+						break;
+					case 36:
+						if (get_color(29) == 'R' && get_color(2) == 'B') {
+							yellow_red_blue = 36;
+						}
+						break;
+					case 38:
+						if (get_color(0) == 'R' && get_color(9) == 'B') {
+							yellow_red_blue = 38;
+						}
+						break;
+					case 42:
+						if (get_color(53) == 'R' && get_color(35) == 'B') {
+							yellow_red_blue = 42;
+						}
+						break;
+					case 44:
+						if (get_color(15) == 'R' && get_color(51) == 'B') {
+							yellow_red_blue = 44;
+						}
+						break;
+					case 45:
+						if (get_color(17) == 'R' && get_color(24) == 'B') {
+							yellow_red_blue = 45;
+						}
+						break;
+					case 47:
+						if (get_color(26) == 'R' && get_color(33) == 'B') {
+							yellow_red_blue = 47;
+						}
+						break;
+					case 51:
+						if (get_color(44) == 'R' && get_color(15) == 'B') {
+							yellow_red_blue = 51;
+						}
+						break;
+					case 53:
+						if (get_color(35) == 'R' && get_color(42) == 'B') {
+							yellow_red_blue = 53;
+						}
+						break;
+				}
+			}
+		}
+		for (int i=0; i<42; i++) {
+			if (get_color(i) == 'R') {
+				switch (i) {
+					case 1:
+						if (get_color(37) == 'B')
+							red_blue = 1;
+						break;
+					case 3:
+						if (get_color(10) == 'B')
+							red_blue = 3;
+						break;
+					case 5:
+						if (get_color(28) == 'B')
+							red_blue = 5;
+						break;
+					case 7:
+						if (get_color(19) == 'B')
+							red_blue = 7;
+						break;
+					case 10:
+						if (get_color(3) == 'B')
+							red_blue = 10;
+						break;
+					case 12:
+						if (get_color(41) == 'B')
+							red_blue = 12;
+						break;
+					case 14:
+						if (get_color(21) == 'B')
+							red_blue = 14;
+						break;
+					case 19:
+						if (get_color(7) == 'B')
+							red_blue = 19;
+						break;
+					case 21:
+						if (get_color(14) == 'B')
+							red_blue = 21;
+						break;
+					case 23:
+						if (get_color(30) == 'B')
+							red_blue = 23;
+						break;
+					case 28:
+						if (get_color(5) == 'B')
+							red_blue = 28;
+						break;
+					case 30:
+						if (get_color(23) == 'B')
+							red_blue = 30;
+						break;
+					case 32:
+						if (get_color(39) == 'B')
+							red_blue = 32;
+						break;
+					case 37:
+						if (get_color(1) == 'B')
+							red_blue = 37;
+						break;
+					case 39:
+						if (get_color(32) == 'B')
+							red_blue = 39;
+						break;
+					case 41:
+						if (get_color(12) == 'B')
+							red_blue = 41;
+						break;
+				}
+			}
+		}
+	
+		printf("\nPlacing Yellow Red Blue: ");
+	
+		// Basic Inserts
+		if (yellow_red_blue == 29 && red_blue == 1) {
+			printf("1 - ");
+			move_and_print_string("UBub");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 28) {
+			printf("2 - ");
+			move_and_print_string("urUR");
+		}
+		else if (yellow_red_blue == 29 && red_blue == 19) {
+			printf("3 - ");
+			move_and_print_string("ruR");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 3) {
+			printf("4 - ");
+			move_and_print_string("BUb");
+		}
+		// Reposition Edge
+		else if (yellow_red_blue == 29 && red_blue == 3) {
+			printf("5 - ");
+			move_and_print_string("uBUbUUBub");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 19) {
+			printf("6 - ");
+			move_and_print_string("BBLUluBB");
+		}
+		else if (yellow_red_blue == 29 && red_blue == 7) {
+			printf("7 - ");
+			move_and_print_string("BULUUlUb");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 10) {
+			printf("8 - ");
+			move_and_print_string("UrUURUrUUR");
+		}
+		// Reposition Edge and Flip Corner
+		else if (yellow_red_blue == 29 && red_blue == 10) {
+			printf("9 - ");
+			move_and_print_string("uBubUruR");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 7) {
+			printf("10 - ");
+			move_and_print_string("uBUbUBUb");
+		}
+		else if (yellow_red_blue == 29 && red_blue == 37) {
+			printf("11 - ");
+			move_and_print_string("uBUUbUruR");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 5) {
+			printf("12 - ");
+			move_and_print_string("bUUBBUBBUB");
+		}
+		else if (yellow_red_blue == 29 && red_blue == 28) {
+			printf("13 - ");
+			move_and_print_string("UrURuruR");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 1) {
+			printf("14 - ");
+			move_and_print_string("uBubUBUb");
+		}
+		// Split Pair by Going Over
+		else if (yellow_red_blue == 29 && red_blue == 5) {
+			printf("15 - ");
+			move_and_print_string("BLFuflb");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 37) {
+			printf("16 - ");
+			move_and_print_string("BubUUruR");
+		}
+		else if (yellow_red_blue == 2 && red_blue == 1) {
+			printf("17 - ");
+			move_and_print_string("BUUbuBUb");
+		}
+		else if (yellow_red_blue == 2 && red_blue == 28) {
+			printf("18 - ");
+			move_and_print_string("rUURUruR");
+		}
+		// Pair Made on Side
+		else if (yellow_red_blue == 2 && red_blue == 3) {
+			printf("19 - ");
+			move_and_print_string("UBUUBBRBr");
+		}
+		else if (yellow_red_blue == 2 && red_blue == 19) {
+			printf("20 - ");
+			move_and_print_string("FurUURRbrB");
+		}
+		else if (yellow_red_blue == 2 && red_blue == 7) {
+			printf("21 - ");
+			move_and_print_string("BLUUlb");
+		}
+		else if (yellow_red_blue == 2 && red_blue == 10) {
+			printf("21 - ");
+			move_and_print_string("rfUUFR");
+		}
+		// Weird
+		else if (yellow_red_blue == 2 && red_blue == 5) {
+			printf("23 - ");
+			move_and_print_string("URbrBUBUb");
+		}
+		else if (yellow_red_blue == 2 && red_blue == 37) {
+			printf("24 - ");
+			move_and_print_string("UrfUFRBUb");
+		}
+		// Corner in Place, Edge in U Face
+		else if (yellow_red_blue == 53 && red_blue == 1) {
+			printf("25 - ");
+			move_and_print_string("ubRBrBUb");
+		}
+		else if (yellow_red_blue == 53 && red_blue == 28) {
+			printf("26 - ");
+			move_and_print_string("UBuburUR");
+		}
+		else if (yellow_red_blue == 35 && red_blue == 1) {
+			printf("27 - ");
+			move_and_print_string("BubUBub");
+		}
+		else if (yellow_red_blue == 42 && red_blue == 28) {
+			printf("28 - ");
+			move_and_print_string("BUbuRbrB");
+		}
+		else if (yellow_red_blue == 35 && red_blue == 28) {
+			printf("29 - ");
+			move_and_print_string("bRBrbRBr");
+		}
+		else if (yellow_red_blue == 42 && red_blue == 1) {
+			printf("30 - ");
+			move_and_print_string("BUbuBUb");
+		}
+		// Edge in Place, Corner in U Face
+		else if (yellow_red_blue == 2 && red_blue == 39) {
+			printf("31 - ");
+			move_and_print_string("BubUrUR");
+		}
+		else if (yellow_red_blue == 2 && red_blue == 32) {
+			printf("32 - ");
+			move_and_print_string("BUbuBUbuBUb");
+		}
+		else if (yellow_red_blue == 29 && red_blue == 32) {
+			printf("33 - ");
+			move_and_print_string("uBubUUBub");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 32) {
+			printf("34 - ");
+			move_and_print_string("UrURUUrUR");
+		}
+		else if (yellow_red_blue == 29 && red_blue == 39) {
+			printf("35 - ");
+			move_and_print_string("uBUbUruR");
+		}
+		else if (yellow_red_blue == 36 && red_blue == 39) {
+			printf("36 - ");
+			move_and_print_string("UruRuBUb");
+		}
+		// Edge and Corner in Place
+		else if (yellow_red_blue == 53 && red_blue == 32) {
+			printf("37 - ");
+			printf("Already in Place");
+		}
+		else if (yellow_red_blue == 53 && red_blue == 39) {
+			printf("38 - ");
+			move_and_print_string("BBUURBBrUUbUb");
+		}
+		else if (yellow_red_blue == 35 && red_blue == 32) {
+			printf("39 - ");
+			move_and_print_string("BubuBUbUUBub");
+		}
+		else if (yellow_red_blue == 42 && red_blue == 32) {
+			printf("40 - ");
+			move_and_print_string("BubUBUUbUBub");
+		}
+		else if (yellow_red_blue == 35 && red_blue == 39) {
+			printf("41 - ");
+			move_and_print_string("BRUBubrub");
+		}
+		else if (yellow_red_blue == 42 && red_blue == 39) {
+			printf("42 - ");
+			move_and_print_string("BURBUburb");
+		}
+		// Corner in Wrong Corner
+		else if (yellow_red_blue == 17 || yellow_red_blue == 24 || yellow_red_blue == 45) {
+			printf("Wrong Corner - ");
+			move_and_print_string("lUL");
+			case_found_B = 0; 
+		}
+		else if (yellow_red_blue == 15 || yellow_red_blue == 44 || yellow_red_blue == 51) {
+			printf("Wrong Corner - ");
+			move_and_print_string("buB");
+			case_found_B = 0; 
+		}
+		// Edge in Wrong Edge
+		else if (red_blue == 14 || red_blue == 21) {
+			printf("Wrong Edge - ");
+			move_and_print_string("lUL");
+			case_found_B = 0; 
+		}
+		else if (red_blue == 12 || red_blue == 41) {
+			printf("Wrong Edge - ");
+			move_and_print_string("buB");
+			case_found_B = 0; 
+		}
+		// Rotate to Find Case
+		else {
+			move_and_print_string("U");
+			case_found_B = 0; 
+			count_B++;
+		}
+	}
+
+	int case_found_C = 0;
+	int count_C = 0;
+	printf("\n");
+	
+	while (case_found_C == 0 && count_C < 4) {
+		case_found_C = 1;
+		
+		for (int i=0; i<54; i++) {
+			if (get_color(i) == 'Y') {
+				switch (i) {
+					case 0:
+						if (get_color(9) == 'B' && get_color(38) == 'O') {
+							yellow_blue_orange = 0;
+						}
+						break;
+					case 2:
+						if (get_color(36) == 'B' && get_color(29) == 'O') {
+							yellow_blue_orange = 2;
+						}
+						break;
+					case 6:
+						if (get_color(18) == 'B' && get_color(11) == 'O') {
+							yellow_blue_orange = 6;
+						}
+						break;
+					case 8:
+						if (get_color(27) == 'B' && get_color(20) == 'O') {
+							yellow_blue_orange = 8;
+						}
+						break;
+					case 9:
+						if (get_color(38) == 'B' && get_color(0) == 'O') {
+							yellow_blue_orange = 9;
+						}
+						break;
+					case 11:
+						if (get_color(6) == 'B' && get_color(18) == 'O') {
+							yellow_blue_orange = 11;
+						}
+						break;
+					case 15:
+						if (get_color(51) == 'B' && get_color(44) == 'O') {
+							yellow_blue_orange = 15;
+						}
+						break;
+					case 17:
+						if (get_color(24) == 'B' && get_color(45) == 'O') {
+							yellow_blue_orange = 17;
+						}
+						break;
+					case 18:
+						if (get_color(11) == 'B' && get_color(6) == 'O') {
+							yellow_blue_orange = 18;
+						}
+						break;
+					case 20:
+						if (get_color(8) == 'B' && get_color(27) == 'O') {
+							yellow_blue_orange = 20;
+						}
+						break;
+					case 24:
+						if (get_color(45) == 'B' && get_color(17) == 'O') {
+							yellow_blue_orange = 24;
+						}
+						break;
+					case 26:
+						if (get_color(33) == 'B' && get_color(47) == 'O') {
+							yellow_blue_orange = 26;
+						}
+						break;
+					case 27:
+						if (get_color(20) == 'B' && get_color(8) == 'O') {
+							yellow_blue_orange = 27;
+						}
+						break;
+					case 29:
+						if (get_color(2) == 'B' && get_color(36) == 'O') {
+							yellow_blue_orange = 29;
+						}
+						break;
+					case 33:
+						if (get_color(47) == 'B' && get_color(26) == 'O') {
+							yellow_blue_orange = 33;
+						}
+						break;
+					case 35:
+						if (get_color(42) == 'B' && get_color(53) == 'O') {
+							yellow_blue_orange = 35;
+						}
+						break;
+					case 36:
+						if (get_color(29) == 'B' && get_color(2) == 'O') {
+							yellow_blue_orange = 36;
+						}
+						break;
+					case 38:
+						if (get_color(0) == 'B' && get_color(9) == 'O') {
+							yellow_blue_orange = 38;
+						}
+						break;
+					case 42:
+						if (get_color(53) == 'B' && get_color(35) == 'O') {
+							yellow_blue_orange = 42;
+						}
+						break;
+					case 44:
+						if (get_color(15) == 'B' && get_color(51) == 'O') {
+							yellow_blue_orange = 44;
+						}
+						break;
+					case 45:
+						if (get_color(17) == 'B' && get_color(24) == 'O') {
+							yellow_blue_orange = 45;
+						}
+						break;
+					case 47:
+						if (get_color(26) == 'B' && get_color(33) == 'O') {
+							yellow_blue_orange = 47;
+						}
+						break;
+					case 51:
+						if (get_color(44) == 'B' && get_color(15) == 'O') {
+							yellow_blue_orange = 51;
+						}
+						break;
+					case 53:
+						if (get_color(35) == 'B' && get_color(42) == 'O') {
+							yellow_blue_orange = 53;
+						}
+						break;
+				}
+			}
+		}
+		for (int i=0; i<42; i++) {
+			if (get_color(i) == 'B') {
+				switch (i) {
+					case 1:
+						if (get_color(37) == 'O')
+							blue_orange = 1;
+						break;
+					case 3:
+						if (get_color(10) == 'O')
+							blue_orange = 3;
+						break;
+					case 5:
+						if (get_color(28) == 'O')
+							blue_orange = 5;
+						break;
+					case 7:
+						if (get_color(19) == 'O')
+							blue_orange = 7;
+						break;
+					case 10:
+						if (get_color(3) == 'O')
+							blue_orange = 10;
+						break;
+					case 12:
+						if (get_color(41) == 'O')
+							blue_orange = 12;
+						break;
+					case 14:
+						if (get_color(21) == 'O')
+							blue_orange = 14;
+						break;
+					case 19:
+						if (get_color(7) == 'O')
+							blue_orange = 19;
+						break;
+					case 21:
+						if (get_color(14) == 'O')
+							blue_orange = 21;
+						break;
+					case 23:
+						if (get_color(30) == 'O')
+							blue_orange = 23;
+						break;
+					case 28:
+						if (get_color(5) == 'O')
+							blue_orange = 28;
+						break;
+					case 30:
+						if (get_color(23) == 'O')
+							blue_orange = 30;
+						break;
+					case 32:
+						if (get_color(39) == 'O')
+							blue_orange = 32;
+						break;
+					case 37:
+						if (get_color(1) == 'O')
+							blue_orange = 37;
+						break;
+					case 39:
+						if (get_color(32) == 'O')
+							blue_orange = 39;
+						break;
+					case 41:
+						if (get_color(12) == 'O')
+							blue_orange = 41;
+						break;
+				}
+			}
+		}
+	
+		printf("\nPlacing Yellow Blue Orange: ");
+		
+		// Basic Inserts
+		if (yellow_blue_orange == 38 && blue_orange == 3) {
+			printf("1 - ");
+			move_and_print_string("ULul");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 37) {
+			printf("2 - ");
+			move_and_print_string("ubUB");
+		}
+		else if (yellow_blue_orange == 38 && blue_orange == 28) {
+			printf("3 - ");
+			move_and_print_string("buB");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 7) {
+			printf("4 - ");
+			move_and_print_string("LUl");
+		}
+		// Reposition Edge
+		else if (yellow_blue_orange == 38 && blue_orange == 7) {
+			printf("5 - ");
+			move_and_print_string("uLUlUULul");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 28) {
+			printf("6 - ");
+			move_and_print_string("LLFUfuLL");
+		}
+		else if (yellow_blue_orange == 38 && blue_orange == 5) {
+			printf("7 - ");
+			move_and_print_string("LUFUUfUl");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 19) {
+			printf("8 - ");
+			move_and_print_string("UbUUBUbUUB");
+		}
+		// Reposition Edge and Flip Corner
+		else if (yellow_blue_orange == 38 && blue_orange == 19) {
+			printf("9 - ");
+			move_and_print_string("uLulUbuB");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 5) {
+			printf("10 - ");
+			move_and_print_string("uLUlULUl");
+		}
+		else if (yellow_blue_orange == 38 && blue_orange == 10) {
+			printf("11 - ");
+			move_and_print_string("uLUUlUbuB");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 1) {
+			printf("12 - ");
+			move_and_print_string("lUULLULLUL");
+		}
+		else if (yellow_blue_orange == 38 && blue_orange == 37) {
+			printf("13 - ");
+			move_and_print_string("UbUBubuB");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 3) {
+			printf("14 - ");
+			move_and_print_string("uLulULUl");
+		}
+		// Split Pair by Going Over
+		else if (yellow_blue_orange == 38 && blue_orange == 1) {
+			printf("15 - ");
+			move_and_print_string("LFRurfl");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 10) {
+			printf("16 - ");
+			move_and_print_string("LulUUbuB");
+		}
+		else if (yellow_blue_orange == 0 && blue_orange == 3) {
+			printf("17 - ");
+			move_and_print_string("LUUluLUl");
+		}
+		else if (yellow_blue_orange == 0 && blue_orange == 37) {
+			printf("18 - ");
+			move_and_print_string("bUUBUbuB");
+		}
+		// Pair Made on Side
+		else if (yellow_blue_orange == 0 && blue_orange == 7) {
+			printf("19 - ");
+			move_and_print_string("ULUULLBLb");
+		}
+		else if (yellow_blue_orange == 0 && blue_orange == 28) {
+			printf("20 - ");
+			move_and_print_string("RubUUBBlbL");
+		}
+		else if (yellow_blue_orange == 0 && blue_orange == 5) {
+			printf("21 - ");
+			move_and_print_string("LFUUfl");
+		}
+		else if (yellow_blue_orange == 0 && blue_orange == 19) {
+			printf("21 - ");
+			move_and_print_string("brUURB");
+		}
+		// Weird
+		else if (yellow_blue_orange == 0 && blue_orange == 1) {
+			printf("23 - ");
+			move_and_print_string("UBlbLULUl");
+		}
+		else if (yellow_blue_orange == 0 && blue_orange == 10) {
+			printf("24 - ");
+			move_and_print_string("UbrURBLUl");
+		}
+		// Corner in Place, Edge in U Face
+		else if (yellow_blue_orange == 51 && blue_orange == 3) {
+			printf("25 - ");
+			move_and_print_string("ulBLbLUl");
+		}
+		else if (yellow_blue_orange == 51 && blue_orange == 37) {
+			printf("26 - ");
+			move_and_print_string("ULulubUB");
+		}
+		else if (yellow_blue_orange == 44 && blue_orange == 3) {
+			printf("27 - ");
+			move_and_print_string("LulULul");
+		}
+		else if (yellow_blue_orange == 15 && blue_orange == 37) {
+			printf("28 - ");
+			move_and_print_string("LUluBlbL");
+		}
+		else if (yellow_blue_orange == 44 && blue_orange == 37) {
+			printf("29 - ");
+			move_and_print_string("lBLblBLb");
+		}
+		else if (yellow_blue_orange == 15 && blue_orange == 3) {
+			printf("30 - ");
+			move_and_print_string("LUluLUl");
+		}
+		// Edge in Place, Corner in U Face
+		else if (yellow_blue_orange == 0 && blue_orange == 12) {
+			printf("31 - ");
+			move_and_print_string("LulUbUB");
+		}
+		else if (yellow_blue_orange == 0 && blue_orange == 41) {
+			printf("32 - ");
+			move_and_print_string("LUluLUluLUl");
+		}
+		else if (yellow_blue_orange == 38 && blue_orange == 41) {
+			printf("33 - ");
+			move_and_print_string("uLulUULul");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 41) {
+			printf("34 - ");
+			move_and_print_string("UbUBUUbUB");
+		}
+		else if (yellow_blue_orange == 38 && blue_orange == 12) {
+			printf("35 - ");
+			move_and_print_string("uLUlUbuB");
+		}
+		else if (yellow_blue_orange == 9 && blue_orange == 12) {
+			printf("36 - ");
+			move_and_print_string("UbuBuLUl");
+		}
+		// Edge and Corner in Place
+		else if (yellow_blue_orange == 51 && blue_orange == 41) {
+			printf("37 - ");
+			printf("Already in Place");
+		}
+		else if (yellow_blue_orange == 51 && blue_orange == 12) {
+			printf("38 - ");
+			move_and_print_string("LLUUBLLbUUlUl");
+		}
+		else if (yellow_blue_orange == 44 && blue_orange == 41) {
+			printf("39 - ");
+			move_and_print_string("LuluLUlUULul");
+		}
+		else if (yellow_blue_orange == 15 && blue_orange == 41) {
+			printf("40 - ");
+			move_and_print_string("LulULUUlULul");
+		}
+		else if (yellow_blue_orange == 44 && blue_orange == 12) {
+			printf("41 - ");
+			move_and_print_string("LBULulbul");
+		}
+		else if (yellow_blue_orange == 15 && blue_orange == 12) {
+			printf("42 - ");
+			move_and_print_string("LUBLUlubl");
+		}
+		// Corner in Wrong Corner
+		else if (yellow_blue_orange == 17 || yellow_blue_orange == 24 || yellow_blue_orange == 45) {
+			printf("Wrong Corner - ");
+			move_and_print_string("lUL");
+			case_found_C = 0; 
+		}
+		// Edge in Wrong Edge
+		else if (blue_orange == 14 || blue_orange == 21) {
+			printf("Wrong Edge - ");
+			move_and_print_string("lUL");
+			case_found_C = 0; 
+		}
+		// Rotate to Find Case
+		else {
+			move_and_print_string("U");
+			case_found_C = 0; 
+			count_C++;
+		}
+	}
+
+	int case_found_D = 0;
+	int count_D = 0;
+	printf("\n");
+
+	while (case_found_D == 0 && count_D < 4) {
+		case_found_D = 1;
+		
+		for (int i=0; i<54; i++) {
+			if (get_color(i) == 'Y') {
+				switch (i) {
+					case 0:
+						if (get_color(9) == 'O' && get_color(38) == 'G') {
+							yellow_orange_green = 0;
+						}
+						break;
+					case 2:
+						if (get_color(36) == 'O' && get_color(29) == 'G') {
+							yellow_orange_green = 2;
+						}
+						break;
+					case 6:
+						if (get_color(18) == 'O' && get_color(11) == 'G') {
+							yellow_orange_green = 6;
+						}
+						break;
+					case 8:
+						if (get_color(27) == 'O' && get_color(20) == 'G') {
+							yellow_orange_green = 8;
+						}
+						break;
+					case 9:
+						if (get_color(38) == 'O' && get_color(0) == 'G') {
+							yellow_orange_green = 9;
+						}
+						break;
+					case 11:
+						if (get_color(6) == 'O' && get_color(18) == 'G') {
+							yellow_orange_green = 11;
+						}
+						break;
+					case 15:
+						if (get_color(51) == 'O' && get_color(44) == 'G') {
+							yellow_orange_green = 15;
+						}
+						break;
+					case 17:
+						if (get_color(24) == 'O' && get_color(45) == 'G') {
+							yellow_orange_green = 17;
+						}
+						break;
+					case 18:
+						if (get_color(11) == 'O' && get_color(6) == 'G') {
+							yellow_orange_green = 18;
+						}
+						break;
+					case 20:
+						if (get_color(8) == 'O' && get_color(27) == 'G') {
+							yellow_orange_green = 20;
+						}
+						break;
+					case 24:
+						if (get_color(45) == 'O' && get_color(17) == 'G') {
+							yellow_orange_green = 24;
+						}
+						break;
+					case 26:
+						if (get_color(33) == 'O' && get_color(47) == 'G') {
+							yellow_orange_green = 26;
+						}
+						break;
+					case 27:
+						if (get_color(20) == 'O' && get_color(8) == 'G') {
+							yellow_orange_green = 27;
+						}
+						break;
+					case 29:
+						if (get_color(2) == 'O' && get_color(36) == 'G') {
+							yellow_orange_green = 29;
+						}
+						break;
+					case 33:
+						if (get_color(47) == 'O' && get_color(26) == 'G') {
+							yellow_orange_green = 33;
+						}
+						break;
+					case 35:
+						if (get_color(42) == 'O' && get_color(53) == 'G') {
+							yellow_orange_green = 35;
+						}
+						break;
+					case 36:
+						if (get_color(29) == 'O' && get_color(2) == 'G') {
+							yellow_orange_green = 36;
+						}
+						break;
+					case 38:
+						if (get_color(0) == 'O' && get_color(9) == 'G') {
+							yellow_orange_green = 38;
+						}
+						break;
+					case 42:
+						if (get_color(53) == 'O' && get_color(35) == 'G') {
+							yellow_orange_green = 42;
+						}
+						break;
+					case 44:
+						if (get_color(15) == 'O' && get_color(51) == 'G') {
+							yellow_orange_green = 44;
+						}
+						break;
+					case 45:
+						if (get_color(17) == 'O' && get_color(24) == 'G') {
+							yellow_orange_green = 45;
+						}
+						break;
+					case 47:
+						if (get_color(26) == 'O' && get_color(33) == 'G') {
+							yellow_orange_green = 47;
+						}
+						break;
+					case 51:
+						if (get_color(44) == 'O' && get_color(15) == 'G') {
+							yellow_orange_green = 51;
+						}
+						break;
+					case 53:
+						if (get_color(35) == 'O' && get_color(42) == 'G') {
+							yellow_orange_green = 53;
+						}
+						break;
+				}
+			}
+		}
+		for (int i=0; i<42; i++) {
+			if (get_color(i) == 'O') {
+				switch (i) {
+					case 1:
+						if (get_color(37) == 'G')
+							orange_green = 1;
+						break;
+					case 3:
+						if (get_color(10) == 'G')
+							orange_green = 3;
+						break;
+					case 5:
+						if (get_color(28) == 'G')
+							orange_green = 5;
+						break;
+					case 7:
+						if (get_color(19) == 'G')
+							orange_green = 7;
+						break;
+					case 10:
+						if (get_color(3) == 'G')
+							orange_green = 10;
+						break;
+					case 12:
+						if (get_color(41) == 'G')
+							orange_green = 12;
+						break;
+					case 14:
+						if (get_color(21) == 'G')
+							orange_green = 14;
+						break;
+					case 19:
+						if (get_color(7) == 'G')
+							orange_green = 19;
+						break;
+					case 21:
+						if (get_color(14) == 'G')
+							orange_green = 21;
+						break;
+					case 23:
+						if (get_color(30) == 'G')
+							orange_green = 23;
+						break;
+					case 28:
+						if (get_color(5) == 'G')
+							orange_green = 28;
+						break;
+					case 30:
+						if (get_color(23) == 'G')
+							orange_green = 30;
+						break;
+					case 32:
+						if (get_color(39) == 'G')
+							orange_green = 32;
+						break;
+					case 37:
+						if (get_color(1) == 'G')
+							orange_green = 37;
+						break;
+					case 39:
+						if (get_color(32) == 'G')
+							orange_green = 39;
+						break;
+					case 41:
+						if (get_color(12) == 'G')
+							orange_green = 41;
+						break;
+				}
+			}
+		}
+	
+		printf("\nPlacing Yellow Orange Green: ");
+		
+		// Basic Inserts
+		if (yellow_orange_green == 11 && orange_green == 7) {
+			printf("1 - ");
+			move_and_print_string("UFuf");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 10) {
+			printf("2 - ");
+			move_and_print_string("ulUL");
+		}
+		else if (yellow_orange_green == 11 && orange_green == 37) {
+			printf("3 - ");
+			move_and_print_string("luL");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 5) {
+			printf("4 - ");
+			move_and_print_string("FUf");
+		}
+		// Reposition Edge
+		else if (yellow_orange_green == 11 && orange_green == 5) {
+			printf("5 - ");
+			move_and_print_string("uFUfUUFuf");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 37) {
+			printf("6 - ");
+			move_and_print_string("FFRUruFF");
+		}
+		else if (yellow_orange_green == 11 && orange_green == 1) {
+			printf("7 - ");
+			move_and_print_string("FURUUrUf");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 28) {
+			printf("8 - ");
+			move_and_print_string("UlUULUlUUL");
+		}
+		// Reposition Edge and Flip Corner
+		else if (yellow_orange_green == 11 && orange_green == 28) {
+			printf("9 - ");
+			move_and_print_string("uFufUluL");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 1) {
+			printf("10 - ");
+			move_and_print_string("uFUfUFUf");
+		}
+		else if (yellow_orange_green == 11 && orange_green == 19) {
+			printf("11 - ");
+			move_and_print_string("uFUUfUluL");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 3) {
+			printf("12 - ");
+			move_and_print_string("fUUFFUFFUF");
+		}
+		else if (yellow_orange_green == 11 && orange_green == 10) {
+			printf("13 - ");
+			move_and_print_string("UlULuluL");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 7) {
+			printf("14 - ");
+			move_and_print_string("uFufUFUf");
+		}
+		// Split Pair by Going Over
+		else if (yellow_orange_green == 11 && orange_green == 3) {
+			printf("15 - ");
+			move_and_print_string("FRBubrf");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 19) {
+			printf("16 - ");
+			move_and_print_string("FufUUluL");
+		}
+		else if (yellow_orange_green == 6 && orange_green == 7) {
+			printf("17 - ");
+			move_and_print_string("FUUfuFUf");
+		}
+		else if (yellow_orange_green == 6 && orange_green == 10) {
+			printf("18 - ");
+			move_and_print_string("lUULUluL");
+		}
+		// Pair Made on Side
+		else if (yellow_orange_green == 6 && orange_green == 5) {
+			printf("19 - ");
+			move_and_print_string("UFUUFFLFl");
+		}
+		else if (yellow_orange_green == 6 && orange_green == 37) {
+			printf("20 - ");
+			move_and_print_string("BulUULLflF");
+		}
+		else if (yellow_orange_green == 6 && orange_green == 1) {
+			printf("21 - ");
+			move_and_print_string("FRUUrf");
+		}
+		else if (yellow_orange_green == 6 && orange_green == 28) {
+			printf("21 - ");
+			move_and_print_string("lbUUBL");
+		}
+		// Weird
+		else if (yellow_orange_green == 6 && orange_green == 3) {
+			printf("23 - ");
+			move_and_print_string("ULflFUFUf");
+		}
+		else if (yellow_orange_green == 6 && orange_green == 19) {
+			printf("24 - ");
+			move_and_print_string("UlbUBLFUf");
+		}
+		// Corner in Place, Edge in U Face
+		else if (yellow_orange_green == 45 && orange_green == 7) {
+			printf("25 - ");
+			move_and_print_string("ufLFlFUf");
+		}
+		else if (yellow_orange_green == 45 && orange_green == 10) {
+			printf("26 - ");
+			move_and_print_string("UFufulUL");
+		}
+		else if (yellow_orange_green == 17 && orange_green == 7) {
+			printf("27 - ");
+			move_and_print_string("FufUFuf");
+		}
+		else if (yellow_orange_green == 24 && orange_green == 10) {
+			printf("28 - ");
+			move_and_print_string("FUfuLflF");
+		}
+		else if (yellow_orange_green == 17 && orange_green == 10) {
+			printf("29 - ");
+			move_and_print_string("fLFlfLFl");
+		}
+		else if (yellow_orange_green == 24 && orange_green == 7) {
+			printf("30 - ");
+			move_and_print_string("FUfuFUf");
+		}
+		// Edge in Place, Corner in U Face
+		else if (yellow_orange_green == 6 && orange_green == 21) {
+			printf("31 - ");
+			move_and_print_string("FufUlUL");
+		}
+		else if (yellow_orange_green == 6 && orange_green == 14) {
+			printf("32 - ");
+			move_and_print_string("FUfuFUfuFUf");
+		}
+		else if (yellow_orange_green == 11 && orange_green == 14) {
+			printf("33 - ");
+			move_and_print_string("uFufUUFuf");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 14) {
+			printf("34 - ");
+			move_and_print_string("UlULUUlUL");
+		}
+		else if (yellow_orange_green == 11 && orange_green == 21) {
+			printf("35 - ");
+			move_and_print_string("uFUfUluL");
+		}
+		else if (yellow_orange_green == 18 && orange_green == 21) {
+			printf("36 - ");
+			move_and_print_string("UluLuFUf");
+		}
+		// Edge and Corner in Place
+		else if (yellow_orange_green == 45 && orange_green == 14) {
+			printf("37 - ");
+			printf("Already in Place");
+		}
+		else if (yellow_orange_green == 45 && orange_green == 21) {
+			printf("38 - ");
+			move_and_print_string("FFUULFFlUUfUf");
+		}
+		else if (yellow_orange_green == 17 && orange_green == 14) {
+			printf("39 - ");
+			move_and_print_string("FufuFUfUUFuf");
+		}
+		else if (yellow_orange_green == 24 && orange_green == 14) {
+			printf("40 - ");
+			move_and_print_string("FufUFUUfUFuf");
+		}
+		else if (yellow_orange_green == 17 && orange_green == 21) {
+			printf("41 - ");
+			move_and_print_string("FLUFufluf");
+		}
+		else if (yellow_orange_green == 24 && orange_green == 21) {
+			printf("42 - ");
+			move_and_print_string("FULFUfulf");
+		}
+		// Rotate to Find Case
+		else {
+			move_and_print_string("U");
+			case_found_D = 0; 
+			count_D++;
 		}
 	}
 }
