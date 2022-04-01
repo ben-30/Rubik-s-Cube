@@ -33,36 +33,37 @@ class Algorithm {
 		void PLL();
 		int check_correct();
 		void end_display();
+		void scramble();
 };
 
 Algorithm::Algorithm(std::string input_cube) {
 	int valid_input = set(input_cube);
 	if (!valid_input) { return; }
 	
-	/*printf("\n---------------------------------------------START--------------------------------------------\n");
+	/*//printf("\n---------------------------------------------START--------------------------------------------\n");
 	display();
 	
-	printf("\n-----------------------------------------YELLOW CROSS-----------------------------------------\n");
+	//printf("\n-----------------------------------------YELLOW CROSS-----------------------------------------\n");
 	yellow_cross();
-	printf("\n");
+	//printf("\n");
 	display();
 	
-	printf("\n----------------------------------------------F2L---------------------------------------------\n");
+	//printf("\n----------------------------------------------F2L---------------------------------------------\n");
 	F2L();
-	printf("\n");
+	//printf("\n");
 	display();
 	
-	printf("\n----------------------------------------------OLL---------------------------------------------\n");
+	//printf("\n----------------------------------------------OLL---------------------------------------------\n");
 	OLL();
-	printf("\n");
+	//printf("\n");
 	display();
 	
-	printf("\n----------------------------------------------PLL---------------------------------------------\n");
+	//printf("\n----------------------------------------------PLL---------------------------------------------\n");
 	PLL();
-	printf("\n");
+	//printf("\n");
 	display();
 	
-	printf("\n----------------------------------------------END---------------------------------------------\n");
+	//printf("\n----------------------------------------------END---------------------------------------------\n");
 	end_display();*/
 	
 	yellow_cross();
@@ -72,25 +73,25 @@ Algorithm::Algorithm(std::string input_cube) {
 }
 
 void Algorithm::display() {
-	printf("\n          ");
+	//printf("\n          ");
 	
 	for (int i=0; i<9; i++) {
 		if ( ((i+1)%3) == 0 ) {
-			printf("%c\n          ", cube[i]);
+			//printf("%c\n          ", cube[i]);
 		} else {
-			printf("%c ", cube[i]);
+			//printf("%c ", cube[i]);
 		}
 	}
 	
-	printf("\n  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n", cube[9], cube[10], cube[11], cube[18], cube[19], cube[20], cube[27], cube[28], cube[29], cube[36], cube[37], cube[38]);
-	printf("  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n", cube[12], cube[13], cube[14], cube[21], cube[22], cube[23], cube[30], cube[31], cube[32], cube[39], cube[40], cube[41]);
-	printf("  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n\n          ", cube[15], cube[16], cube[17], cube[24], cube[25], cube[26], cube[33], cube[34], cube[35], cube[42], cube[43], cube[44]);
+	//printf("\n  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n", cube[9], cube[10], cube[11], cube[18], cube[19], cube[20], cube[27], cube[28], cube[29], cube[36], cube[37], cube[38]);
+	//printf("  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n", cube[12], cube[13], cube[14], cube[21], cube[22], cube[23], cube[30], cube[31], cube[32], cube[39], cube[40], cube[41]);
+	//printf("  %c %c %c   %c %c %c   %c %c %c   %c %c %c\n\n          ", cube[15], cube[16], cube[17], cube[24], cube[25], cube[26], cube[33], cube[34], cube[35], cube[42], cube[43], cube[44]);
 	
 	for (int i=45; i<54; i++) {
 		if ( ((i+1)%3) == 0 ) {
-			printf("%c\n          ", cube[i]);
+			//printf("%c\n          ", cube[i]);
 		} else {
-			printf("%c ", cube[i]);
+			//printf("%c ", cube[i]);
 		}
 	}
 }
@@ -148,7 +149,7 @@ int Algorithm::set(std::string input_cube) {
     }
 	
 	if (W_count != 9 || O_count != 9 || G_count != 9 || R_count != 9 || B_count != 9 || Y_count != 9) {
-		printf("\nInvalid Sequence!\n");
+		//printf("\nInvalid Sequence!\n");
 		return 0;
 	} else {
 		for (int i=0; i<54; i++) {
@@ -163,66 +164,66 @@ void Algorithm::move_and_print_string(std::string movement) {
 		switch (movement[i]) {
 			case 'U':
 				U();
-				//printf("U");
+				////printf("U");
 				final_moves[final_moves_count] = 'U';
 				break;
 			case 'D':
 				D();
-				//printf("D");
+				////printf("D");
 				final_moves[final_moves_count] = 'D';
 				break;
 			case 'L':
 				L();
-				//printf("L");
+				////printf("L");
 				final_moves[final_moves_count] = 'L';
 				break;
 			case 'R':
 				R();
-				//printf("R");
+				////printf("R");
 				final_moves[final_moves_count] = 'R';
 				break;
 			case 'F':
 				F();
-				//printf("F");
+				////printf("F");
 				final_moves[final_moves_count] = 'F';
 				break;
 			case 'B':
 				B();
-				//printf("B");
+				////printf("B");
 				final_moves[final_moves_count] = 'B';
 				break;
 			case 'u':
 				Ui();
-				//printf("u");
+				////printf("u");
 				final_moves[final_moves_count] = 'u';
 				break;
 			case 'd':
 				Di();
-				//printf("d");
+				////printf("d");
 				final_moves[final_moves_count] = 'd';
 				break;
 			case 'l':
 				Li();
-				//printf("l");
+				////printf("l");
 				final_moves[final_moves_count] = 'l';
 				break;
 			case 'r':
 				Ri();
-				//printf("r");
+				////printf("r");
 				final_moves[final_moves_count] = 'r';
 				break;
 			case 'f':
 				Fi();
-				//printf("f");
+				////printf("f");
 				final_moves[final_moves_count] = 'f';
 				break;
 			case 'b':
 				Bi();
-				//printf("b");
+				////printf("b");
 				final_moves[final_moves_count] = 'b';
 				break;
 			case ' ':
-				//printf(" ");
+				////printf(" ");
 				final_moves_count--;
 				break;
 		}
@@ -548,8 +549,8 @@ void Algorithm::yellow_cross() {
 		}
 	}
 	
-	//printf("\nYellow Orange: %d", yellow_orange);	
-	//printf("\nPlacing Yellow Orange: ");
+	////printf("\nYellow Orange: %d", yellow_orange);	
+	////printf("\nPlacing Yellow Orange: ");
 	switch (yellow_orange) {
 		case 1:
 			move_and_print_string("uLL");
@@ -615,7 +616,7 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("d");
 			break;
 		case 48:
-			printf("Already in Place");
+			//printf("Already in Place");
 			break;
 		case 50:			
 			move_and_print_string("DD");
@@ -728,8 +729,8 @@ void Algorithm::yellow_cross() {
 		}
 	}
 	
-	//printf("\nYellow Green: %d", yellow_green);	
-	//printf("\nPlacing Yellow Green: ");
+	////printf("\nYellow Green: %d", yellow_green);	
+	////printf("\nPlacing Yellow Green: ");
 	switch (yellow_green) {
 		case 1:
 			move_and_print_string("UUFF");
@@ -753,7 +754,7 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("f");
 			break;
 		case 16:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 19:
 			move_and_print_string("fdLD");
@@ -792,10 +793,10 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("BDRd");
 			break;
 		case 46:
-			printf("Already in Place");
+			//printf("Already in Place");
 			break;
 		case 48:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 50:
 			move_and_print_string("RDrd");
@@ -908,8 +909,8 @@ void Algorithm::yellow_cross() {
 		}
 	}
 	
-	//printf("\nYellow Red: %d", yellow_red);	
-	//printf("\nPlacing Yellow Red: ");
+	////printf("\nYellow Red: %d", yellow_red);	
+	////printf("\nPlacing Yellow Red: ");
 	switch (yellow_red) {
 		case 1:
 			move_and_print_string("URR");
@@ -933,7 +934,7 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("dfD");
 			break;
 		case 16:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 19:
 			move_and_print_string("Frf");		
@@ -945,7 +946,7 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("r");
 			break;
 		case 25:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 28:
 			move_and_print_string("rdFD");
@@ -972,13 +973,13 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("BR");
 			break;
 		case 46:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 48:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 50:
-			printf("Already in Place");
+			//printf("Already in Place");
 			break;
 		case 52:
 			move_and_print_string("BDbd");
@@ -1088,8 +1089,8 @@ void Algorithm::yellow_cross() {
 		}
 	}
 	
-	//printf("\nYellow Blue: %d", yellow_blue);
-	//printf("\nPlacing Yellow Blue: ");
+	////printf("\nYellow Blue: %d", yellow_blue);
+	////printf("\nPlacing Yellow Blue: ");
 	switch (yellow_blue) {
 		case 1:
 			move_and_print_string("BB");
@@ -1113,7 +1114,7 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("DDfdd");
 			break;
 		case 16:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 19:
 			move_and_print_string("uRbr");
@@ -1125,7 +1126,7 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("drD");
 			break;
 		case 25:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 28:
 			move_and_print_string("Rbr");
@@ -1137,7 +1138,7 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("b");
 			break;
 		case 34:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 37:
 			move_and_print_string("BDld");
@@ -1152,16 +1153,16 @@ void Algorithm::yellow_cross() {
 			move_and_print_string("BdRD");
 			break;
 		case 46:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 48:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 50:
-			printf("Should Never Be Here");
+			//printf("Should Never Be Here");
 			break;
 		case 52:
-			printf("Already in Place");
+			//printf("Already in Place");
 			break;
 	}
 }
@@ -1380,214 +1381,214 @@ void Algorithm::F2L() {
 			}
 		}
 
-		//printf("\nPlacing Yellow Green Red: ");
+		////printf("\nPlacing Yellow Green Red: ");
 	
 		// Basic Inserts
 		if (yellow_green_red == 20 && green_red == 5) {
-			//printf("1 - ");
+			////printf("1 - ");
 			move_and_print_string("URur");
 		}
 		else if (yellow_green_red == 27 && green_red == 19) {
-			//printf("2 - ");
+			////printf("2 - ");
 			move_and_print_string("ufUF");
 		}
 		else if (yellow_green_red == 20 && green_red == 10) {
-			//printf("3 - ");
+			////printf("3 - ");
 			move_and_print_string("fuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 1) {
-			//printf("4 - ");
+			////printf("4 - ");
 			move_and_print_string("RUr");
 		}
 		// Reposition Edge
 		else if (yellow_green_red == 20 && green_red == 1) {
-			//printf("5 - ");
+			////printf("5 - ");
 			move_and_print_string("UfrfRF");
 		}
 		else if (yellow_green_red == 27 && green_red == 10) {
-			//printf("6 - ");
+			////printf("6 - ");
 			move_and_print_string("ufrFRF");
 		}
 		else if (yellow_green_red == 20 && green_red == 3) {
-			//printf("7 - ");
+			////printf("7 - ");
 			move_and_print_string("RUBUUbUr");
 		}
 		else if (yellow_green_red == 27 && green_red == 37) {
-			//printf("8 - ");
+			////printf("8 - ");
 			move_and_print_string("UfUUFUfUUF");
 		}
 		// Reposition Edge and Flip Corner
 		else if (yellow_green_red == 20 && green_red == 37) {
-			//printf("9 - ");
+			////printf("9 - ");
 			move_and_print_string("ruRfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 3) {
-			//printf("10 - ");
+			////printf("10 - ");
 			move_and_print_string("FUfRUr");
 		}
 		else if (yellow_green_red == 20 && green_red == 28) {
-			//printf("11 - ");
+			////printf("11 - ");
 			move_and_print_string("uRUUrUfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 7) {
-			//printf("12 - ");
+			////printf("12 - ");
 			move_and_print_string("rUURRUr");
 		}
 		else if (yellow_green_red == 20 && green_red == 19) {
-			//printf("13 - ");
+			////printf("13 - ");
 			move_and_print_string("rURfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 5) {
-			//printf("14 - ");
+			////printf("14 - ");
 			move_and_print_string("uRurURUr");
 		}
 		// Split Pair by Going Over
 		else if (yellow_green_red == 20 && green_red == 7) {
-			//printf("15 - ");
+			////printf("15 - ");
 			move_and_print_string("RFUfur");
 		}
 		else if (yellow_green_red == 27 && green_red == 28) {
-			//printf("16 - ");
+			////printf("16 - ");
 			move_and_print_string("fruRUF");
 		}
 		else if (yellow_green_red == 8 && green_red == 5) {
-			//printf("17 - ");
+			////printf("17 - ");
 			move_and_print_string("RUUruRUr");
 		}
 		else if (yellow_green_red == 8 && green_red == 19) {
-			//printf("18 - ");
+			////printf("18 - ");
 			move_and_print_string("fUUFUfuF");
 		}
 		// Pair Made on Side
 		else if (yellow_green_red == 8 && green_red == 1) {
-			//printf("19 - ");
+			////printf("19 - ");
 			move_and_print_string("URUURRFRf");
 		}
 		else if (yellow_green_red == 8 && green_red == 10) {
-			//printf("20 - ");
+			////printf("20 - ");
 			move_and_print_string("LufUUFFrfR");
 		}
 		else if (yellow_green_red == 8 && green_red == 3) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("RBUUbr");
 		}
 		else if (yellow_green_red == 8 && green_red == 37) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("flUULF");
 		}
 		// Weird
 		else if (yellow_green_red == 8 && green_red == 7) {
-			//printf("23 - ");
+			////printf("23 - ");
 			move_and_print_string("UFrfRURUr");
 		}
 		else if (yellow_green_red == 8 && green_red == 28) {
-			//printf("24 - ");
+			////printf("24 - ");
 			move_and_print_string("UflULFRUr");
 		}
 		// Corner in Place, Edge in U Face
 		else if (yellow_green_red == 47 && green_red == 5) {
-			//printf("25 - ");
+			////printf("25 - ");
 			move_and_print_string("UdRurD");
 		}
 		else if (yellow_green_red == 47 && green_red == 19) {
-			//printf("26 - ");
+			////printf("26 - ");
 			move_and_print_string("URurufUF");
 		}
 		else if (yellow_green_red == 26 && green_red == 5) {
-			//printf("27 - ");
+			////printf("27 - ");
 			move_and_print_string("RurURur");
 		}
 		else if (yellow_green_red == 33 && green_red == 19) {
-			//printf("28 - ");
+			////printf("28 - ");
 			move_and_print_string("RUruFrfR");
 		}
 		else if (yellow_green_red == 26 && green_red == 19) {
-			//printf("29 - ");
+			////printf("29 - ");
 			move_and_print_string("rFRfrFRf");
 		}
 		else if (yellow_green_red == 33 && green_red == 5) {
-			//printf("30 - ");
+			////printf("30 - ");
 			move_and_print_string("RUruRUr");
 		}
 		// Edge in Place, Corner in U Face
 		else if (yellow_green_red == 8 && green_red == 30) {
-			//printf("31 - ");
+			////printf("31 - ");
 			move_and_print_string("RurUfUF");
 		}
 		else if (yellow_green_red == 8 && green_red == 23) {
-			//printf("32 - ");
+			////printf("32 - ");
 			move_and_print_string("RUruRUruRUr");
 		}
 		else if (yellow_green_red == 20 && green_red == 23) {
-			//printf("33 - ");
+			////printf("33 - ");
 			move_and_print_string("uRurUURur");
 		}
 		else if (yellow_green_red == 27 && green_red == 23) {
-			//printf("34 - ");
+			////printf("34 - ");
 			move_and_print_string("UfUFUUfUF");
 		}
 		else if (yellow_green_red == 20 && green_red == 30) {
-			//printf("35 - ");
+			////printf("35 - ");
 			move_and_print_string("uRUrUfuF");
 		}
 		else if (yellow_green_red == 27 && green_red == 30) {
-			//printf("36 - ");
+			////printf("36 - ");
 			move_and_print_string("UfuFuRUr");
 		}
 		// Edge and Corner in Place
 		else if (yellow_green_red == 47 && green_red == 23) {
-			//printf("37 - ");
-			printf("Already in Place");
+			////printf("37 - ");
+			//printf("Already in Place");
 		}
 		else if (yellow_green_red == 47 && green_red == 30) {
-			//printf("38 - ");
+			////printf("38 - ");
 			move_and_print_string("RuRRUURufUF");
 		}
 		else if (yellow_green_red == 26 && green_red == 23) {
-			//printf("39 - ");
+			////printf("39 - ");
 			move_and_print_string("RuruRUrUURur");
 		}
 		else if (yellow_green_red == 33 && green_red == 23) {
-			//printf("40 - ");
+			////printf("40 - ");
 			move_and_print_string("RurURUUrURur");
 		}
 		else if (yellow_green_red == 26 && green_red == 30) {
-			//printf("41 - ");
+			////printf("41 - ");
 			move_and_print_string("RFURurfur");
 		}
 		else if (yellow_green_red == 33 && green_red == 30) {
-			//printf("42 - ");
+			////printf("42 - ");
 			move_and_print_string("RUFRUrufr");
 		}
 		// Corner in Wrong Corner
 		else if (yellow_green_red == 17 || yellow_green_red == 24 || yellow_green_red == 45) {
-			//printf("Wrong Corner - ");
+			////printf("Wrong Corner - ");
 			move_and_print_string("lUL");
 			case_found_A = 0; 
 		}
 		else if (yellow_green_red == 15 || yellow_green_red == 44 || yellow_green_red == 51) {
-			//printf("Wrong Corner - ");
+			////printf("Wrong Corner - ");
 			move_and_print_string("buB");
 			case_found_A = 0; 
 		}
 		else if (yellow_green_red == 35 || yellow_green_red == 42 || yellow_green_red == 53) {
-			//printf("Wrong Corner - ");
+			////printf("Wrong Corner - ");
 			move_and_print_string("rUR");
 			case_found_A = 0; 
 		}
 		// Edge in Wrong Edge
 		else if (green_red == 14 || green_red == 21) {
-			//printf("Wrong Edge - ");
+			////printf("Wrong Edge - ");
 			move_and_print_string("lUL");
 			case_found_A = 0; 
 		}
 		else if (green_red == 12 || green_red == 41) {
-			//printf("Wrong Edge - ");
+			////printf("Wrong Edge - ");
 			move_and_print_string("buB");
 			case_found_A = 0; 
 		}
 		else if (green_red == 32 || green_red == 39) {
-			//printf("Remove From Wrong Edge - ");
+			////printf("Remove From Wrong Edge - ");
 			move_and_print_string("rUR");
 			case_found_A = 0; 
 		}
@@ -1601,7 +1602,7 @@ void Algorithm::F2L() {
 
 	int case_found_B = 0;
 	int count_B = 0;
-	printf("\n");
+	//printf("\n");
 	
 	while (case_found_B == 0 && count_B < 4) {
 		case_found_B = 1;
@@ -1803,204 +1804,204 @@ void Algorithm::F2L() {
 			}
 		}
 	
-		//printf("\nPlacing Yellow Red Blue: ");
+		////printf("\nPlacing Yellow Red Blue: ");
 	
 		// Basic Inserts
 		if (yellow_red_blue == 29 && red_blue == 1) {
-			//printf("1 - ");
+			////printf("1 - ");
 			move_and_print_string("UBub");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 28) {
-			//printf("2 - ");
+			////printf("2 - ");
 			move_and_print_string("urUR");
 		}
 		else if (yellow_red_blue == 29 && red_blue == 19) {
-			//printf("3 - ");
+			////printf("3 - ");
 			move_and_print_string("ruR");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 3) {
-			//printf("4 - ");
+			////printf("4 - ");
 			move_and_print_string("BUb");
 		}
 		// Reposition Edge
 		else if (yellow_red_blue == 29 && red_blue == 3) {
-			//printf("5 - ");
+			////printf("5 - ");
 			move_and_print_string("uBUbUUBub");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 19) {
-			//printf("6 - ");
+			////printf("6 - ");
 			move_and_print_string("BBLUluBB");
 		}
 		else if (yellow_red_blue == 29 && red_blue == 7) {
-			//printf("7 - ");
+			////printf("7 - ");
 			move_and_print_string("BULUUlUb");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 10) {
-			//printf("8 - ");
+			////printf("8 - ");
 			move_and_print_string("UrUURUrUUR");
 		}
 		// Reposition Edge and Flip Corner
 		else if (yellow_red_blue == 29 && red_blue == 10) {
-			//printf("9 - ");
+			////printf("9 - ");
 			move_and_print_string("uBubUruR");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 7) {
-			//printf("10 - ");
+			////printf("10 - ");
 			move_and_print_string("uBUbUBUb");
 		}
 		else if (yellow_red_blue == 29 && red_blue == 37) {
-			//printf("11 - ");
+			////printf("11 - ");
 			move_and_print_string("uBUUbUruR");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 5) {
-			//printf("12 - ");
+			////printf("12 - ");
 			move_and_print_string("bUUBBUBBUB");
 		}
 		else if (yellow_red_blue == 29 && red_blue == 28) {
-			//printf("13 - ");
+			////printf("13 - ");
 			move_and_print_string("UrURuruR");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 1) {
-			//printf("14 - ");
+			////printf("14 - ");
 			move_and_print_string("uBubUBUb");
 		}
 		// Split Pair by Going Over
 		else if (yellow_red_blue == 29 && red_blue == 5) {
-			//printf("15 - ");
+			////printf("15 - ");
 			move_and_print_string("BLFuflb");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 37) {
-			//printf("16 - ");
+			////printf("16 - ");
 			move_and_print_string("BubUUruR");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 1) {
-			//printf("17 - ");
+			////printf("17 - ");
 			move_and_print_string("BUUbuBUb");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 28) {
-			//printf("18 - ");
+			////printf("18 - ");
 			move_and_print_string("rUURUruR");
 		}
 		// Pair Made on Side
 		else if (yellow_red_blue == 2 && red_blue == 3) {
-			//printf("19 - ");
+			////printf("19 - ");
 			move_and_print_string("UBUUBBRBr");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 19) {
-			//printf("20 - ");
+			////printf("20 - ");
 			move_and_print_string("FurUURRbrB");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 7) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("BLUUlb");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 10) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("rfUUFR");
 		}
 		// Weird
 		else if (yellow_red_blue == 2 && red_blue == 5) {
-			//printf("23 - ");
+			////printf("23 - ");
 			move_and_print_string("URbrBUBUb");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 37) {
-			//printf("24 - ");
+			////printf("24 - ");
 			move_and_print_string("UrfUFRBUb");
 		}
 		// Corner in Place, Edge in U Face
 		else if (yellow_red_blue == 53 && red_blue == 1) {
-			//printf("25 - ");
+			////printf("25 - ");
 			move_and_print_string("ubRBrBUb");
 		}
 		else if (yellow_red_blue == 53 && red_blue == 28) {
-			//printf("26 - ");
+			////printf("26 - ");
 			move_and_print_string("UBuburUR");
 		}
 		else if (yellow_red_blue == 35 && red_blue == 1) {
-			//printf("27 - ");
+			////printf("27 - ");
 			move_and_print_string("BubUBub");
 		}
 		else if (yellow_red_blue == 42 && red_blue == 28) {
-			//printf("28 - ");
+			////printf("28 - ");
 			move_and_print_string("BUbuRbrB");
 		}
 		else if (yellow_red_blue == 35 && red_blue == 28) {
-			//printf("29 - ");
+			////printf("29 - ");
 			move_and_print_string("bRBrbRBr");
 		}
 		else if (yellow_red_blue == 42 && red_blue == 1) {
-			//printf("30 - ");
+			////printf("30 - ");
 			move_and_print_string("BUbuBUb");
 		}
 		// Edge in Place, Corner in U Face
 		else if (yellow_red_blue == 2 && red_blue == 39) {
-			//printf("31 - ");
+			////printf("31 - ");
 			move_and_print_string("BubUrUR");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 32) {
-			//printf("32 - ");
+			////printf("32 - ");
 			move_and_print_string("BUbuBUbuBUb");
 		}
 		else if (yellow_red_blue == 29 && red_blue == 32) {
-			//printf("33 - ");
+			////printf("33 - ");
 			move_and_print_string("uBubUUBub");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 32) {
-			//printf("34 - ");
+			////printf("34 - ");
 			move_and_print_string("UrURUUrUR");
 		}
 		else if (yellow_red_blue == 29 && red_blue == 39) {
-			//printf("35 - ");
+			////printf("35 - ");
 			move_and_print_string("uBUbUruR");
 		}
 		else if (yellow_red_blue == 36 && red_blue == 39) {
-			//printf("36 - ");
+			////printf("36 - ");
 			move_and_print_string("UruRuBUb");
 		}
 		// Edge and Corner in Place
 		else if (yellow_red_blue == 53 && red_blue == 32) {
-			//printf("37 - ");
-			//printf("Already in Place");
+			////printf("37 - ");
+			////printf("Already in Place");
 		}
 		else if (yellow_red_blue == 53 && red_blue == 39) {
-			//printf("38 - ");
+			////printf("38 - ");
 			move_and_print_string("BBUURBBrUUbUb");
 		}
 		else if (yellow_red_blue == 35 && red_blue == 32) {
-			//printf("39 - ");
+			////printf("39 - ");
 			move_and_print_string("BubuBUbUUBub");
 		}
 		else if (yellow_red_blue == 42 && red_blue == 32) {
-			//printf("40 - ");
+			////printf("40 - ");
 			move_and_print_string("BubUBUUbUBub");
 		}
 		else if (yellow_red_blue == 35 && red_blue == 39) {
-			//printf("41 - ");
+			////printf("41 - ");
 			move_and_print_string("BRUBubrub");
 		}
 		else if (yellow_red_blue == 42 && red_blue == 39) {
-			//printf("42 - ");
+			////printf("42 - ");
 			move_and_print_string("BURBUburb");
 		}
 		// Corner in Wrong Corner
 		else if (yellow_red_blue == 17 || yellow_red_blue == 24 || yellow_red_blue == 45) {
-			//printf("Wrong Corner - ");
+			////printf("Wrong Corner - ");
 			move_and_print_string("lUL");
 			case_found_B = 0; 
 		}
 		else if (yellow_red_blue == 15 || yellow_red_blue == 44 || yellow_red_blue == 51) {
-			//printf("Wrong Corner - ");
+			////printf("Wrong Corner - ");
 			move_and_print_string("buB");
 			case_found_B = 0; 
 		}
 		// Edge in Wrong Edge
 		else if (red_blue == 14 || red_blue == 21) {
-			//printf("Wrong Edge - ");
+			////printf("Wrong Edge - ");
 			move_and_print_string("lUL");
 			case_found_B = 0; 
 		}
 		else if (red_blue == 12 || red_blue == 41) {
-			//printf("Wrong Edge - ");
+			////printf("Wrong Edge - ");
 			move_and_print_string("buB");
 			case_found_B = 0; 
 		}
@@ -2014,7 +2015,7 @@ void Algorithm::F2L() {
 
 	int case_found_C = 0;
 	int count_C = 0;
-	//printf("\n");
+	////printf("\n");
 	
 	while (case_found_C == 0 && count_C < 4) {
 		case_found_C = 1;
@@ -2216,194 +2217,194 @@ void Algorithm::F2L() {
 			}
 		}
 	
-		//printf("\nPlacing Yellow Blue Orange: ");
+		////printf("\nPlacing Yellow Blue Orange: ");
 		
 		// Basic Inserts
 		if (yellow_blue_orange == 38 && blue_orange == 3) {
-			//printf("1 - ");
+			////printf("1 - ");
 			move_and_print_string("ULul");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 37) {
-			//printf("2 - ");
+			////printf("2 - ");
 			move_and_print_string("ubUB");
 		}
 		else if (yellow_blue_orange == 38 && blue_orange == 28) {
-			//printf("3 - ");
+			////printf("3 - ");
 			move_and_print_string("buB");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 7) {
-			//printf("4 - ");
+			////printf("4 - ");
 			move_and_print_string("LUl");
 		}
 		// Reposition Edge
 		else if (yellow_blue_orange == 38 && blue_orange == 7) {
-			//printf("5 - ");
+			////printf("5 - ");
 			move_and_print_string("uLUlUULul");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 28) {
-			//printf("6 - ");
+			////printf("6 - ");
 			move_and_print_string("LLFUfuLL");
 		}
 		else if (yellow_blue_orange == 38 && blue_orange == 5) {
-			//printf("7 - ");
+			////printf("7 - ");
 			move_and_print_string("LUFUUfUl");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 19) {
-			//printf("8 - ");
+			////printf("8 - ");
 			move_and_print_string("UbUUBUbUUB");
 		}
 		// Reposition Edge and Flip Corner
 		else if (yellow_blue_orange == 38 && blue_orange == 19) {
-			//printf("9 - ");
+			////printf("9 - ");
 			move_and_print_string("uLulUbuB");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 5) {
-			//printf("10 - ");
+			////printf("10 - ");
 			move_and_print_string("uLUlULUl");
 		}
 		else if (yellow_blue_orange == 38 && blue_orange == 10) {
-			//printf("11 - ");
+			////printf("11 - ");
 			move_and_print_string("uLUUlUbuB");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 1) {
-			//printf("12 - ");
+			////printf("12 - ");
 			move_and_print_string("lUULLULLUL");
 		}
 		else if (yellow_blue_orange == 38 && blue_orange == 37) {
-			//printf("13 - ");
+			////printf("13 - ");
 			move_and_print_string("UbUBubuB");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 3) {
-			//printf("14 - ");
+			////printf("14 - ");
 			move_and_print_string("uLulULUl");
 		}
 		// Split Pair by Going Over
 		else if (yellow_blue_orange == 38 && blue_orange == 1) {
-			//printf("15 - ");
+			////printf("15 - ");
 			move_and_print_string("LFRurfl");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 10) {
-			//printf("16 - ");
+			////printf("16 - ");
 			move_and_print_string("LulUUbuB");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 3) {
-			//printf("17 - ");
+			////printf("17 - ");
 			move_and_print_string("LUUluLUl");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 37) {
-			//printf("18 - ");
+			////printf("18 - ");
 			move_and_print_string("bUUBUbuB");
 		}
 		// Pair Made on Side
 		else if (yellow_blue_orange == 0 && blue_orange == 7) {
-			//printf("19 - ");
+			////printf("19 - ");
 			move_and_print_string("ULUULLBLb");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 28) {
-			//printf("20 - ");
+			////printf("20 - ");
 			move_and_print_string("RubUUBBlbL");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 5) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("LFUUfl");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 19) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("brUURB");
 		}
 		// Weird
 		else if (yellow_blue_orange == 0 && blue_orange == 1) {
-			//printf("23 - ");
+			////printf("23 - ");
 			move_and_print_string("UBlbLULUl");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 10) {
-			//printf("24 - ");
+			////printf("24 - ");
 			move_and_print_string("UbrURBLUl");
 		}
 		// Corner in Place, Edge in U Face
 		else if (yellow_blue_orange == 51 && blue_orange == 3) {
-			//printf("25 - ");
+			////printf("25 - ");
 			move_and_print_string("ulBLbLUl");
 		}
 		else if (yellow_blue_orange == 51 && blue_orange == 37) {
-			//printf("26 - ");
+			////printf("26 - ");
 			move_and_print_string("ULulubUB");
 		}
 		else if (yellow_blue_orange == 44 && blue_orange == 3) {
-			//printf("27 - ");
+			////printf("27 - ");
 			move_and_print_string("LulULul");
 		}
 		else if (yellow_blue_orange == 15 && blue_orange == 37) {
-			//printf("28 - ");
+			////printf("28 - ");
 			move_and_print_string("LUluBlbL");
 		}
 		else if (yellow_blue_orange == 44 && blue_orange == 37) {
-			//printf("29 - ");
+			////printf("29 - ");
 			move_and_print_string("lBLblBLb");
 		}
 		else if (yellow_blue_orange == 15 && blue_orange == 3) {
-			//printf("30 - ");
+			////printf("30 - ");
 			move_and_print_string("LUluLUl");
 		}
 		// Edge in Place, Corner in U Face
 		else if (yellow_blue_orange == 0 && blue_orange == 12) {
-			//printf("31 - ");
+			////printf("31 - ");
 			move_and_print_string("LulUbUB");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 41) {
-			//printf("32 - ");
+			////printf("32 - ");
 			move_and_print_string("LUluLUluLUl");
 		}
 		else if (yellow_blue_orange == 38 && blue_orange == 41) {
-			//printf("33 - ");
+			////printf("33 - ");
 			move_and_print_string("uLulUULul");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 41) {
-			//printf("34 - ");
+			////printf("34 - ");
 			move_and_print_string("UbUBUUbUB");
 		}
 		else if (yellow_blue_orange == 38 && blue_orange == 12) {
-			//printf("35 - ");
+			////printf("35 - ");
 			move_and_print_string("uLUlUbuB");
 		}
 		else if (yellow_blue_orange == 9 && blue_orange == 12) {
-			//printf("36 - ");
+			////printf("36 - ");
 			move_and_print_string("UbuBuLUl");
 		}
 		// Edge and Corner in Place
 		else if (yellow_blue_orange == 51 && blue_orange == 41) {
-			//printf("37 - ");
-			//printf("Already in Place");
+			////printf("37 - ");
+			////printf("Already in Place");
 		}
 		else if (yellow_blue_orange == 51 && blue_orange == 12) {
-			//printf("38 - ");
+			////printf("38 - ");
 			move_and_print_string("LLUUBLLbUUlUl");
 		}
 		else if (yellow_blue_orange == 44 && blue_orange == 41) {
-			//printf("39 - ");
+			////printf("39 - ");
 			move_and_print_string("LuluLUlUULul");
 		}
 		else if (yellow_blue_orange == 15 && blue_orange == 41) {
-			//printf("40 - ");
+			////printf("40 - ");
 			move_and_print_string("LulULUUlULul");
 		}
 		else if (yellow_blue_orange == 44 && blue_orange == 12) {
-			//printf("41 - ");
+			////printf("41 - ");
 			move_and_print_string("LBULulbul");
 		}
 		else if (yellow_blue_orange == 15 && blue_orange == 12) {
-			//printf("42 - ");
+			////printf("42 - ");
 			move_and_print_string("LUBLUlubl");
 		}
 		// Corner in Wrong Corner
 		else if (yellow_blue_orange == 17 || yellow_blue_orange == 24 || yellow_blue_orange == 45) {
-			//printf("Wrong Corner - ");
+			////printf("Wrong Corner - ");
 			move_and_print_string("lUL");
 			case_found_C = 0; 
 		}
 		// Edge in Wrong Edge
 		else if (blue_orange == 14 || blue_orange == 21) {
-			//printf("Wrong Edge - ");
+			////printf("Wrong Edge - ");
 			move_and_print_string("lUL");
 			case_found_C = 0; 
 		}
@@ -2417,7 +2418,7 @@ void Algorithm::F2L() {
 
 	int case_found_D = 0;
 	int count_D = 0;
-	//printf("\n");
+	////printf("\n");
 
 	while (case_found_D == 0 && count_D < 4) {
 		case_found_D = 1;
@@ -2619,183 +2620,183 @@ void Algorithm::F2L() {
 			}
 		}
 	
-		//printf("\nPlacing Yellow Orange Green: ");
+		////printf("\nPlacing Yellow Orange Green: ");
 		
 		// Basic Inserts
 		if (yellow_orange_green == 11 && orange_green == 7) {
-			//printf("1 - ");
+			////printf("1 - ");
 			move_and_print_string("UFuf");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 10) {
-			//printf("2 - ");
+			////printf("2 - ");
 			move_and_print_string("ulUL");
 		}
 		else if (yellow_orange_green == 11 && orange_green == 37) {
-			//printf("3 - ");
+			////printf("3 - ");
 			move_and_print_string("luL");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 5) {
-			//printf("4 - ");
+			////printf("4 - ");
 			move_and_print_string("FUf");
 		}
 		// Reposition Edge
 		else if (yellow_orange_green == 11 && orange_green == 5) {
-			//printf("5 - ");
+			////printf("5 - ");
 			move_and_print_string("uFUfUUFuf");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 37) {
-			//printf("6 - ");
+			////printf("6 - ");
 			move_and_print_string("FFRUruFF");
 		}
 		else if (yellow_orange_green == 11 && orange_green == 1) {
-			//printf("7 - ");
+			////printf("7 - ");
 			move_and_print_string("FURUUrUf");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 28) {
-			//printf("8 - ");
+			////printf("8 - ");
 			move_and_print_string("UlUULUlUUL");
 		}
 		// Reposition Edge and Flip Corner
 		else if (yellow_orange_green == 11 && orange_green == 28) {
-			//printf("9 - ");
+			////printf("9 - ");
 			move_and_print_string("uFufUluL");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 1) {
-			//printf("10 - ");
+			////printf("10 - ");
 			move_and_print_string("uFUfUFUf");
 		}
 		else if (yellow_orange_green == 11 && orange_green == 19) {
-			//printf("11 - ");
+			////printf("11 - ");
 			move_and_print_string("uFUUfUluL");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 3) {
-			//printf("12 - ");
+			////printf("12 - ");
 			move_and_print_string("fUUFFUFFUF");
 		}
 		else if (yellow_orange_green == 11 && orange_green == 10) {
-			//printf("13 - ");
+			////printf("13 - ");
 			move_and_print_string("UlULuluL");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 7) {
-			//printf("14 - ");
+			////printf("14 - ");
 			move_and_print_string("uFufUFUf");
 		}
 		// Split Pair by Going Over
 		else if (yellow_orange_green == 11 && orange_green == 3) {
-			//printf("15 - ");
+			////printf("15 - ");
 			move_and_print_string("FRBubrf");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 19) {
-			//printf("16 - ");
+			////printf("16 - ");
 			move_and_print_string("FufUUluL");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 7) {
-			//printf("17 - ");
+			////printf("17 - ");
 			move_and_print_string("FUUfuFUf");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 10) {
-			//printf("18 - ");
+			////printf("18 - ");
 			move_and_print_string("lUULUluL");
 		}
 		// Pair Made on Side
 		else if (yellow_orange_green == 6 && orange_green == 5) {
-			//printf("19 - ");
+			////printf("19 - ");
 			move_and_print_string("UFUUFFLFl");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 37) {
-			//printf("20 - ");
+			////printf("20 - ");
 			move_and_print_string("BulUULLflF");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 1) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("FRUUrf");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 28) {
-			//printf("21 - ");
+			////printf("21 - ");
 			move_and_print_string("lbUUBL");
 		}
 		// Weird
 		else if (yellow_orange_green == 6 && orange_green == 3) {
-			//printf("23 - ");
+			////printf("23 - ");
 			move_and_print_string("ULflFUFUf");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 19) {
-			//printf("24 - ");
+			////printf("24 - ");
 			move_and_print_string("UlbUBLFUf");
 		}
 		// Corner in Place, Edge in U Face
 		else if (yellow_orange_green == 45 && orange_green == 7) {
-			//printf("25 - ");
+			////printf("25 - ");
 			move_and_print_string("ufLFlFUf");
 		}
 		else if (yellow_orange_green == 45 && orange_green == 10) {
-			//printf("26 - ");
+			////printf("26 - ");
 			move_and_print_string("UFufulUL");
 		}
 		else if (yellow_orange_green == 17 && orange_green == 7) {
-			//printf("27 - ");
+			////printf("27 - ");
 			move_and_print_string("FufUFuf");
 		}
 		else if (yellow_orange_green == 24 && orange_green == 10) {
-			//printf("28 - ");
+			////printf("28 - ");
 			move_and_print_string("FUfuLflF");
 		}
 		else if (yellow_orange_green == 17 && orange_green == 10) {
-			//printf("29 - ");
+			////printf("29 - ");
 			move_and_print_string("fLFlfLFl");
 		}
 		else if (yellow_orange_green == 24 && orange_green == 7) {
-			//printf("30 - ");
+			////printf("30 - ");
 			move_and_print_string("FUfuFUf");
 		}
 		// Edge in Place, Corner in U Face
 		else if (yellow_orange_green == 6 && orange_green == 21) {
-			//printf("31 - ");
+			////printf("31 - ");
 			move_and_print_string("FufUlUL");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 14) {
-			//printf("32 - ");
+			////printf("32 - ");
 			move_and_print_string("FUfuFUfuFUf");
 		}
 		else if (yellow_orange_green == 11 && orange_green == 14) {
-			//printf("33 - ");
+			////printf("33 - ");
 			move_and_print_string("uFufUUFuf");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 14) {
-			//printf("34 - ");
+			////printf("34 - ");
 			move_and_print_string("UlULUUlUL");
 		}
 		else if (yellow_orange_green == 11 && orange_green == 21) {
-			//printf("35 - ");
+			////printf("35 - ");
 			move_and_print_string("uFUfUluL");
 		}
 		else if (yellow_orange_green == 18 && orange_green == 21) {
-			//printf("36 - ");
+			////printf("36 - ");
 			move_and_print_string("UluLuFUf");
 		}
 		// Edge and Corner in Place
 		else if (yellow_orange_green == 45 && orange_green == 14) {
-			//printf("37 - ");
-			//printf("Already in Place");
+			////printf("37 - ");
+			////printf("Already in Place");
 		}
 		else if (yellow_orange_green == 45 && orange_green == 21) {
-			//printf("38 - ");
+			////printf("38 - ");
 			move_and_print_string("FFUULFFlUUfUf");
 		}
 		else if (yellow_orange_green == 17 && orange_green == 14) {
-			//printf("39 - ");
+			////printf("39 - ");
 			move_and_print_string("FufuFUfUUFuf");
 		}
 		else if (yellow_orange_green == 24 && orange_green == 14) {
-			//printf("40 - ");
+			////printf("40 - ");
 			move_and_print_string("FufUFUUfUFuf");
 		}
 		else if (yellow_orange_green == 17 && orange_green == 21) {
-			//printf("41 - ");
+			////printf("41 - ");
 			move_and_print_string("FLUFufluf");
 		}
 		else if (yellow_orange_green == 24 && orange_green == 21) {
-			//printf("42 - ");
+			////printf("42 - ");
 			move_and_print_string("FULFUfulf");
 		}
 		// Rotate to Find Case
@@ -2813,411 +2814,411 @@ void Algorithm::OLL() {
 	
 	while (case_found == 0 && count < 4) {
 		case_found = 1;
-		//printf("\nOLL Case: ");
+		////printf("\nOLL Case: ");
 		
 		if      (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(2)  == 'W' && 
 			     get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(7)  == 'W' && get_color(8)  == 'W') 
 			     { 
-					 //printf("Already in Place"); 
+					 ////printf("Already in Place"); 
 				 }
 		else if (get_color(4)  == 'W' && get_color(9)  == 'W' && get_color(10) == 'W' && 
 			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(27) == 'W' && 
 			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(37) == 'W') 
 			     { 
-					 //printf("1 - ");
+					 ////printf("1 - ");
 					 move_and_print_string("RUbRBRRurFRf");
 				 }
 		else if (get_color(4)  == 'W' && get_color(10) == 'W' && get_color(11) == 'W' && 
 			     get_color(19) == 'W' && get_color(27) == 'W' && get_color(28) == 'W' && 
 			     get_color(36) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("2 - ");
+					 ////printf("2 - ");
 					 move_and_print_string("LFlUULFFrFFRfl");
 				 }
 		else if (get_color(0)  == 'W' && get_color(4)  == 'W' && get_color(10) == 'W' && 
 			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
 			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("3 - ");
+					 ////printf("3 - ");
 					 move_and_print_string("FURurfUFRUruf");
 				 }
 		else if (get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(9)  == 'W' && 
 			     get_color(10) == 'W' && get_color(19) == 'W' && get_color(27) == 'W' && 
 			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("4 - ");
+					 ////printf("4 - ");
 					 move_and_print_string("FURurfuFRUruf");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("5 - ");
+					 ////printf("5 - ");
 					 move_and_print_string("rFFLFlFR");
 				 }
 		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(9)  == 'W' && get_color(10) == 'W' && 
 			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(27) == 'W')
 			     { 
-					 //printf("6 - ");
+					 ////printf("6 - ");
 					 move_and_print_string("LFFrfRfl");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
 			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("7 - ");
+					 ////printf("7 - ");
 					 move_and_print_string("LFrFRFFl");
 				 }
 		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(10) == 'W' && 
 			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(36) == 'W')
 			     { 
-					 //printf("8 - ");
+					 ////printf("8 - ");
 					 move_and_print_string("RUUrUUrFRf");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(18) == 'W' && 
 			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(36) == 'W')
 			     { 
-					 //printf("9 - ");
+					 ////printf("9 - ");
 					 move_and_print_string("RUrurFRRUruf");
 				 }
 		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(7)  == 'W' && get_color(11) == 'W' && get_color(20) == 'W' && 
 			     get_color(28) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("10 - ");
+					 ////printf("10 - ");
 					 move_and_print_string("RUrUrFRfRUUr");
 				 }
 		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("11 - ");
+					 ////printf("11 - ");
 					 move_and_print_string("LFrFrDRdRFFl");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(10) == 'W' && get_color(18) == 'W' && 
 			     get_color(19) == 'W' && get_color(27) == 'W' && get_color(36) == 'W')
 			     { 
-					 //printf("12 - ");
+					 ////printf("12 - ");
 					 move_and_print_string("LrrfRfrFFRfRl");
 				 }
 		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
 			     get_color(29) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("13 - ");
+					 ////printf("13 - ");
 					 move_and_print_string("FURuRRfRURur");
 				 }
 		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(18) == 'W' && 
 			     get_color(19) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("14 - ");
+					 ////printf("14 - ");
 					 move_and_print_string("rFRUrfRFuf");
 				 }
 		else if (get_color(0)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(20) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("15 - ");
+					 ////printf("15 - ");
 					 move_and_print_string("rfRluLUrFR");
 				 }
 		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(9)  == 'W' && get_color(18) == 'W' && 
 			     get_color(19) == 'W' && get_color(27) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("16 - ");
+					 ////printf("16 - ");
 					 move_and_print_string("LFlRUruLfl");
 				 }
 		else if (get_color(0)  == 'W' && get_color(4)  == 'W' && get_color(8)  == 'W' && 
 			     get_color(10) == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("17 - ");
+					 ////printf("17 - ");
 					 move_and_print_string("RUrUrFRfUUrFRf");
 				 }
 		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(10) == 'W' && get_color(18) == 'W' && get_color(19) == 'W' && 
 			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("18 - ");
+					 ////printf("18 - ");
 					 move_and_print_string("LFrFRFFLLbRbrBBL");
 				 }
 		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(10) == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("19 - ");
+					 ////printf("19 - ");
 					 move_and_print_string("lRBRBrbLRRFRf");
 				 }
 		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
 			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(37) == 'W') 
 			     { 
-					 //printf("20 - ");
+					 ////printf("20 - ");
 					 move_and_print_string("RBUbrFFBdlDbFF");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(7)  == 'W' && get_color(18) == 'W' && 
 			     get_color(20) == 'W' && get_color(36) == 'W' && get_color(38) == 'W') 
 			     { 
-					 //printf("21 - ");
+					 ////printf("21 - ");
 					 move_and_print_string("RUUruRUruRur");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(7)  == 'W' && get_color(9)  == 'W' && 
 			     get_color(11) == 'W' && get_color(20) == 'W' && get_color(36) == 'W')
 			     { 
-					 //printf("22 - ");
+					 ////printf("22 - ");
 					 move_and_print_string("RUURRuRRuRRUUR");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(36) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("23 - ");
+					 ////printf("23 - ");
 					 move_and_print_string("RRdRUUrDRUUR");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(9)  == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("24 - ");
+					 ////printf("24 - ");
 					 move_and_print_string("RURDruRdRR");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(18) == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("25 - ");
+					 ////printf("25 - ");
 					 move_and_print_string("rFRbrfRB");
 				 }
 		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(9)  == 'W' && get_color(18) == 'W' && get_color(27) == 'W')
 			     { 
-					 //printf("26 - ");
+					 ////printf("26 - ");
 					 move_and_print_string("RUUruRur");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(20) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("27 - ");
+					 ////printf("27 - ");
 					 move_and_print_string("RUrURUUr");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(2)  == 'W' && 
 			     get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(6)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(19) == 'W' && get_color(28) == 'W')
 			     { 
-					 //printf("28 - ");
+					 ////printf("28 - ");
 					 move_and_print_string("FRUruFFluLUF");
 				 }
 		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(8)  == 'W' && get_color(18) == 'W' && 
 			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("29 - ");
+					 ////printf("29 - ");
 					 move_and_print_string("RUruRurfuFRUr");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
 			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("30 - ");
+					 ////printf("30 - ");
 					 move_and_print_string("FrFRRuruRUrFF");
 				 }
 		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
 			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("31 - ");
+					 ////printf("31 - ");
 					 move_and_print_string("ruFURurfR");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
 			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(36) == 'W')
 			     { 
-					 //printf("32 - ");
+					 ////printf("32 - ");
 					 move_and_print_string("LUfulULFl");
 				 }
 		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(18) == 'W' && 
 			     get_color(19) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("33 - ");
+					 ////printf("33 - ");
 					 move_and_print_string("RUrurFRf");
 				 }
 		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
 			     get_color(19) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("34 - ");
+					 ////printf("34 - ");
 					 move_and_print_string("RURRurFRURuf");
 				 }
 		else if (get_color(0)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(7)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
 			     get_color(18) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("35 - ");
+					 ////printf("35 - ");
 					 move_and_print_string("RUURRFRfRUUr");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(10) == 'W' && 
 			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(36) == 'W')
 			     { 
-					 //printf("36 - ");
+					 ////printf("36 - ");
 					 move_and_print_string("luLulULULflF");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(8)  == 'W' && get_color(18) == 'W' && 
 			     get_color(19) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("37 - ");
+					 ////printf("37 - ");
 					 move_and_print_string("FrfRURur");
 				 }
 		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
 			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("38 - ");
+					 ////printf("38 - ");
 					 move_and_print_string("RUrURururFRf");
 				 }
 		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
 			     get_color(27) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("39 - ");
+					 ////printf("39 - ");
 					 move_and_print_string("LfluLUFul");
 				 }
 		else if (get_color(0)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(11) == 'W' && 
 			     get_color(19) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("40 - ");
+					 ////printf("40 - ");
 					 move_and_print_string("rFRUrufUR");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(8)  == 'W' && get_color(19) == 'W' && 
 			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("41 - ");
+					 ////printf("41 - ");
 					 move_and_print_string("RUrURUUrFRUruf");
 				 }
 		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(7)  == 'W' && get_color(18) == 'W' && 
 			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("42 - ");
+					 ////printf("42 - ");
 					 move_and_print_string("ruRurUURFRUruf");
 				 }
 		else if (get_color(1)  == 'W' && get_color(2)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
 			     get_color(10) == 'W' && get_color(11) == 'W' && get_color(19) == 'W') 
 			     { 
-					 //printf("43 - ");
+					 ////printf("43 - ");
 					 move_and_print_string("fulULF");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(6)  == 'W' && get_color(19) == 'W' && 
 			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("44 - ");
+					 ////printf("44 - ");
 					 move_and_print_string("FURurf");
 				 }
 		else if (get_color(2)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(5)  == 'W' && get_color(8)  == 'W' && get_color(9)  == 'W' && 
 			     get_color(11) == 'W' && get_color(19) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("45 - ");
+					 ////printf("45 - ");
 					 move_and_print_string("FRUruf");
 				 }
 		else if (get_color(0)  == 'W' && get_color(1)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(6)  == 'W' && get_color(7)  == 'W' && get_color(10) == 'W' && 
 			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("46 - ");
+					 ////printf("46 - ");
 					 move_and_print_string("rurFRfUR");
 				 }
 		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(10) == 'W' && get_color(18) == 'W' && get_color(19) == 'W' && 
 			     get_color(27) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("47 - ");
+					 ////printf("47 - ");
 					 move_and_print_string("rurFRfrFRfUR");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(9)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(20) == 'W' && get_color(28) == 'W' && get_color(36) == 'W')
 			     { 
-					 //printf("48 - ");
+					 ////printf("48 - ");
 					 move_and_print_string("FRUruRUruf");
 				 }
 		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(18) == 'W' && get_color(27) == 'W' && get_color(28) == 'W' && 
 			     get_color(29) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("49 - ");
+					 ////printf("49 - ");
 					 move_and_print_string("RbRRFRRBRRfR");
 				 }
 		else if (get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(9)  == 'W' && get_color(10) == 'W' && get_color(11) == 'W' && 
 			     get_color(20) == 'W' && get_color(36) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("50 - ");
+					 ////printf("50 - ");
 					 move_and_print_string("RbRBRRUUFrfR");
 				 }
 		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(27) == 'W' && 
 			     get_color(29) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("51 - ");
+					 ////printf("51 - ");
 					 move_and_print_string("FURurURurf");
 				 }
 		else if (get_color(1)  == 'W' && get_color(4)  == 'W' && get_color(7)  == 'W' && 
 			     get_color(10) == 'W' && get_color(18) == 'W' && get_color(27) == 'W' && 
 			     get_color(28) == 'W' && get_color(29) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("52 - ");
+					 ////printf("52 - ");
 					 move_and_print_string("RUrURuBubr");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(9)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(27) == 'W' && get_color(28) == 'W' && get_color(29) == 'W')
 			     { 
-					 //printf("53 - ");
+					 ////printf("53 - ");
 					 move_and_print_string("FRUrufRUrurFRf");
 				 }
 		else if (get_color(1)  == 'W' && get_color(3)  == 'W' && get_color(4)  == 'W' && 
 			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
 			     get_color(28) == 'W' && get_color(36) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("54 - ");
+					 ////printf("54 - ");
 					 move_and_print_string("LFFrfRFrfRfl");
 				 }
 		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(18) == 'W' && get_color(19) == 'W' && get_color(20) == 'W' && 
 			     get_color(36) == 'W' && get_color(37) == 'W' && get_color(38) == 'W')
 			     { 
-					 //printf("55 - ");
+					 ////printf("55 - ");
 					 move_and_print_string("rFRURuRRfRRurURUr");
 				 }
 		else if (get_color(3)  == 'W' && get_color(4)  == 'W' && get_color(5)  == 'W' && 
 			     get_color(9)  == 'W' && get_color(11) == 'W' && get_color(19) == 'W' && 
 			     get_color(27) == 'W' && get_color(29) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("56 - ");
+					 ////printf("56 - ");
 					 move_and_print_string("LFlURurURurLfl");
 				 }
 		else if (get_color(0)  == 'W' && get_color(2)  == 'W' && get_color(3)  == 'W' && 
 			     get_color(4)  == 'W' && get_color(5)  == 'W' && get_color(6)  == 'W' && 
 			     get_color(8)  == 'W' && get_color(19) == 'W' && get_color(37) == 'W')
 			     { 
-					 //printf("57 - ");
+					 ////printf("57 - ");
 					 move_and_print_string("RUruLrFRfl");
 				 }
 		else 
@@ -3240,14 +3241,14 @@ void Algorithm::PLL() {
 	
 	while (case_found == 0 && count < 4) {
 		case_found = 1;
-		//printf("\nPLL Case: ");
+		////printf("\nPLL Case: ");
 		
 		if      (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
 			     get_color(18) == 'G' && get_color(19) == 'G' && get_color(20) == 'G' && 
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     { 
-					 //printf("Already in Place"); 
+					 ////printf("Already in Place"); 
 				 }
 		// H
 		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'O' && 
@@ -3255,7 +3256,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
 			     { 
-					 //printf("H - ");
+					 ////printf("H - ");
 					 move_and_print_string("LRUUlrfbUUFB");	
 				 }
 		// Ua
@@ -3264,7 +3265,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ua - ");
+					 ////printf("Ua - ");
 					 move_and_print_string("RRuruRURURuR");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3272,7 +3273,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ua - ");
+					 ////printf("Ua - ");
 					 move_and_print_string("FFufuFUFUFuF");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
@@ -3280,7 +3281,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ua - ");
+					 ////printf("Ua - ");
 					 move_and_print_string("BBubuBUBUBuB");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
@@ -3288,7 +3289,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ua - ");
+					 ////printf("Ua - ");
 					 move_and_print_string("LLuluLULULuL");
 				 }
 		// Ub
@@ -3297,7 +3298,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ub - ");
+					 ////printf("Ub - ");
 					 move_and_print_string("rUrururURURR");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3305,7 +3306,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ub - ");
+					 ////printf("Ub - ");
 					 move_and_print_string("fUfufufUFUFF");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'O' && 
@@ -3313,7 +3314,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ub - ");
+					 ////printf("Ub - ");
 					 move_and_print_string("bUbububUBUBB");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'O' && 
@@ -3321,7 +3322,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ub - ");
+					 ////printf("Ub - ");
 					 move_and_print_string("lUlululULULL");
 				 }
 		// Z
@@ -3330,7 +3331,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
 			     { 
-					 //printf("Z - ");
+					 ////printf("Z - ");
 					 move_and_print_string("ruRRURUruRURuRurUU");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
@@ -3338,7 +3339,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
 			     { 
-					 //printf("Z - ");
+					 ////printf("Z - ");
 					 move_and_print_string("fuFFUFUfuFUFuFufUU");	
 				 }
 		// Aa
@@ -3347,7 +3348,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'R') 
 			     { 
-					 //printf("Aa - ");
+					 ////printf("Aa - ");
 					 move_and_print_string("rFrBBRfrBBRR");	
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
@@ -3355,7 +3356,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     { 
-					 //printf("Aa - ");
+					 ////printf("Aa - ");
 					 move_and_print_string("fLfRRFlfRRFF");	
 				 }
 		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'B' && 
@@ -3363,7 +3364,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'R') 
 			     { 
-					 //printf("Aa - ");
+					 ////printf("Aa - ");
 					 move_and_print_string("bRbLLBrbLLBB");	
 				 }
 		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'B' && 
@@ -3371,7 +3372,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
 			     { 
-					 //printf("Aa - ");
+					 ////printf("Aa - ");
 					 move_and_print_string("lBlFFLblFFLL");	
 				 }
 		// Ab
@@ -3380,7 +3381,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     { 
-					 //printf("Ab - ");
+					 ////printf("Ab - ");
 					 move_and_print_string("RbRFFrBRFFRR");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'G' && 
@@ -3388,7 +3389,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
 			     { 
-					 //printf("Ab - ");
+					 ////printf("Ab - ");
 					 move_and_print_string("FrFLLfRFLLFF");	
 				 }
 		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3396,7 +3397,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'G') 
 			     { 
-					 //printf("Ab - ");
+					 ////printf("Ab - ");
 					 move_and_print_string("BlBRRbLBRRBB");	
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'R' && 
@@ -3404,7 +3405,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'O') 
 			     {
-					 //printf("Ab - ");
+					 ////printf("Ab - ");
 					 move_and_print_string("LfLBBlFLBBLL");	
 				 }
 		// E
@@ -3413,7 +3414,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
 			     {
-					 //printf("E - ");
+					 ////printf("E - ");
 					 move_and_print_string("rUlDDLuRlUrDDRuL");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
@@ -3421,7 +3422,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'O') 
 			     {
-					 //printf("E - ");
+					 ////printf("E - ");
 					 move_and_print_string("fUbDDBuFbUfDDFuB");
 				 }
 		// F
@@ -3430,7 +3431,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
 			     {
-					 //printf("F - ");
+					 ////printf("F - ");
 					 move_and_print_string("rURuRRfuFURFrfRRu");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3438,7 +3439,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'G' && get_color(38) == 'B') 
 			     {
-					 //printf("F - ");
+					 ////printf("F - ");
 					 move_and_print_string("fUFuFFluLUFLflFFu");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
@@ -3446,7 +3447,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'O') 
 			     {
-					 //printf("F - ");
+					 ////printf("F - ");
 					 move_and_print_string("bUBuBBruRUBRbrBBu");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'G' && 
@@ -3454,7 +3455,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'O' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("F - ");
+					 ////printf("F - ");
 					 move_and_print_string("lULuLLbuBULBlbLLu");
 				 }
 		// Ga
@@ -3463,7 +3464,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'O' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'R' && get_color(38) == 'B') 
 			     {
-					 //printf("Ga - ");
+					 ////printf("Ga - ");
 					 move_and_print_string("RUrurUFRURurfUrUUR");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'G' && 
@@ -3471,7 +3472,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'G' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'O') 
 			     {
-					 //printf("Ga - ");
+					 ////printf("Ga - ");
 					 move_and_print_string("FUfufULFUFuflUfUUF");
 				 }
 		else if (get_color(9)  == 'R' && get_color(10) == 'B' && get_color(11) == 'O' && 
@@ -3479,7 +3480,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'G' && get_color(38) == 'G') 
 			     {
-					 //printf("Ga - ");
+					 ////printf("Ga - ");
 					 move_and_print_string("BUbubURBUBubrUbUUB");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'R' && get_color(11) == 'R' && 
@@ -3487,7 +3488,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'O') 
 			     {
-					 //printf("Ga - ");
+					 ////printf("Ga - ");
 					 move_and_print_string("LUlulUBLULulbUlUUL");
 				 }
 		// Gb
@@ -3496,7 +3497,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'O') 
 			     {
-					 //printf("Gb - ");
+					 ////printf("Gb - ");
 					 move_and_print_string("ruRBBDlULuLdBB");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'B' && get_color(11) == 'R' && 
@@ -3504,7 +3505,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'O') 
 			     {
-					 //printf("Gb - ");
+					 ////printf("Gb - ");
 					 move_and_print_string("fuFRRDbUBuBdRR");	
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'R' && get_color(11) == 'G' && 
@@ -3512,7 +3513,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("Gb - ");
+					 ////printf("Gb - ");
 					 move_and_print_string("buBLLDfUFuFdLL");	
 				 }
 		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3520,7 +3521,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'G') 
 			     {
-					 //printf("Gb - ");
+					 ////printf("Gb - ");
 					 move_and_print_string("luLFFDrURuRdFF");	
 				 }
 		// Gc
@@ -3529,7 +3530,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'B' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'G') 
 			     {
-					 //printf("Gc - ");
+					 ////printf("Gc - ");
 					 move_and_print_string("luLULuflulULFuLUUl");
 				 }
 		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'B' && 
@@ -3537,7 +3538,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'G' && get_color(38) == 'R') 
 			     {
-					 //printf("Gc - ");
+					 ////printf("Gc - ");
 					 move_and_print_string("buBUBulbubUBLuBUUb");	
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'R' && 
@@ -3545,7 +3546,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'O' && get_color(38) == 'B') 
 			     {
-					 //printf("Gc - ");
+					 ////printf("Gc - ");
 					 move_and_print_string("fuFUFurfufUFRuFUUf");
 				 }
 		else if (get_color(9)  == 'B' && get_color(10) == 'G' && get_color(11) == 'O' && 
@@ -3553,7 +3554,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'O' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'R') 
 			     {
-					 //printf("Gc - ");
+					 ////printf("Gc - ");
 					 move_and_print_string("ruRURubrurURBuRUUr");
 				 }
 		// Gd
@@ -3562,7 +3563,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'G') 
 			     {
-					 //printf("Gd - ");
+					 ////printf("Gd - ");
 					 move_and_print_string("RUUrUbruRURBUrurUR");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'G' && 
@@ -3570,7 +3571,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'G' && get_color(38) == 'B') 
 			     {
-					 //printf("Gd - ");
+					 ////printf("Gd - ");
 					 move_and_print_string("FUUfUrfuFUFRUfufUF");	
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'R' && 
@@ -3578,7 +3579,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'O') 
 			     {
-					 //printf("Gd - ");
+					 ////printf("Gd - ");
 					 move_and_print_string("BUUbUlbuBUBLUbubUB");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'B' && get_color(11) == 'G' && 
@@ -3586,7 +3587,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'O' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'O') 
 			     {
-					 //printf("Gd - ");
+					 ////printf("Gd - ");
 					 move_and_print_string("LUUlUfluLULFUlulUL");
 				 }
 		// Ja
@@ -3595,7 +3596,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
 			     {
-					 //printf("Ja - ");
+					 ////printf("Ja - ");
 					 move_and_print_string("rlUULUlUURuLU");
 				 }
 		else if (get_color(9)  == 'B' && get_color(10) == 'B' && get_color(11) == 'O' && 
@@ -3603,7 +3604,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'O' && get_color(38) == 'R') 
 			     {
-					 //printf("Ja - ");
+					 ////printf("Ja - ");
 					 move_and_print_string("fbUUBUbUUFuBU");	
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'G' && 
@@ -3611,7 +3612,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'G' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("Ja - ");
+					 ////printf("Ja - ");
 					 move_and_print_string("bfUUFUfUUBuFU");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3619,7 +3620,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'B' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'R' && get_color(38) == 'B') 
 			     {
-					 //printf("Ja - ");
+					 ////printf("Ja - ");
 					 move_and_print_string("lrUURUrUULuRU");
 				 }
 		// Jb
@@ -3628,7 +3629,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'G' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("Jb - ");
+					 ////printf("Jb - ");
 					 move_and_print_string("RUrfRUrurFRRuru");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'G' && 
@@ -3636,7 +3637,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("Jb - ");
+					 ////printf("Jb - ");
 					 move_and_print_string("FUflFUfufLFFufu");	
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'B' && get_color(11) == 'B' && 
@@ -3644,7 +3645,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'O') 
 			     {
-					 //printf("Jb - ");
+					 ////printf("Jb - ");
 					 move_and_print_string("LUlbLUlulBLLulu");
 				 }
 		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3652,7 +3653,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'R' && get_color(38) == 'R') 
 			     {
-					 //printf("Jb - ");
+					 ////printf("Jb - ");
 					 move_and_print_string("BUbrBUbubRBBubu");
 				 }
 		// Na
@@ -3661,7 +3662,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("Na - ");
+					 ////printf("Na - ");
 					 move_and_print_string("fRUrurFRRFuruRUfr");
 				 }
 		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3669,7 +3670,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'G') 
 			     {
-					 //printf("Na - ");
+					 ////printf("Na - ");
 					 move_and_print_string("lFUfufLFFLufuFUlf");
 				 }
 		// Nb
@@ -3678,7 +3679,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'O' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
 			     {
-					 //printf("Nb - ");
+					 ////printf("Nb - ");
 					 move_and_print_string("BruRURbRRbURUruBR");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
@@ -3686,7 +3687,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'G' && get_color(38) == 'b') 
 			     {
-					 //printf("Nb - ");
+					 ////printf("Nb - ");
 					 move_and_print_string("RfuFUFrFFrUFUfuRF");
 				 }
 		// Ra
@@ -3695,7 +3696,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'B' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'B') 
 			     {
-					 //printf("Ra - ");
+					 ////printf("Ra - ");
 					 move_and_print_string("RUUrUURbruRURBRRU");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
@@ -3703,7 +3704,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
 			     {
-					 //printf("Ra - ");
+					 ////printf("Ra - ");
 					 move_and_print_string("FUUfUUFrfuFUFRFFU");	
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'O' && 
@@ -3711,7 +3712,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'O' && get_color(38) == 'B') 
 			     {
-					 //printf("Ra - ");
+					 ////printf("Ra - ");
 					 move_and_print_string("BUUbUUBlbuBUBLBBU");
 				 }
 		else if (get_color(9)  == 'B' && get_color(10) == 'G' && get_color(11) == 'O' && 
@@ -3719,7 +3720,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
 			     {
-					 //printf("Ra - ");
+					 ////printf("Ra - ");
 					 move_and_print_string("LUUlUULfluLULFLLU");
 				 }
 		// Rb
@@ -3728,7 +3729,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'B' && get_color(38) == 'R') 
 			     {
-					 //printf("Rb - ");
+					 ////printf("Rb - ");
 					 move_and_print_string("rUURUUrFRUrurfRRu");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'O' && 
@@ -3736,7 +3737,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'R' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("Rb - ");
+					 ////printf("Rb - ");
 					 move_and_print_string("fUUFUUfLFUfuflFFu");	
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'O' && get_color(11) == 'B' && 
@@ -3744,7 +3745,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'O') 
 			     {
-					 //printf("Rb - ");
+					 ////printf("Rb - ");
 					 move_and_print_string("bUUBUUbRBUbubrBBu");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'G' && 
@@ -3752,7 +3753,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'B') 
 			     {
-					 //printf("Rb - ");
+					 ////printf("Rb - ");
 					 move_and_print_string("lUULUUlBLUlulbLLu");
 				 }
 		// T
@@ -3761,7 +3762,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'B' && get_color(28) == 'O' && get_color(29) == 'G' && 
 			     get_color(36) == 'R' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("T - ");
+					 ////printf("T - ");
 					 move_and_print_string("RUrurFRRuruRUrf");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'G' && 
@@ -3769,7 +3770,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'G' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'G' && get_color(38) == 'B') 
 			     {
-					 //printf("T - ");
+					 ////printf("T - ");
 					 move_and_print_string("FUfufLFFufuFUfl");	
 				 }
 		else if (get_color(9)  == 'B' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3777,7 +3778,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'B' && 
 			     get_color(36) == 'O' && get_color(37) == 'G' && get_color(38) == 'R') 
 			     {
-					 //printf("T - ");
+					 ////printf("T - ");
 					 move_and_print_string("BUbubRBBubuBUbr");
 				 }
 		else if (get_color(9)  == 'G' && get_color(10) == 'R' && get_color(11) == 'B' && 
@@ -3785,7 +3786,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'O' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'O') 
 			     {
-					 //printf("T - ");
+					 ////printf("T - ");
 					 move_and_print_string("LUlulBLLuluLUlb");
 				 }
 		// V
@@ -3794,7 +3795,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'B' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'R' && get_color(38) == 'G') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("rUrubrBBubUbRBR");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
@@ -3802,7 +3803,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'G' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("fUfurfRRurUrFRF");	
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'B' && get_color(11) == 'R' && 
@@ -3810,7 +3811,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'O' && get_color(38) == 'B') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("bUbulbLLulUlBLB");
 				 }
 		else if (get_color(9)  == 'R' && get_color(10) == 'G' && get_color(11) == 'O' && 
@@ -3818,7 +3819,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("lUluflFFufUfLFL");
 				 }
 		// Y
@@ -3827,7 +3828,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'R' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'O' && get_color(38) == 'G') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("ruRuLRUUruRUUlURRUR");
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'O' && get_color(11) == 'R' && 
@@ -3835,7 +3836,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'B' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'R' && get_color(38) == 'B') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("fuFuBFUUfuFUUbUFFUF");	
 				 }
 		else if (get_color(9)  == 'O' && get_color(10) == 'G' && get_color(11) == 'R' && 
@@ -3843,7 +3844,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'R' && get_color(28) == 'R' && get_color(29) == 'O' && 
 			     get_color(36) == 'G' && get_color(37) == 'B' && get_color(38) == 'B') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("buBuFBUUbuBUUfUBBUB");
 				 }
 		else if (get_color(9)  == 'R' && get_color(10) == 'O' && get_color(11) == 'O' && 
@@ -3851,7 +3852,7 @@ void Algorithm::PLL() {
 			     get_color(27) == 'O' && get_color(28) == 'G' && get_color(29) == 'R' && 
 			     get_color(36) == 'B' && get_color(37) == 'B' && get_color(38) == 'G') 
 			     {
-					 //printf("V - ");
+					 ////printf("V - ");
 					 move_and_print_string("luLuRLUUluLUUrULLUL");
 				 }
 		else 
@@ -3897,17 +3898,16 @@ int Algorithm::check_correct() {
 void Algorithm::end_display() {
 	int correct = check_correct();
 	if (correct == 1) {
-		printf("\nCorrectly Solved");
-		printf("\nTotal Move Count: %d", final_moves_count);
-		printf("\nMoves to Solve: ");
+		//printf("\nCorrectly Solved");
+		//printf("\nTotal Move Count: %d", final_moves_count);
+		//printf("\nMoves to Solve: ");
 		for (int i=0; i<final_moves_count; i++) {
-			printf("%c", final_moves[i]);
-			if ((i+1)%10 == 0) { printf(" "); }
-			if ((i+1)%50 == 0) { printf("\n                "); }
+			//printf("%c", final_moves[i]);
+			//if ((i+1)%10 == 0) { //printf(" "); }
+			//if ((i+1)%50 == 0) { //printf("\n                "); }
 		}
-		printf("\n\n");
+		//printf("\n\n");
 	} else {
-		printf("\nIncorrectly Solved");
+		//printf("\nIncorrectly Solved");
 	}
 }
-
