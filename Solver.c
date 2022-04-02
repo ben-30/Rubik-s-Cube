@@ -1482,14 +1482,14 @@ void F2L()
 		}
 		else if (yellow_green_red == 8 && green_red == 10) {
 			printf("20 - ");
-			move_and_print_string("LufUUFFrfR");
+			move_and_print_string("ufUUFFrfR");
 		}
 		else if (yellow_green_red == 8 && green_red == 3) {
 			printf("21 - ");
 			move_and_print_string("RBUUbr");
 		}
 		else if (yellow_green_red == 8 && green_red == 37) {
-			printf("21 - ");
+			printf("22 - ");
 			move_and_print_string("flUULF");
 		}
 		// Weird
@@ -1905,14 +1905,14 @@ void F2L()
 		}
 		else if (yellow_red_blue == 2 && red_blue == 19) {
 			printf("20 - ");
-			move_and_print_string("FurUURRbrB");
+			move_and_print_string("urUURRbrB");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 7) {
 			printf("21 - ");
 			move_and_print_string("BLUUlb");
 		}
 		else if (yellow_red_blue == 2 && red_blue == 10) {
-			printf("21 - ");
+			printf("22 - ");
 			move_and_print_string("rfUUFR");
 		}
 		// Weird
@@ -2028,7 +2028,7 @@ void F2L()
 			count_B++;
 		}
 	}
-
+	
 	int case_found_C = 0;
 	int count_C = 0;
 	printf("\n");
@@ -2318,14 +2318,14 @@ void F2L()
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 28) {
 			printf("20 - ");
-			move_and_print_string("RubUUBBlbL");
+			move_and_print_string("ubUUBBlbL");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 5) {
 			printf("21 - ");
 			move_and_print_string("LFUUfl");
 		}
 		else if (yellow_blue_orange == 0 && blue_orange == 19) {
-			printf("21 - ");
+			printf("22 - ");
 			move_and_print_string("brUURB");
 		}
 		// Weird
@@ -2431,7 +2431,7 @@ void F2L()
 			count_C++;
 		}
 	}
-
+	
 	int case_found_D = 0;
 	int count_D = 0;
 	printf("\n");
@@ -2721,14 +2721,14 @@ void F2L()
 		}
 		else if (yellow_orange_green == 6 && orange_green == 37) {
 			printf("20 - ");
-			move_and_print_string("BulUULLflF");
+			move_and_print_string("ulUULLflF");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 1) {
 			printf("21 - ");
 			move_and_print_string("FRUUrf");
 		}
 		else if (yellow_orange_green == 6 && orange_green == 28) {
-			printf("21 - ");
+			printf("22 - ");
 			move_and_print_string("lbUUBL");
 		}
 		// Weird
