@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <string>
+#include <cstring>
 
 class Algorithm {
 	public:
@@ -9,6 +10,7 @@ class Algorithm {
 		char scramble_seq[30];
 		char final_moves[200];
 		int final_moves_count = 0;
+		int original_count = 0;
 		
 		Algorithm(std::string);
 		void solve();
@@ -34,6 +36,8 @@ class Algorithm {
 		void F2L();
 		void OLL();
 		void PLL();
+		void reverse_moves();
+		void double_moves();
 		int check_correct();
 		void end_display();
 		void scramble();
@@ -77,6 +81,10 @@ void Algorithm::solve() {
 	F2L();
 	OLL();
 	PLL();
+	
+	original_count = final_moves_count;
+	//reverse_moves();
+	//double_moves();
 }
 
 void Algorithm::display() {
@@ -3878,6 +3886,214 @@ void Algorithm::PLL() {
 				 	 count++;
 				 }
 	}
+}
+
+void Algorithm::reverse_moves() {
+	int remove_count = 0;
+	
+	for (int i=0; i<original_count-1; i++) {
+		char current = final_moves[i];
+		char next = final_moves[i+1];
+		
+		switch (current) {
+			case 'U':
+				if (next == 'u') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'u':
+				if (next == 'U') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'D':
+				if (next == 'd') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'd':
+				if (next == 'D') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'L':
+				if (next == 'l') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'l':
+				if (next == 'L') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'R':
+				if (next == 'r') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'r':
+				if (next == 'R') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'F':
+				if (next == 'f') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'f':
+				if (next == 'F') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'B':
+				if (next == 'b') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+			case 'b':
+				if (next == 'B') { 
+					final_moves[i] = ' ';
+					final_moves[i+1] = ' ';
+					remove_count += 2;
+					i++;
+				}
+				break;
+		}
+	}
+	
+	final_moves_count -= remove_count;
+}
+
+void Algorithm::double_moves() {
+	int remove_count = 0;
+	
+	for (int i=0; i<original_count-1; i++) {
+		char current = final_moves[i];
+		char next = final_moves[i+1];
+		
+		switch (current) {
+			case 'U':
+				if (next == 'U') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'u':
+				if (next == 'u') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'D':
+				if (next == 'D') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'd':
+				if (next == 'd') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'L':
+				if (next == 'L') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'l':
+				if (next == 'l') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'R':
+				if (next == 'R') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'r':
+				if (next == 'r') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'F':
+				if (next == 'F') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'f':
+				if (next == 'f') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'B':
+				if (next == 'B') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+			case 'b':
+				if (next == 'b') { 					
+					final_moves[i+1] = '2';
+					remove_count += 1;
+					i++;
+				}
+				break;
+		}
+	}
+	
+	final_moves_count -= remove_count;
 }
 
 int Algorithm::check_correct() {
