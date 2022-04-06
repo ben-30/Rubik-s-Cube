@@ -6,7 +6,7 @@ int main() {
 	Algorithm cube("WWWWWWWWWOOOOOOOOOGGGGGGGGGRRRRRRRRRBBBBBBBBBYYYYYYYYY");
 	
 	float move_sum = 0.0;
-	int num_trials = 100000;
+	int num_trials = 1000;
 	int correct = 1;
 	
 	for (int i=0; i<num_trials; i++) {
@@ -15,6 +15,8 @@ int main() {
 		printf(" --> ");
 		
 		cube.solve();
+		cube.reverse_moves();
+		cube.double_moves();
 		for (int i=0; i<54; i++) { printf("%c", cube.cube[i]); }
 		
 		move_sum += cube.final_moves_count;
